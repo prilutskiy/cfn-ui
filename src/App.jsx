@@ -22,14 +22,15 @@ class App extends Component {
           <Button primary xl>Button</Button>
         </div>
         <div>
-          <Input xl
+          <Input xs
+            inline
             beforeIcon="key"
             type="text"
             placeholder="Enter your name"
             title="Username"
             hint="Some description here Lorem ipsum dolor la la l al al all la.l la lla"
           >
-            <Button info xl>Click me!</Button>
+            <Button info xs>Click me!</Button>
           </Input>
         </div>
       </div>

@@ -18,74 +18,104 @@
       text-align: left;
     }
 
-    &.input-xs input {
-      height: 21px;
-      line-height: 0.8em;   
-      font-size: 0.8em;
+    &.input-xs {
+      &.has-before-icon input {
+        padding-left: 24px;
+      }
+      &.has-after-icon input {
+        padding-left: 24px;
+      }
+      input, label {
+        height: 21px;
+        line-height: 0.8em;   
+        font-size: 0.8em;
+      }
       .fa {
         font-size: 0.9em;
       }
     }
-    &.input-sm input {
-      height: 27px;
-      line-height: 0.9em;   
-      font-size: 0.9em;
+    &.input-sm {
+      &.has-before-icon input {
+        padding-left: 26px;
+      }
+      &.has-after-icon input {
+        padding-left: 26px;
+      }
+      input, label {
+        height: 27px;
+        line-height: 0.9em;   
+        font-size: 0.9em;
+      }
       .fa {
         font-size: 1em;
       }
     }
-    &.input-md input {
-      height: 33px;
-      line-height: 1em;   
-      font-size: 1em;
+    &.input-md {
+      &.has-before-icon input {
+        padding-left: 28px;
+      }
+      &.has-after-icon input {
+        padding-left: 28px;
+      }
+      input, label {
+        height: 33px;
+        line-height: 1em;   
+        font-size: 1em;
+      }
       .fa {
         font-size: 1.1em;
-      }      
+      }
     }
-    &.input-lg input {
-      height: 39px;
-      line-height: 1.1em;   
-      font-size: 1.1em;
+    &.input-lg {
+      &.has-before-icon input {
+        padding-left: 30px;
+      }
+      &.has-after-icon input {
+        padding-left: 30px;
+      }
+      input, label {
+        height: 39px;
+        line-height: 1.1em;   
+        font-size: 1.1em;
+      }
       .fa {
         font-size: 1.2em;
-      }      
+      }
     }
-    &.input-xl input {
-      height: 45px;
-      line-height: 1.2em;   
-      font-size: 1.2em;
+    &.input-xl {
+      &.has-before-icon input {
+        padding-left: 32px;
+      }
+      &.has-after-icon input {
+        padding-left: 32px;
+      }
+      input, label {
+        height: 45px;
+        line-height: 1.2em;   
+        font-size: 1.2em;
+      }
       .fa {
         font-size: 1.3em;
-      }      
+      }  
     }
     .input-wrapper {
       position: relative;
       display: inline-flex;
       flex-direction: column;
     }
-    &.has-before-icon {
-      input { 
-        padding-left: 28px;
-      }
-      .fa.before {
-        color: lighten(@muted, 10%);
-        position: absolute;
-        left: 10px;
-        bottom: 50%;
-        padding-bottom: 2px;
-      }
+    .fa.before {
+      color: lighten(@muted, 10%);
+      position: absolute;
+      left: 10px;
+      bottom: 50%;
+      padding-bottom: 2px;
     }
-    &.has-after-icon {
-      input {
-        padding-right: 28px;
-      }
-      .fa.after {
-        color: lighten(@muted, 10%);
-        position: absolute;
-        right: 10px;
-        bottom: 50%;
-        padding-bottom: 2px;
-      }
+    .fa.after {
+      color: lighten(@muted, 10%);
+      position: absolute;
+      right: 10px;
+      bottom: 50%;
+      padding-bottom: 2px;
     }
     &:not(.disabled) input {
       background: @light;
