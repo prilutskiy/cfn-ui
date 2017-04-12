@@ -31,7 +31,7 @@ class Input extends Component {
   }
 
   render() {
-    let { beforeIcon, afterIcon, type, disabled, inline, children, ...otherProps } = this.props;
+    let { beforeIcon, afterIcon, type, disabled, inline, children, xs, sm, md, lg, xl, hint, ...otherProps } = this.props;
     afterIcon = this.props.type === 'password' ? `${!this.state.isPasswordVisible ? 'eye' : 'eye-slash'} clickable` : afterIcon;
     return (
       <div className={`input-container ${this.getInputStyle()} ${this.getInputSize()} ${inline ? 'input-container-inline' : ''} ${disabled ? 'disabled' : ''} ${beforeIcon ? 'has-before-icon' : ''} ${afterIcon ? 'has-after-icon' : ''}`}>

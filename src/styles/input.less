@@ -106,16 +106,18 @@
     .fa.before {
       color: lighten(@muted, 10%);
       position: absolute;
-      left: 10px;
-      bottom: 50%;
-      padding-bottom: 2px;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-bottom: 3px;
     }
     .fa.after {
       color: lighten(@muted, 10%);
       position: absolute;
-      right: 10px;
-      bottom: 50%;
-      padding-bottom: 2px;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-bottom: 3px;
     }
     &:not(.disabled) input {
       background: @light;
