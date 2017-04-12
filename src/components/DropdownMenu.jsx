@@ -42,6 +42,7 @@ class DropdownMenu extends Component {
           React.Children.count(this.props.children)
             ?
             <div className="dropdown-menu hidden">
+              <div className="dropdown-menu-pointer"/>
               {this.props.children}
             </div>
             :
@@ -65,7 +66,7 @@ class Item extends Component {
         ?
         <div className="dropdown-divider" />
         :
-        <div className={"dropdown-item " + className} {...otherProps}>
+        <div className={"dropdown-item " + (className||'')} {...otherProps}>
           {children}
         </div>
     );

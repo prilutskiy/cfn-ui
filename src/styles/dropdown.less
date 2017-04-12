@@ -1,15 +1,12 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  .dropdown-trigger {
-
-  }
   .dropdown-menu {
     position: absolute;
     width: auto;
     margin: 2px 5px;
     background: @light;
-    border: 1px solid @bg;
+    border: 1px solid darken(@bg, 3%);
     box-shadow: 0px 4px 15px 0px @bg;
     border-radius: @border-radius;
     top: 100%;
@@ -23,10 +20,10 @@
       font-size: 0.95em;
       border-radius: @border-radius;
       &:hover:not(:active), &:focus:not(:active) {
-        background: @bg;
+        background: lighten(@bg, 2%);
       }
       &:active {
-        background: darken(@bg, 2%);
+        background: darken(@bg, 1%);
       }
       .fa {
         padding: 0 5px;
