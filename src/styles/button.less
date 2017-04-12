@@ -37,7 +37,7 @@
     &:hover:not(:active):not(.disabled), 
     &:focus:not(:active):not(.disabled) {
       &.btn-outline{
-        background: fade(@fillcolor, 7%);
+        background: fade(@fillcolor, 3%);
         border-color: darken(@bordercolor, 7%);
       }
       &:not(.btn-outline) {
@@ -57,7 +57,7 @@
   }
 
   &.btn-default {
-    .btn-type-mixin(@primary, @light, @primary)
+    .btn-type-mixin(@primary, rgba(255,255,255 ,0.1), @primary)
   }
   &.btn-link {
     .btn-type-mixin(@primary, rgba(0,0,0,0), rgba(0,0,0,0))

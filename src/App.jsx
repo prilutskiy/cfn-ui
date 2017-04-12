@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   render() {
-    const dropdownTrigger = <Button link>Dropdown <i className="fa fa-caret-down"></i></Button>;
+    const dropdownTrigger = <Button>Dropdown <i className="fa fa-caret-down"></i></Button>;
     return (
       <div className="App" style={{ textAlign: 'center' }}>
         <div>
@@ -27,11 +27,20 @@ class App extends Component {
         <div>
           <Input 
             
+            beforeIcon="email"
+            type="password"
+            placeholder="Enter your name"
+            title="Username"
+            hint="Some descriptioa.l la lla"
+          >
+          </Input>
+          <Input 
+            
             beforeIcon="key"
             type="password"
             placeholder="Enter your name"
             title="Username"
-            hint="Some description here Lorem ipsum dolor la la l al al all la.l la lla"
+            hint="Some description here Lorem ipsum dolor la l lla"
           >
             <Button info >Click me!</Button>
           </Input>

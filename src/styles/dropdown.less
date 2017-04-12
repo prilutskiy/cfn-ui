@@ -10,7 +10,7 @@
     margin: 2px 5px;
     background: @light;
     border: 1px solid @bg;
-    box-shadow: 0px 4px 15px 0px #e8e8e8;
+    box-shadow: 0px 4px 15px 0px @bg;
     border-radius: @border-radius;
     top: 100%;
     right: 0;
@@ -18,11 +18,16 @@
       user-select: none;
       cursor: pointer;
       white-space: nowrap;
-      &:hover, &:focus {
-        background: #f9f9f9;
-      }
-      padding: .8em 2em;
+      padding: .8em 1em;
       text-align: left;
+      font-size: 0.95em;
+      border-radius: @border-radius;
+      &:hover:not(:active), &:focus:not(:active) {
+        background: @bg;
+      }
+      &:active {
+        background: darken(@bg, 2%);
+      }
       .fa {
         padding: 0 5px;
       }
