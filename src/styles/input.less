@@ -1,0 +1,71 @@
+.input-container {
+    position: relative;
+    &.has-before-icon {
+      input { 
+        padding-left: 28px;
+      }
+      .fa.before {
+        color: @primary;
+        position: absolute;
+        left: 8px;
+        transform: translateY(-50%);
+        top: 50%;
+      }
+    }
+    &.has-after-icon {
+      input {
+        padding-right: 28px;
+      }
+      .fa.after {
+        position: absolute;
+        right: 8px;
+        transform: translateY(-50%);
+        top: 50%;
+      }
+    }
+    &:not(.disabled) input {
+      background: @light;
+    }
+    &.disabled input {
+      background: darken(@light, 15%);
+      border: 1px solid darken(@muted, 15%);
+    }
+    &.input-default input {
+      border-color: @muted;
+    }
+    &.input-primary input {
+      border-color: @primary;
+    }
+    &.input-success input{
+      border-color: @success;
+    }
+    &.input-info input {
+      border-color: @info;
+    }
+    &.input-warning input {
+      border-color: @warning;
+    }
+    &.input-danger input {
+      border-color: @danger;
+    }
+    input {  
+      &:focus {
+        border-color: @primary;
+      }
+      &::placeholder{
+        color: darken(@muted, 10%);
+      }
+      border-width: 1px;
+      border-style: solid;
+      outline: none;
+      color: @dark;
+      position: relative;
+      padding: 0px 8px;
+      line-height: 1em;
+      display: inline-block;
+      height: 33px;
+      border-radius: @border-radius;
+      width: inherit;
+      min-width: 250px;
+    }
+  }
