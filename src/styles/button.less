@@ -1,78 +1,116 @@
 .btn {
   display: inline-block;
+  position: relative;
   margin: 5px;
   color: @light;
   border-radius: @border-radius;
   cursor: pointer;
   user-select: none;
-  .btn-type-mixin(@fillcolor, @fontcolor) {
-    border: 1px solid darken(@fillcolor, 2%);
+
+  .btn-type-mixin(@fontcolor, @fillcolor, @bordercolor) {
+    &:not(.disabled) {
+      border: 1px solid darken(@bordercolor, 2%);
+    }
+    &.disabled {
+      border: 1px solid tint(darken(@bordercolor, 2%));
+    }
     &:not(.btn-outline) {
-      color: @fontcolor;
-      background: @fillcolor;
+      &:not(.disabled) {
+        color: @fontcolor;
+        background: @fillcolor;
+      }
+      &.disabled {
+        color: tint(@fontcolor);
+        background: tint(@fillcolor)
+      }
     }
     &.btn-outline {
-      color: @fillcolor;
-      background: transparent;
+      &:not(.disabled) {
+        color: @fillcolor;
+        background: transparent;
+      }
+      &.disabled {
+        color: tint(@fillcolor);
+        background: transparent;
+      }
     }
-    &:hover:not(:active), &:focus:not(:active) {
+    &:hover:not(:active):not(.disabled), 
+    &:focus:not(:active):not(.disabled) {
       &.btn-outline{
         background: fade(@fillcolor, 7%);
-        border-color: darken(@fillcolor, 7%);
+        border-color: darken(@bordercolor, 7%);
       }
       &:not(.btn-outline) {
         background: darken(@fillcolor, 2%);
       }
     }
-    &:active {
+    &:active:not(.disabled) {
       &.btn-outline {
         background: @fillcolor;
         color: @fontcolor;
       }
       &:not(.btn-outline) {
-        border-color: darken(@fillcolor, 9%);
+        border-color: darken(@bordercolor, 9%);
         background: darken(@fillcolor, 7%);
       }
     }
   }
+
   &.btn-default {
-    .btn-type-mixin(@light, @primary)
+    .btn-type-mixin(@primary, @light, @primary)
   }
   &.btn-link {
-    .btn-type-mixin(rgba(0,0,0,0), @primary)
+    .btn-type-mixin(@primary, rgba(0,0,0,0), rgba(0,0,0,0))
   }
   &.btn-primary {
-    .btn-type-mixin(@primary, @light)
+    .btn-type-mixin(@light, @primary, @primary)
   }
   &.btn-success {
-    .btn-type-mixin(@success, @light)
+    .btn-type-mixin(@light, @success, @success)
   }
   &.btn-info {
-    .btn-type-mixin(@info, @light)
+    .btn-type-mixin(@light, @info, @info)
   }
   &.btn-warning {
-    .btn-type-mixin(@warning, @light)
+    .btn-type-mixin(@light, @warning, @warning)
   }
   &.btn-danger {
-    .btn-type-mixin(@danger, @light)
+    .btn-type-mixin(@light, @danger, @danger)
   }
 
   &.btn-xs {
     padding: 4px 8px;
+    font-size: 0.8em;
+    .fa { font-size: 0.9em; }
   }
   &.btn-sm {
     padding: 6px 12px;
+    font-size: 0.9em;
+    .fa { font-size: 1em; }
   }
   &.btn-md {
     padding: 8px 16px;
+    font-size: 1em;
+    .fa { font-size: 1.1em; }
   }
   &.btn-lg {
     padding: 10px 20px;
+    font-size: 1.1em;
+    .fa { font-size: 1.2em; }
   }
   &.btn-xl {
     padding: 12px 24px;
+    font-size: 1.2em;
+    .fa { font-size: 1.3em; }
   }
 
-  &.btn-loading {}
+  &.btn-loading {
+    .fa {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
   &.btn-block { display: block; }
 }

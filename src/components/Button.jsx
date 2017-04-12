@@ -6,48 +6,65 @@ class Button extends Component {
     this.generateClassSet = this.generateClassSet.bind(this);
     this.getType = this.getType.bind(this);
   }
-  generateClassSet(a) {
+  generateClassSet() {
+    const type = this.getType();
+    const size = this.getSize();
     const classSet = [
       'btn',
-      this.getType(),
-      this.getSize(),
+      type,
+      size,
       this.props.loading ? 'btn-loading' : '',
-      this.props.outline&&!this.props.link&&!this.props.default ? 'btn-outline' : '',
+      this.props.outline&&type!=='btn-link'&&type!=='btn-default'? 'btn-outline' : '',
       this.props.block ? 'btn-block' : '',
-      this.props.disabled ? 'disabled' : '',
+      this.props.disabled||this.props.loading ? 'disabled' : '',
       this.props.hidden ? 'hidden' : ''
     ];
     return classSet.filter(_=>_).join(' ');
   }
 
   getSize() {
-    return this.props.xs ? 'btn-xs' :
+    return (this.props.xs ? 'btn-xs' :
       this.props.sm ? 'btn-sm' :
       this.props.lg ? 'btn-lg' :
       this.props.xl ? 'btn-xl' :
       this.props.md ? 'btn-md' :
-      '';
+      '') || 'btn-md';
   }
 
   getType() {
-    return this.props.primary ? 'btn-primary' :
+    return (this.props.primary ? 'btn-primary' :
       this.props.success ? 'btn-success' :
       this.props.info ? 'btn-info' :
       this.props.warning ? 'btn-warning' :
       this.props.danger ? 'btn-danger' :
       this.props.link ? 'btn-link' :
       this.props.default ? 'btn-default'
-      : '';
+      : '') || 'btn-default';
+  }
+
+  onClick(e) {
+    return this.props.onClick && !this.props.disabled && !this.props.loading?this.props.onClick(e):false;
   }
 
   render() {
     return (
-      <div className={this.generateClassSet()}>{this.props.children}</div>
+      <div className={this.generateClassSet() + (this.props.className?' '+this.props.className:'')} style={this.props.style} onClick={(e) => this.onClick(e)}>
+        <i className={'fa fa-spinner fa-spin fa-fw ' + (!this.props.loading?'hidden':'')}></i>
+        <div className={this.props.loading?'invisible':''}>
+          {
+            this.props.children
+          }
+        </div>
+      </div>
     );
   }
 }
 
 Button.propTypes = {
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  style: PropTypes.object,
+
   default: PropTypes.bool,
   primary: PropTypes.bool,
   success: PropTypes.bool,
@@ -69,10 +86,4 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   hidden: PropTypes.bool
 };
-
-Button.defaultProps = {
-  default: true,
-  md: true
-}
-
 export default Button;
