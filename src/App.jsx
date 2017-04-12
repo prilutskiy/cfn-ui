@@ -21,10 +21,18 @@ class App extends Component {
           <Button warning lg>Button</Button>
           <Button primary xl>Button</Button>
         </div>
-        <div>          
-          <Input beforeIcon="user" type="text" placeholder="Enter your name"/>
+        <div>
+          <Input
+
+            beforeIcon="user"
+            type="text"
+            placeholder="Enter your name"
+            title="Username"
+            hint="Some description here Lorem ipsum dolor la la l al al all la.l la lla"
+          >
+            <Button info>Click me!</Button>
+          </Input>
         </div>
-        <Button info>Click me!</Button>
       </div>
     );
   }

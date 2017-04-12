@@ -1,5 +1,27 @@
 .input-container {
-    position: relative;
+    display: inline-flex;
+    &:not(.input-container-inline) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &.input-container-inline {
+      flex-direction: row;
+      align-items: baseline;
+    }
+    label {
+      margin-bottom: 5px;
+      margin-right: 10px;
+    }
+    small {
+      margin-top: 3px;
+      color: @muted;
+      text-align: left;
+    }
+    .input-wrapper {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+    }
     &.has-before-icon {
       input { 
         padding-left: 28px;
@@ -7,9 +29,9 @@
       .fa.before {
         color: @primary;
         position: absolute;
-        left: 8px;
-        transform: translateY(-50%);
-        top: 50%;
+        left: 10px;
+        bottom: 50%;
+        padding-bottom: 2px;
       }
     }
     &.has-after-icon {
@@ -18,9 +40,9 @@
       }
       .fa.after {
         position: absolute;
-        right: 8px;
-        transform: translateY(-50%);
-        top: 50%;
+        right: 10px;
+        bottom: 50%;
+        padding-bottom: 2px;
       }
     }
     &:not(.disabled) input {
@@ -28,10 +50,10 @@
     }
     &.disabled input {
       background: darken(@light, 15%);
-      border: 1px solid darken(@muted, 15%);
+      border: 1px solid darken(@bg, 15%);
     }
     &.input-default input {
-      border-color: @muted;
+      border-color: @bg;
     }
     &.input-primary input {
       border-color: @primary;
@@ -48,12 +70,17 @@
     &.input-danger input {
       border-color: @danger;
     }
+    .input-wrapper-input {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
     input {  
       &:focus {
         border-color: @primary;
       }
       &::placeholder{
-        color: darken(@muted, 10%);
+        color: darken(@bg, 10%);
       }
       border-width: 1px;
       border-style: solid;
