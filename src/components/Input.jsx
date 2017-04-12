@@ -27,23 +27,25 @@ class Input extends Component {
       this.props.sm ? 'input-sm' :
         this.props.lg ? 'input-lg' :
           this.props.xl ? 'input-xl' :
-              'input-md';
+            'input-md';
   }
 
   render() {
     let { beforeIcon, afterIcon, type, disabled, inline, children, xs, sm, md, lg, xl, hint, ...otherProps } = this.props;
-    afterIcon = this.props.type === 'password' ? `${!this.state.isPasswordVisible ? 'eye' : 'eye-slash'} clickable` : afterIcon;
+    afterIcon = type === 'password' ? `${!this.state.isPasswordVisible ? 'eye' : 'eye-slash'} clickable` : afterIcon;
     return (
       <div className={`input-container ${this.getInputStyle()} ${this.getInputSize()} ${inline ? 'input-container-inline' : ''} ${disabled ? 'disabled' : ''} ${beforeIcon ? 'has-before-icon' : ''} ${afterIcon ? 'has-after-icon' : ''}`}>
         <label>{otherProps.title}</label>
         <span className="input-wrapper">
-          <span className="input-wrapper-input">
-            <input {...otherProps} type={type === 'password' && this.state.isPasswordVisible ? 'text' : type} disabled={disabled} />
-            {beforeIcon ? <i className={`before fa fa-${beforeIcon}`}></i> : null}
-            {afterIcon ? <i className={`after fa fa-${afterIcon}`} onClick={() => this.props.type === 'password' ? this.togglePassword() : null}></i> : null}
+          <span className="input-wrapper-group">
+            <span className="input-wrapper-input">
+              <input {...otherProps} type={type === 'password' && this.state.isPasswordVisible ? 'text' : type} disabled={disabled} />
+              {beforeIcon ? <i className={`before fa fa-${beforeIcon}`}></i> : null}
+              {afterIcon ? <i className={`after fa fa-${afterIcon}`} onClick={() => type === 'password' ? this.togglePassword() : null}></i> : null}
+            </span>
             {children}
           </span>
-          <small>{otherProps.hint}</small>
+          <small style={{ height: '1em' }}>{hint}</small>
         </span>
       </div>
     );

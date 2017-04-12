@@ -109,7 +109,6 @@
       left: 8px;
       top: 50%;
       transform: translateY(-50%);
-      padding-bottom: 3px;
     }
     .fa.after {
       color: lighten(@muted, 10%);
@@ -117,7 +116,6 @@
       right: 8px;
       top: 50%;
       transform: translateY(-50%);
-      padding-bottom: 3px;
     }
     &:not(.disabled) input {
       background: @light;
@@ -144,10 +142,13 @@
     &.input-danger input {
       border-color: @danger;
     }
-    .input-wrapper-input {
+    .input-wrapper-input-group {
       display: inline-flex;
       flex-direction: row;
       align-items: flex-start;
+    }
+    .input-wrapper-input {
+      position: relative;
     }
     input {  
       &:focus {
@@ -160,7 +161,6 @@
       border-style: solid;
       outline: none;
       color: @dark;
-      position: relative;
       padding: 0px 8px;
       display: inline-block;
       border-radius: @border-radius;

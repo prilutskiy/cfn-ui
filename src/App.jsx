@@ -26,9 +26,9 @@ class App extends Component {
         </div>
         <div>
           <Input 
-            inline
+            
             beforeIcon="key"
-            type="text"
+            type="password"
             placeholder="Enter your name"
             title="Username"
             hint="Some description here Lorem ipsum dolor la la l al al all la.l la lla"
