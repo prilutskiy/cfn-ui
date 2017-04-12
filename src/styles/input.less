@@ -17,6 +17,47 @@
       color: @muted;
       text-align: left;
     }
+
+    &.input-xs input {
+      height: 21px;
+      line-height: 0.8em;   
+      font-size: 0.8em;
+      .fa {
+        font-size: 0.9em;
+      }
+    }
+    &.input-sm input {
+      height: 27px;
+      line-height: 0.9em;   
+      font-size: 0.9em;
+      .fa {
+        font-size: 1em;
+      }
+    }
+    &.input-md input {
+      height: 33px;
+      line-height: 1em;   
+      font-size: 1em;
+      .fa {
+        font-size: 1.1em;
+      }      
+    }
+    &.input-lg input {
+      height: 39px;
+      line-height: 1.1em;   
+      font-size: 1.1em;
+      .fa {
+        font-size: 1.2em;
+      }      
+    }
+    &.input-xl input {
+      height: 45px;
+      line-height: 1.2em;   
+      font-size: 1.2em;
+      .fa {
+        font-size: 1.3em;
+      }      
+    }
     .input-wrapper {
       position: relative;
       display: inline-flex;
@@ -27,7 +68,7 @@
         padding-left: 28px;
       }
       .fa.before {
-        color: @primary;
+        color: lighten(@muted, 10%);
         position: absolute;
         left: 10px;
         bottom: 50%;
@@ -39,6 +80,7 @@
         padding-right: 28px;
       }
       .fa.after {
+        color: lighten(@muted, 10%);
         position: absolute;
         right: 10px;
         bottom: 50%;
@@ -88,9 +130,7 @@
       color: @dark;
       position: relative;
       padding: 0px 8px;
-      line-height: 1em;
       display: inline-block;
-      height: 33px;
       border-radius: @border-radius;
       width: inherit;
       min-width: 250px;

@@ -7,6 +7,7 @@ class Input extends Component {
       isPasswordVisible: false,
     };
     this.getInputStyle = this.getInputStyle.bind(this);
+    this.getInputSize = this.getInputSize.bind(this);
   }
 
   togglePassword() {
@@ -21,12 +22,19 @@ class Input extends Component {
             this.props.danger ? 'input-danger' :
               'input-default';
   }
+  getInputSize() {
+    return this.props.xs ? 'input-xs' :
+      this.props.sm ? 'input-sm' :
+        this.props.lg ? 'input-lg' :
+          this.props.xl ? 'input-xl' :
+              'input-md';
+  }
 
   render() {
     let { beforeIcon, afterIcon, type, disabled, inline, children, ...otherProps } = this.props;
     afterIcon = this.props.type === 'password' ? `${!this.state.isPasswordVisible ? 'eye' : 'eye-slash'} clickable` : afterIcon;
     return (
-      <div className={`input-container ${this.getInputStyle()} ${inline ? 'input-container-inline' : ''} ${disabled ? 'disabled' : ''} ${beforeIcon ? 'has-before-icon' : ''} ${afterIcon ? 'has-after-icon' : ''}`}>
+      <div className={`input-container ${this.getInputStyle()} ${this.getInputSize()} ${inline ? 'input-container-inline' : ''} ${disabled ? 'disabled' : ''} ${beforeIcon ? 'has-before-icon' : ''} ${afterIcon ? 'has-after-icon' : ''}`}>
         <label>{otherProps.title}</label>
         <span className="input-wrapper">
           <span className="input-wrapper-input">
@@ -52,6 +60,12 @@ Input.propTypes = {
   warning: PropTypes.bool,
   danger: PropTypes.bool,
   default: PropTypes.bool,
+
+  xs: PropTypes.bool,
+  sm: PropTypes.bool,
+  md: PropTypes.bool,
+  lg: PropTypes.bool,
+  xl: PropTypes.bool,
 }
 
 export default Input;
