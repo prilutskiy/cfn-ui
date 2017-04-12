@@ -59,13 +59,14 @@ class Item extends Component {
   }
 
   render() {
+    let { className, children, divider, ...otherProps } = this.props;
     return (
-      this.props.divider
+      divider
         ?
         <div className="dropdown-divider" />
         :
-        <div className="dropdown-item">
-          {this.props.children}
+        <div className={"dropdown-item " + className} {...otherProps}>
+          {children}
         </div>
     );
   }
