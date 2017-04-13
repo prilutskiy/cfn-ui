@@ -3,11 +3,12 @@
   display: inline-block;
   .dropdown-menu {
     position: absolute;
+    z-index: 10;
     width: auto;
     margin: 2px 5px;
     background: @light;
     border: 1px solid darken(@bg, 3%);
-    box-shadow: 0px 4px 15px 0px @bg;
+    box-shadow: 0px 4px 15px 0px darken(@bg, 10%);
     border-radius: @border-radius;
     top: 100%;
     right: 0;
@@ -20,10 +21,10 @@
       font-size: 0.95em;
       border-radius: @border-radius;
       &:hover:not(:active), &:focus:not(:active) {
-        background: lighten(@bg, 2%);
+        background: darken(@light, 2%)
       }
       &:active {
-        background: darken(@bg, 1%);
+        background: darken(@light, 5%);
       }
       .fa {
         padding: 0 5px;

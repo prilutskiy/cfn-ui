@@ -43,22 +43,21 @@ class App extends Component {
         </div>
         <div>
           <Input xs type="password" icon="key" placeholder="Enter your password" />
-          <Button xs primary>Button</Button>
         </div>
         <div>
-          <Input sm type="password" icon="key" placeholder="Enter your password" />
+          <Input sm warning type="password" icon="key" placeholder="Enter your password" />
           <Button sm primary>Button</Button>
         </div>
         <div>
-          <Input type="password" icon="key" placeholder="Enter your password" />
+          <Input type="password" info icon="key" placeholder="Enter your password" />
           <Button primary>Button</Button>
         </div>
         <div>
-          <Input lg type="password" icon="key" placeholder="Enter your password" />
+          <Input lg type="password" primary  icon="key" placeholder="Enter your password" />
           <Button lg primary>Button</Button>
         </div>
         <div>
-          <Input xl type="password" icon="key" placeholder="Enter your password" />
+          <Input xl type="password" success icon="key" placeholder="Enter your password" />
           <Button xl primary>Button</Button>
         </div>
       </div>

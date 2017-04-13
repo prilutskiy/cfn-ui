@@ -3,9 +3,11 @@
   display: inline-block;
   margin: 5px;
   input {
+    display: block;
     outline: none;
     padding: 4px 10px;
-    border: 1px solid darken(@bg, 10%);
+    border-width: 1px;
+    border-style: solid;
     border-radius: @border-radius;
   }
   input::placeholder {
@@ -16,11 +18,63 @@
     position: absolute;
     color: darken(@light, 30%);
   }
+  &.input-default {
+    .input-icon-left {
+      color: darken(@bg, 15%);
+    }
+    input {
+      border-color: darken(@bg, 10%);
+    }
+    &.disabled {
+      background: darken(@bg, 10%);
+    }
+  }
+  &.input-primary {
+    .input-icon-left {
+      color: @primary;
+    }
+    input {
+      border-color: @primary;
+    }
+  }
+  &.input-success {
+    .input-icon-left {
+      color: @success;
+    }
+    input {
+      border-color: @success;
+    }
+  }
+  &.input-info {
+    .input-icon-left {
+      color: @info;
+    }
+    input {
+      border-color: @info;
+    }
+  }
+  &.input-warning {
+    .input-icon-left {
+      color: @warning;
+    }
+    input {
+      border-color: @warning;
+    }
+  }
+  &.input-danger {
+    .input-icon-left {
+      color: @danger;
+    }
+    input {
+      border-color: @danger;
+    }
+  }
   &.input-xs {
     &>input {
       height: 15px;
       font-size: 0.8em;
       line-height: 0.8em;
+      width: ~'calc(100% - 31px)';
     }
     &.input-icon {
       input {
@@ -48,6 +102,7 @@
       height: 20px;
       font-size: 0.9em;
       line-height: 0.9em;
+      width: ~'calc(100% - 43px)';
     }
     &.input-icon {
       input {
@@ -75,6 +130,7 @@
       height: 25px;
       font-size: 1em;
       line-height: 1em;
+      width: ~'calc(100% - 55px)';
     }
     &.input-icon {
       input {
@@ -102,6 +158,7 @@
       height: 30px;
       font-size: 1.1em;
       line-height: 1.1em;
+      width: ~'calc(100% - 63px)';
     }
     &.input-icon {
       input {
@@ -129,6 +186,7 @@
       height: 37px;
       font-size: 1.2em;
       line-height: 1.2em;
+      width: ~'calc(100% - 75px)';
     }
     &.input-icon {
       input {
