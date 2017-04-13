@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import Button from './components/Button';
 import Input from './components/Input';
 import DropdownMenu from './components/DropdownMenu';
+import Select from './components/Select';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: false
+      isLoading: false,
+      values: []
     }
+    this.handleMultiSelectChange = (options) => this.setState({values: options});
   }
 
   render() {
@@ -49,15 +52,50 @@ class App extends Component {
           <Button sm primary>Button</Button>
         </div>
         <div>
-          <Input type="password" info icon="key" placeholder="Enter your password" />
+          <Input disabled type="password" info icon="key" placeholder="Enter your password" />
           <Button primary>Button</Button>
         </div>
         <div>
-          <Input lg type="password" primary  icon="key" placeholder="Enter your password" />
+          <Input lg type="password" primary icon="key" placeholder="Enter your password" />
           <Button lg primary>Button</Button>
         </div>
         <div>
           <Input xl type="password" success icon="key" placeholder="Enter your password" />
+          <Button xl primary>Button</Button>
+        </div>
+        <div>
+          <Select multi default xs icon="key" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' }
+          ]} />
+          <Button xs primary>Button</Button>
+        </div>
+        <div>
+          <Select multi warning sm icon="key" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' }
+          ]} />
+          <Button sm primary>Button</Button>
+        </div>
+        <div>
+          <Select multi icon="building" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' }
+          ]} />
+          <Button primary>Button</Button>
+        </div>
+        <div>
+          <Select multi primary icon="building" lg value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' }
+          ]} />
+          <Button lg primary>Button</Button>
+        </div>
+        <div>
+          <Select multi success xl icon="building" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' }
+          ]} />
           <Button xl primary>Button</Button>
         </div>
       </div>

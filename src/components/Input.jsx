@@ -60,9 +60,9 @@ class Input extends Component {
       this.props.type === 'password'
         ?
         <i
-          onClick={() => this.setState({ isPasswordVisible: !this.state.isPasswordVisible })}
-          className={'input-icon-right clickable fa fa-' +
-            (this.state.isPasswordVisible ? 'eye-slash' : 'eye')}
+          onClick={!disabled?() => this.setState({ isPasswordVisible: !this.state.isPasswordVisible }):null}
+          className={'input-icon-right fa fa-' +
+            (this.state.isPasswordVisible ? 'eye-slash' : 'eye') + (!disabled?' clickable':'')}
         />
         :
         null;

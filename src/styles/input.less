@@ -13,6 +13,15 @@
   input::placeholder {
     color: darken(@light, 15%);
   }
+  &.disabled {
+    &>* {
+      cursor: not-allowed;
+    }
+    input {
+      background: darken(@light, 7%) !important;
+      border-color: darken(@bg, 10%) !important;
+    }
+  }
   .input-icon-left,
   .input-icon-right {
     position: absolute;
@@ -24,9 +33,6 @@
     }
     input {
       border-color: darken(@bg, 10%);
-    }
-    &.disabled {
-      background: darken(@bg, 10%);
     }
   }
   &.input-primary {
