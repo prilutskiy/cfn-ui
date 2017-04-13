@@ -1,170 +1,154 @@
-.input-container {
-    display: inline-flex;
-    &:not(.input-container-inline) {
-      flex-direction: column;
-      align-items: flex-start;
+.input {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  input {
+    outline: none;
+    padding: 4px 10px;
+    border: 1px solid darken(@bg, 10%);
+    border-radius: @border-radius;
+  }
+  input::placeholder {
+    color: darken(@light, 15%);
+  }
+  .input-icon-left,
+  .input-icon-right {
+    position: absolute;
+    color: darken(@light, 30%);
+  }
+  &.input-xs {
+    &>input {
+      height: 15px;
+      font-size: 0.8em;
+      line-height: 0.8em;
     }
-    &.input-container-inline {
-      flex-direction: row;
-      align-items: baseline;
-    }
-    label {
-      margin-bottom: 5px;
-      margin-right: 10px;
-    }
-    small {
-      margin-top: 3px;
-      color: @muted;
-      text-align: left;
-    }
-
-    &.input-xs {
-      &.has-before-icon input {
-        padding-left: 24px;
+    &.input-icon {
+      input {
+        padding-left: 15px;
       }
-      &.has-after-icon input {
-        padding-left: 24px;
-      }
-      input, label {
-        height: 21px;
-        line-height: 0.8em;   
+      .input-icon-left {
         font-size: 0.8em;
-      }
-      .fa {
-        font-size: 0.9em;
-      }
-    }
-    &.input-sm {
-      &.has-before-icon input {
-        padding-left: 26px;
-      }
-      &.has-after-icon input {
-        padding-left: 26px;
-      }
-      input, label {
-        height: 27px;
-        line-height: 0.9em;   
-        font-size: 0.9em;
-      }
-      .fa {
-        font-size: 1em;
+        top: 6px;
+        left: 4px;
       }
     }
-    &.input-md {
-      &.has-before-icon input {
-        padding-left: 28px;
+    &.input-password {
+      input {
+        padding-right: 15px;
       }
-      &.has-after-icon input {
-        padding-left: 28px;
+      .input-icon-right {
+        font-size: 0.8em;
+        top: 6px;
+        right: 4px;
       }
-      input, label {
-        height: 33px;
-        line-height: 1em;   
-        font-size: 1em;
-      }
-      .fa {
-        font-size: 1.1em;
-      }
-    }
-    &.input-lg {
-      &.has-before-icon input {
-        padding-left: 30px;
-      }
-      &.has-after-icon input {
-        padding-left: 30px;
-      }
-      input, label {
-        height: 39px;
-        line-height: 1.1em;   
-        font-size: 1.1em;
-      }
-      .fa {
-        font-size: 1.2em;
-      }
-    }
-    &.input-xl {
-      &.has-before-icon input {
-        padding-left: 32px;
-      }
-      &.has-after-icon input {
-        padding-left: 32px;
-      }
-      input, label {
-        height: 45px;
-        line-height: 1.2em;   
-        font-size: 1.2em;
-      }
-      .fa {
-        font-size: 1.3em;
-      }  
-    }
-    .input-wrapper {
-      position: relative;
-      display: inline-flex;
-      flex-direction: column;
-    }
-    .fa.before {
-      color: lighten(@muted, 10%);
-      position: absolute;
-      left: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .fa.after {
-      color: lighten(@muted, 10%);
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &:not(.disabled) input {
-      background: @light;
-    }
-    &.disabled input {
-      background: darken(@light, 15%);
-      border: 1px solid darken(@bg, 15%);
-    }
-    &.input-default input {
-      border-color: @bg;
-    }
-    &.input-primary input {
-      border-color: @primary;
-    }
-    &.input-success input{
-      border-color: @success;
-    }
-    &.input-info input {
-      border-color: @info;
-    }
-    &.input-warning input {
-      border-color: @warning;
-    }
-    &.input-danger input {
-      border-color: @danger;
-    }
-    .input-wrapper-input-group {
-      display: inline-flex;
-      flex-direction: row;
-      align-items: flex-start;
-    }
-    .input-wrapper-input {
-      position: relative;
-    }
-    input {  
-      &:focus {
-        border-color: @primary;
-      }
-      &::placeholder{
-        color: darken(@bg, 10%);
-      }
-      border-width: 1px;
-      border-style: solid;
-      outline: none;
-      color: @dark;
-      padding: 0px 8px;
-      display: inline-block;
-      border-radius: @border-radius;
-      width: inherit;
-      min-width: 250px;
     }
   }
+  &.input-sm {
+    &>input {
+      height: 20px;
+      font-size: 0.9em;
+      line-height: 0.9em;
+    }
+    &.input-icon {
+      input {
+        padding-left: 20px;
+      }
+      .input-icon-left {
+        font-size: 0.9em;
+        top: 8px;
+        left: 6px;
+      }
+    }
+    &.input-password {
+      input {
+        padding-right: 20px;
+      }
+      .input-icon-right {
+        font-size: 0.9em;
+        top: 8px;
+        right: 6px;
+      }
+    }
+  }
+  &.input-md {
+    &>input {
+      height: 25px;
+      font-size: 1em;
+      line-height: 1em;
+    }
+    &.input-icon {
+      input {
+        padding-left: 26px;
+      }
+      .input-icon-left {
+        font-size: 1em;
+        top: 10px;
+        left: 8px;
+      }
+    }
+    &.input-password {
+      input {
+        padding-right: 26px;
+      }
+      .input-icon-right {
+        font-size: 1em;
+        top: 10px;
+        right: 8px;
+      }
+    }
+  }
+  &.input-lg {
+    &>input {
+      height: 30px;
+      font-size: 1.1em;
+      line-height: 1.1em;
+    }
+    &.input-icon {
+      input {
+        padding-left: 30px;
+      }
+      .input-icon-left {
+        font-size: 1.1em;
+        top: 12px;
+        left: 10px;
+      }
+    }
+    &.input-password {
+      input {
+        padding-right: 30px;
+      }
+      .input-icon-right {
+        font-size: 1.1em;
+        top: 12px;
+        right: 10px;
+      }
+    }
+  }
+  &.input-xl {
+    &>input {
+      height: 37px;
+      font-size: 1.2em;
+      line-height: 1.2em;
+    }
+    &.input-icon {
+      input {
+        padding-left: 35px;
+      }
+      .input-icon-left {
+        font-size: 1.2em;
+        top: 14px;
+        left: 12px;
+      }
+    }
+    &.input-password {
+      input {
+        padding-right: 35px;
+      }
+      .input-icon-right {
+        font-size: 1.2em;
+        top: 14px;
+        right: 12px;
+      }
+    }
+  }
+}

@@ -25,28 +25,6 @@ class App extends Component {
           <Button primary xl>Button</Button>
         </div>
         <div>
-          <Input 
-            
-            beforeIcon="email"
-            type="password"
-            placeholder="Enter your name"
-            title="Username"
-            hint="Some descriptioa.l la lla"
-          >
-          </Input>
-          <Input 
-            
-            beforeIcon="key"
-            type="password"
-            placeholder="Enter your name"
-            title="Username"
-            hint="Some description here Lorem ipsum dolor la l lla"
-          >
-            <Button info >Click me!</Button>
-          </Input>
-        </div>
-        <div>
-          
           <DropdownMenu trigger={dropdownTrigger}>
             <DropdownMenu.Item>
               <i className="fa fa-user" />
@@ -56,12 +34,32 @@ class App extends Component {
               <i className="fa fa-sliders" />
               Account settings
             </DropdownMenu.Item>
-            <DropdownMenu.Item divider/>
+            <DropdownMenu.Item divider />
             <DropdownMenu.Item>
               <i className="fa fa-power-off" />
               Exit
             </DropdownMenu.Item>
           </DropdownMenu>
+        </div>
+        <div>
+          <Input xs type="password" icon="key" placeholder="Enter your password" />
+          <Button xs primary>Button</Button>
+        </div>
+        <div>
+          <Input sm type="password" icon="key" placeholder="Enter your password" />
+          <Button sm primary>Button</Button>
+        </div>
+        <div>
+          <Input type="password" icon="key" placeholder="Enter your password" />
+          <Button primary>Button</Button>
+        </div>
+        <div>
+          <Input lg type="password" icon="key" placeholder="Enter your password" />
+          <Button lg primary>Button</Button>
+        </div>
+        <div>
+          <Input xl type="password" icon="key" placeholder="Enter your password" />
+          <Button xl primary>Button</Button>
         </div>
       </div>
     );
