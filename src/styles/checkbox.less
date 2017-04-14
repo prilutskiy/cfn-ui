@@ -1,0 +1,102 @@
+.checkbox {
+  display: inline-block;
+  margin: 5px;
+  &:not(.disabled){
+    cursor: pointer;
+  }
+  &.disabled {
+    cursor: not-allowed;
+  }
+  &:not(.checked){
+    .checkbox-box {
+      .checkbox-check {
+        visibility: hidden;
+      }
+    }
+  }
+  &.checked {
+    .checkbox-box {
+      .checkbox-check {
+        visibility: visible;
+      }      
+    }
+  }
+  &.checkbox-default {
+    .checkbox-style-mixin(@dark);
+  }
+  &.checkbox-primary {
+    .checkbox-style-mixin(@primary);
+  }
+  &.checkbox-success {
+    .checkbox-style-mixin(@success);
+  }
+  &.checkbox-info {
+    .checkbox-style-mixin(@info);
+  }
+  &.checkbox-warning {
+    .checkbox-style-mixin(@warning);
+  }
+  &.checkbox-danger {
+    .checkbox-style-mixin(@danger);
+  }
+  .checkbox-box {
+    display: inline-block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: @border-radius;
+    .checkbox-check { 
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 4px;
+        width: 4px;
+        height: 8px;
+        border-width: 0 3px 3px 0;  
+        border-style: solid;  
+        transform: rotate(45deg);
+        border-radius: 1px;
+      }
+    }    
+  }
+  .checkbox-label {
+    position: relative;
+    top: -1px;
+    padding-left: 5px;
+    user-select: none;
+  }
+
+  .checkbox-style-mixin(@color) {
+    &:not(.disabled) .checkbox-box {
+      border: 2px solid @color;
+      &:hover, &:focus {
+        border-color: darken(@color, 2%);
+      }
+      &:active {
+        border-color: darken(@color, 4%);
+      }
+      .checkbox-check { 
+        &:after {
+          border-color: @color;
+        }
+      }
+    }
+    &.disabled .checkbox-box {
+      border: 2px solid tint(@color);
+      &:hover, &:focus {
+        border-color: tint(@color);
+      }
+      &:active {
+        border-color: tint(@color);
+      }
+      .checkbox-check { 
+        &:after {
+          border-color: tint(@color);
+        }
+      }
+    }
+  }
+}
+

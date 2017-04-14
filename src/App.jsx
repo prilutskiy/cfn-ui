@@ -3,15 +3,22 @@ import Button from './components/Button';
 import Input from './components/Input';
 import DropdownMenu from './components/DropdownMenu';
 import Select from './components/Select';
+import Checkbox from './components/Checkbox';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: false,
-      values: null
+      values: null,
+      checked: false
     }
     this.handlSelectChange = (options) => this.setState({values: options});
+    this.onCheck = this.onCheck.bind(this);
+  }
+
+  onCheck(newValue) {
+    this.setState({ checked: newValue });
   }
 
   render() {
@@ -90,6 +97,20 @@ class App extends Component {
             { value: 'two', label: 'Two' }
           ]} />
           <Button primary>Button</Button>
+        </div>
+        <div>
+          <Checkbox label="A" onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="B" success value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="C" info value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="D" warning value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="E" danger value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+        </div>
+        <div>
+          <Checkbox label="F" primary disabled value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="G" success disabled value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="H" info disabled value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="I" warning disabled value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
+          <Checkbox label="J" danger disabled value={this.state.checked} onChange={(v) => this.onCheck(v)}/>
         </div>
       </div>
     );
