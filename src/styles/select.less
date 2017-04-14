@@ -4,14 +4,40 @@
   min-width: 250px;
   position: relative;
   margin: 5px;
+  .is-disabled {
+    &>* {
+      cursor: not-allowed;
+    }
+  }
   .select-icon-left {
     position: absolute;
   }
-  .Select > .Select-control > .Select-multi-value-wrapper {
-    .Select-value {
-      padding-left: 0;
+  &.select-icon {
+    .Select.Select--single {
+      .Select-input {
+        padding-left: 0;
+      }
+    }
+    .Select.Select--multi {
+      .Select-input {
+        padding-left: 0;
+        margin-left: 0;
+      }
     }
   }
+  &:not(.select-icon) {
+    .Select.Select--single {
+      .Select-input {
+        padding-left: 10px;
+      }
+    }
+    .Select.Select--multi {
+      .Select-input {
+        padding-left: 0;
+      }
+    }
+  }
+  
   .Select {    
     &.is-focused:not(.is-open) > .Select-control {
       box-shadow: none !important;
@@ -27,80 +53,95 @@
     }
   }
   &.select-xs {
-    top: 14px;
+    top: 12px;
+    .Select.Select--single .Select-value {
+      top: -7px;
+    }
     &.select-icon {
-      .Select-multi-value-wrapper .Select-value {
-        zoom: 0.6;
+      .Select.Select--single .Select-value {
+        padding-left: 26px;
       }
       .Select-placeholder,
-      .Select-value,
-      .Select-input,
       .Select-multi-value-wrapper {
-        padding-left: 20px;
-      }
-    }
-    .select-icon-left {
-      top: 6px;
-      left: 6px;
-      font-size: 0.8em;
-    }
-    .Select-input, .Select-control, .Select-placeholder {
-      height: 23px;
-    }
-    .Select-input > input, .Select-placeholder {
-      line-height: 0.5em;
-      padding-top: 3px;
-      font-size: 0.8em;
-    }
-    .Select-menu-outer {
-      font-size: 0.8em;
-    }
-    .Select-placeholder {
-      padding-top: 8px;
-    }
-  }
-  &.select-sm {
-    top: 16px;
-    &.select-icon {
-      .Select-multi-value-wrapper .Select-value {
-        zoom: 0.8;
-      }
-      .Select-placeholder,
-      .Select-value,
-      .Select-input,
-      .Select-multi-value-wrapper {
-        padding-left: 23px;
+        padding-left: 26px;
       }
     }
     .select-icon-left {
       top: 8px;
-      left: 8px;
-      font-size: 0.9em;
+      left: 10px;
+      font-size: .6em;
+    }
+    .Select-input, .Select-control, .Select-placeholder {
+      height: 22px;
+    }
+    .Select-value {
+      font-size: .6em;
+      margin-top: 2px;
+    }
+    .Select-placeholder, .Select-input > input {
+      line-height: 0.5em;
+      font-size: .6em;
+    }
+    .Select-placeholder {
+      padding-top: 10px;
+    }
+    .Select-input > input {
+      padding-top: 5px;
+    }
+    .Select-menu-outer {
+      font-size: .6em;
+    }
+  }
+  &.select-sm {
+    top: 15px;
+    .Select.Select--single .Select-value {
+      top: -5px;
+    }
+    &.select-icon {
+      .Select.Select--single .Select-value {
+        padding-left: 26px;
+      }
+      .Select-placeholder,
+      .Select-multi-value-wrapper {
+        padding-left: 26px;
+      }
+    }
+    .select-icon-left {
+      top: 8px;
+      left: 10px;
+      font-size: .8em;
     }
     .Select-input, .Select-control, .Select-placeholder {
       height: 28px;
     }
-    .Select-input > input, .Select-placeholder {
-      line-height: 0.5em;
-      padding-top: 5px;
-      font-size: 0.9em;
+    .Select-value {
+      font-size: .8em;
+      margin-top: 2px;
     }
-    .Select-menu-outer {
-      font-size: 0.9em;
+    .Select-placeholder, .Select-input > input {
+      line-height: 0.5em;
+      font-size: .8em;
     }
     .Select-placeholder {
       padding-top: 11px;
     }
+    .Select-input > input {
+      padding-top: 7px;
+    }
+    .Select-menu-outer {
+      font-size: .8em;
+    }
   }
   &.select-md {
     top: 18px;
+    .Select.Select--single .Select-value {
+      top: -4px;
+    }
     &.select-icon {
-      .Select-multi-value-wrapper .Select-value {
-        zoom: 1;
+      .Select.Select--single .Select-value {
+        padding-left: 26px;
       }
       .Select-placeholder,
-      .Select-value,
-      .Select-input,
       .Select-multi-value-wrapper {
         padding-left: 26px;
       }
@@ -113,88 +154,104 @@
     .Select-input, .Select-control, .Select-placeholder {
       height: 34px;
     }
-    .Select-input > input, .Select-placeholder {
-      line-height: 0.5em;
-      padding-top: 7px;
+    .Select-value {
       font-size: 1em;
+      margin-top: 4px;
     }
-    .Select-menu-outer {
+    .Select-placeholder, .Select-input > input {
+      line-height: 0.5em;
       font-size: 1em;
     }
     .Select-placeholder {
       padding-top: 13px;
     }
-  }
-  &.select-lg {
-    top: 20px;
-    &.select-icon {
-      .Select-multi-value-wrapper .Select-value {
-        zoom: 1.2;
-      }
-      .Select-placeholder,
-      .Select-value,
-      .Select-input,
-      .Select-multi-value-wrapper {
-        padding-left: 31px;
-      }
-    }
-    .select-icon-left {
-      top: 12px;
-      left: 12px;
-      font-size: 1.1em;
-    }
-    .Select-input, .Select-control, .Select-placeholder {
-      height: 39px;
-    }
-    .Select-input > input, .Select-placeholder {
-      line-height: 0.5em;
+    .Select-input > input {
       padding-top: 9px;
-      font-size: 1.1em;
     }
     .Select-menu-outer {
-      font-size: 1.1em;
-    }
-    .Select-placeholder {
-      padding-top: 16px;
+      font-size: 1em;
     }
   }
-  &.select-xl {
-    top: 22px;
+  &.select-lg {
+    top: 21px;
+    .Select.Select--single .Select-value {
+      top: -2px;
+    }
     &.select-icon {
-      .Select-multi-value-wrapper .Select-value {
-        zoom: 1.4;
-      }
-      .Select-input:first-child {
-        padding-left: 25px;
+      .Select.Select--single .Select-value {
+        padding-left: 26px;
       }
       .Select-placeholder,
-      .Select-value,
-      .Select-input,
       .Select-multi-value-wrapper {
-        padding-left: 36px;
+        padding-left: 26px;
       }
     }
     .select-icon-left {
       top: 14px;
-      left: 14px;
+      left: 10px;
+      font-size: 1.1em;
+    }
+    .Select-input, .Select-control, .Select-placeholder {
+      height: 40px;
+    }
+    .Select-value {
+      font-size: 1.1em;
+      margin-top: 6px;
+    }
+    .Select-placeholder, .Select-input > input {
+      line-height: 0.5em;
+      font-size: 1.1em;
+    }
+    .Select-placeholder {
+      padding-top: 15px;
+    }
+    .Select-input > input {
+      padding-top: 11px;
+    }
+    .Select-menu-outer {
+      font-size: 1.1em;
+    }
+  }
+  &.select-xl {
+    top: 22px;
+    .Select.Select--single .Select-value {
+      top: -2px;
+    }
+    &.select-icon {
+      .Select.Select--single .Select-value {
+        padding-left: 26px;
+      }
+      .Select-placeholder,
+      .Select-multi-value-wrapper {
+        padding-left: 26px;
+      }
+    }
+    .select-icon-left {
+      top: 16px;
+      left: 10px;
       font-size: 1.2em;
     }
     .Select-input, .Select-control, .Select-placeholder {
-      height: 44px;
+      height: 44.5px;
     }
-    .Select-input > input, .Select-placeholder {
-      line-height: 0.5em;
-      padding-top: 11px;
+    .Select-value {
       font-size: 1.2em;
+      margin-top: 8px;
     }
-    .Select-menu-outer {
+    .Select-placeholder, .Select-input > input {
+      line-height: 0.5em;
       font-size: 1.2em;
     }
     .Select-placeholder {
       padding-top: 19px;
     }
+    .Select-input > input {
+      padding-top: 13px;
+    }
+    .Select-menu-outer {
+      font-size: 1.2em;
+    }
   }
-
   &.select-default {
     .select-icon-left {
       color: darken(@bg, 15%);
@@ -203,6 +260,7 @@
       border-color: darken(@bg, 10%);
     }
   }
+
   &.select-primary {
     .select-icon-left {
       color: @primary;

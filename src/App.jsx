@@ -9,9 +9,9 @@ class App extends Component {
     super(props);
     this.state = {
       isLoading: false,
-      values: []
+      values: null
     }
-    this.handleMultiSelectChange = (options) => this.setState({values: options});
+    this.handlSelectChange = (options) => this.setState({values: options});
   }
 
   render() {
@@ -64,35 +64,28 @@ class App extends Component {
           <Button xl primary>Button</Button>
         </div>
         <div>
-          <Select multi default xs icon="key" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+          <Select xl value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
-          <Button xs primary>Button</Button>
+          <Button xl primary>Button</Button>
         </div>
         <div>
-          <Select multi warning sm icon="key" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+          <Select xl icon="building" value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
-          <Button sm primary>Button</Button>
+          <Button xl primary>Button</Button>
         </div>
         <div>
-          <Select multi icon="building" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+          <Select xl multi value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
-          <Button primary>Button</Button>
+          <Button xl primary>Button</Button>
         </div>
         <div>
-          <Select multi primary icon="building" lg value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
-            { value: 'one', label: 'One' },
-            { value: 'two', label: 'Two' }
-          ]} />
-          <Button lg primary>Button</Button>
-        </div>
-        <div>
-          <Select multi success xl icon="building" value={this.state.values} onChange={(o) => this.handleMultiSelectChange(o)} options={[
+          <Select multi xl icon="building" value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
