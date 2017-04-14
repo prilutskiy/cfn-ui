@@ -9,6 +9,15 @@
       cursor: not-allowed;
     }
   }
+  .Select.Select--multi .Select-value {
+    .Select-value-icon {
+      border-right: none;
+      &:hover {
+        background-color: initial;
+        color: inherit;
+      }
+    }
+  }
   .select-icon-left {
     position: absolute;
   }
@@ -259,6 +268,11 @@
     .Select-control {
       border-color: darken(@bg, 10%);
     }
+    .Select.Select--multi .Select-value {
+      background: @light;
+      border: 1px solid @primary;
+      color: @primary;
+    }
   }
 
   &.select-primary {
@@ -268,6 +282,11 @@
     .Select-control {
       border-color: @primary;
     }
+    .Select.Select--multi .Select-value {
+      background: @primary;
+      border: 1px solid @primary;
+      color: @light;
+    }
   }
   &.select-success {
     .select-icon-left {
@@ -275,6 +294,11 @@
     }
     .Select-control {
       border-color: @success;
+    }
+    .Select.Select--multi .Select-value {
+      background: @success;
+      border: 1px solid @success;
+      color: @light;
     }
   }
   &.select-info {
@@ -284,6 +308,11 @@
     .Select-control {
       border-color: @info;
     }
+    .Select.Select--multi .Select-value {
+      background: @info;
+      border: 1px solid @info;
+      color: @light;
+    }
   }
   &.select-warning {
     .select-icon-left {
@@ -292,6 +321,11 @@
     .Select-control {
       border-color: @warning;
     }
+    .Select.Select--multi .Select-value {
+      background: @warning;
+      border: 1px solid @warning;
+      color: @light;
+    }
   }
   &.select-danger {
     .select-icon-left {
@@ -299,6 +333,11 @@
     }
     .Select-control {
       border-color: @danger;
+    }
+    .Select.Select--multi .Select-value {
+      background: @danger;
+      border: 1px solid @danger;
+      color: @light;
     }
   }
 }

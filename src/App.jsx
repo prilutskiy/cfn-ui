@@ -64,32 +64,32 @@ class App extends Component {
           <Button xl primary>Button</Button>
         </div>
         <div>
-          <Select xl value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
+          <Select primary value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
-          <Button xl primary>Button</Button>
+          <Button primary>Button</Button>
         </div>
         <div>
-          <Select xl icon="building" value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
+          <Select primary icon="building" value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
-          <Button xl primary>Button</Button>
+          <Button primary>Button</Button>
         </div>
         <div>
-          <Select xl multi value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
+          <Select primary multi value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
-          <Button xl primary>Button</Button>
+          <Button primary>Button</Button>
         </div>
         <div>
-          <Select multi xl icon="building" value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
+          <Select primary multi icon="building" value={this.state.values} onChange={(o) => this.handlSelectChange(o)} options={[
             { value: 'one', label: 'One' },
             { value: 'two', label: 'Two' }
           ]} />
-          <Button xl primary>Button</Button>
+          <Button primary>Button</Button>
         </div>
       </div>
     );
