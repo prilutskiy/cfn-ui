@@ -11,6 +11,7 @@ import DropdownDemo from './demo/DropdownDemo';
 import SelectDemo from './demo/SelectDemo';
 import CheckboxDemo from './demo/CheckboxDemo';
 import ToggleSwitchDemo from './demo/ToggleSwitchDemo';
+import RadioGroupDemo from './demo/RadioGroupDemo';
 
 ReactDOM.render(
   <Router>
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route path="/selects" component={SelectDemo} />
       <Route path="/checkboxes" component={CheckboxDemo} />
       <Route path="/toggleSwitches" component={ToggleSwitchDemo} />
+      <Route path="/radioGroups" component={RadioGroupDemo} />
     </App>
   </Router>
   ,

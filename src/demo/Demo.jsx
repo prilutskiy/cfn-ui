@@ -27,6 +27,9 @@ class Demo extends Component {
         <div>
           <Link to="/toggleSwitches">Toggle Switch</Link>
         </div>
+        <div>
+          <Link to="/radioGroups">Radio Group</Link>
+        </div>
       </div>
     );
   }
