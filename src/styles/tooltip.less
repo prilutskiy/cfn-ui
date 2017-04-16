@@ -1,0 +1,86 @@
+@tooltip-background: fade(#000, 80%);
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+  &:hover .tooltip-body {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tooltip-trigger {
+    position: relative;
+    display: inline-block;
+  }
+  &.tooltip-top {
+    .tooltip-body {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      &::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: @tooltip-background transparent transparent transparent;
+      }
+    }
+  }
+  &.tooltip-right {
+    .tooltip-body {
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+      &::after {
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+        border-color: transparent @tooltip-background transparent transparent;
+      }
+    }
+  }
+  &.tooltip-bottom {
+    .tooltip-body {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      &::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-color: transparent transparent @tooltip-background transparent;
+      }
+    }
+  }
+  &.tooltip-left {
+    .tooltip-body {
+      top: 50%;
+      right: 100%;
+      transform: translateY(-50%);
+      &::after {
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        border-color: transparent transparent transparent @tooltip-background;
+      }
+    }
+  }
+  .tooltip-body {
+    transition: opacity .25s ease;
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    background-color: @tooltip-background;
+    color: @light;
+    text-align: center;
+    padding: 10px;
+    border-radius: @border-radius;
+    white-space: nowrap;
+    box-shadow: @shadow;
+    &::after {
+      content: " ";
+      position: absolute;
+      border-width: 3px;
+      border-style: solid;
+    }
+  }
+}

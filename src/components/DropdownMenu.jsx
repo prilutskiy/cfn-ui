@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 /* global $ */
 
 class DropdownMenu extends Component {
@@ -11,12 +12,12 @@ class DropdownMenu extends Component {
   }
 
   close(e) {
-    $(this.dropdown).find('.dropdown-menu').addClass('hidden');
+    $(this.dropdown).find('.dropdown-menu').addClass('invisible');
     $(window).off('click', this.close);
   }
 
   open(e) {
-    $(this.dropdown).find('.dropdown-menu').removeClass('hidden');
+    $(this.dropdown).find('.dropdown-menu').removeClass('invisible');
     $(window).on('click', this.close);
   }
 
@@ -25,7 +26,7 @@ class DropdownMenu extends Component {
     e.stopPropagation();
     $(window).on('click', this.close);
     const dropdownMenu = $(this.dropdown).find('.dropdown-menu');
-    if (dropdownMenu.hasClass('hidden')) {
+    if (dropdownMenu.hasClass('invisible')) {
       this.open(e);
     } else {
       this.close(e);
@@ -41,7 +42,7 @@ class DropdownMenu extends Component {
         {
           React.Children.count(this.props.children)
             ?
-            <div className="dropdown-menu hidden">
+            <div className="dropdown-menu invisible">
               <div className="dropdown-menu-pointer"/>
               {this.props.children}
             </div>
@@ -74,7 +75,7 @@ class Item extends Component {
 }
 
 DropdownMenu.propTypes = {
-  trigger: PropTypes.any,
+  trigger: PropTypes.element,
   children: (props, propName, componentName) =>
     React.Children
       .toArray(props[propName])
