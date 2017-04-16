@@ -24,6 +24,9 @@ class Demo extends Component {
         <div>
           <Link to="/checkboxes">Checkbox</Link>
         </div>
+        <div>
+          <Link to="/toggleSwitches">Toggle Switch</Link>
+        </div>
       </div>
     );
   }
