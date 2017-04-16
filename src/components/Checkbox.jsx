@@ -62,8 +62,8 @@ class Checkbox extends Component {
 
   render() {
     return (
-      <span className={this.getClassSet()}>
-        <div className="checkbox-box" onClick={() => this.onClick()}>
+      <span className={this.getClassSet()} onClick={() => this.onClick()}>
+        <div className="checkbox-box">
           <span className="checkbox-check" />
         </div>
         <label className="checkbox-label">{this.props.label}</label>

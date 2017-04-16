@@ -17,6 +17,7 @@ class DropdownMenu extends Component {
   }
 
   open(e) {
+    $('.dropdown-menu').addClass('invisible');
     $(this.dropdown).find('.dropdown-menu').removeClass('invisible');
     $(window).on('click', this.close);
   }
