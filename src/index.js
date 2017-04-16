@@ -14,6 +14,7 @@ import ToggleSwitchDemo from './demo/ToggleSwitchDemo';
 import RadioGroupDemo from './demo/RadioGroupDemo';
 import TooltipDemo from './demo/TooltipDemo';
 import FormDemo from './demo/FormDemo';
+import TagDemo from './demo/TagDemo';
 
 ReactDOM.render(
   <Router>
@@ -28,6 +29,7 @@ ReactDOM.render(
       <Route path="/radioGroups" component={RadioGroupDemo} />
       <Route path="/tooltips" component={TooltipDemo} />
       <Route path="/forms" component={FormDemo} />
+      <Route path="/tags" component={TagDemo} />
     </App>
   </Router>
   ,

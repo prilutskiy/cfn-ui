@@ -36,6 +36,9 @@ class Demo extends Component {
         <div>
           <Link to="/forms">Form</Link>
         </div>
+        <div>
+          <Link to="/tags">Tag</Link>
+        </div>
       </div>
     );
   }
