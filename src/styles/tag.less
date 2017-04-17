@@ -1,13 +1,39 @@
 .tag {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 3px 5px;
   margin: 5px;
-  color: @primary;
-  background: @light;
-  border: 1px solid @primary;
+  background: transparent;
   border-radius: @border-radius;
   .fa {
-    padding: 0 10px 0 5px;
+    padding: 0 6px 0 3px;
     cursor: pointer;
+  }
+  &.tag-default {
+    .tag-style-mixin(@dark);
+  }
+  &.tag-primary {
+    .tag-style-mixin(@primary);
+  }
+  &.tag-success {
+    .tag-style-mixin(@success);
+  }
+  &.tag-info {
+    .tag-style-mixin(@info);
+  }
+  &.tag-warning {
+    .tag-style-mixin(@warning);
+  }
+  &.tag-danger {
+    .tag-style-mixin(@danger);
+  }
+  .tag-style-mixin(@color) {
+    &:not(.disabled) {
+      color: @color;
+      border: 1px solid @color;
+    }
+    &.disabled {
+      color: tint(@color);
+      border: 1px solid tint(@color);
+    }
   }
 }
