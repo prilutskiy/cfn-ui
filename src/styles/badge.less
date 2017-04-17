@@ -1,0 +1,36 @@
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  margin: 5px;
+  border-radius: 25px;
+  &.badge-default {
+    .badge-style-mixin(@dark);
+  }
+  &.badge-primary {
+    .badge-style-mixin(@primary);
+  }
+  &.badge-success {
+    .badge-style-mixin(@success);
+  }
+  &.badge-info {
+    .badge-style-mixin(@info);
+  }
+  &.badge-warning {
+    .badge-style-mixin(@warning);
+  }
+  &.badge-danger {
+    .badge-style-mixin(@danger);
+  }
+  .badge-style-mixin(@color) {
+    &:not(.disabled) {
+      color: @light;
+      border: 1px solid darken(@color, 3%);
+      background: @color;
+    }
+    &.disabled {
+      color: tint(@light);
+      border: 1px solid tint(darken(@color, 3%));
+      background: tint(@color);
+    }
+  }
+}

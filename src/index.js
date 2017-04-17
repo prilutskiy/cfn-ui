@@ -15,6 +15,7 @@ import RadioGroupDemo from './demo/RadioGroupDemo';
 import TooltipDemo from './demo/TooltipDemo';
 import FormDemo from './demo/FormDemo';
 import TagDemo from './demo/TagDemo';
+import BadgeDemo from './demo/BadgeDemo';
 
 ReactDOM.render(
   <Router>
@@ -30,6 +31,7 @@ ReactDOM.render(
       <Route path="/tooltips" component={TooltipDemo} />
       <Route path="/forms" component={FormDemo} />
       <Route path="/tags" component={TagDemo} />
+      <Route path="/badges" component={BadgeDemo} />
     </App>
   </Router>
   ,

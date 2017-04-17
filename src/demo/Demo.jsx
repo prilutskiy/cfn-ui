@@ -39,6 +39,9 @@ class Demo extends Component {
         <div>
           <Link to="/tags">Tag</Link>
         </div>
+        <div>
+          <Link to="/badges">Badges</Link>
+        </div>
       </div>
     );
   }
