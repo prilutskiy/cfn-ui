@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import AppContainer from './components/AppContainer';
 import Navbar from './components/Navbar';
 import DropdownMenu from './components/DropdownMenu';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const profileBtn = (
     <div className="text-inverted" style={{display:'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch'}}>
@@ -23,7 +20,7 @@ class App extends Component {
             <img src="http://dev.cafein.by/static/img/shattered.png" />
           </Navbar.BrandLogo>
           <Navbar.BrandTitle>
-            Brand
+            <Link to="/">Brand</Link>
           </Navbar.BrandTitle>
           <Navbar.LeftMenu>
             <Navbar.MenuItem>First</Navbar.MenuItem>

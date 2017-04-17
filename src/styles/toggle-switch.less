@@ -65,7 +65,7 @@
         border-color: @border-color;
         .toggle-switch-latch {
           background: @inverted;
-          border-color: @border-color;
+          border-color: darken(@border-color, 3%);
           left: 0%;
           transform: translateX(-50%) translateY(-50%);
         }
@@ -90,7 +90,7 @@
         border-color: tint(@border-color);
         .toggle-switch-latch {
           background: tint(@inverted);
-          border-color: tint(@border-color);
+          border-color: tint(darken(@border-color, 3%));
           left: 0%;
           transform: translateX(-50%) translateY(-50%);
         }
