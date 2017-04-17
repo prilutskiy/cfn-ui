@@ -53,12 +53,17 @@
     &.is-focused:not(.is-open) > .Select-control {
       box-shadow: none !important;
     }
+    &.is-open > .Select-control {
+      background: transparent;
+    }
     &:focus {
       outline: none !important;
     }
   }
   .Select-control {
     border-radius: @border-radius;
+    background: transparent;
+    border-width: 0 0 2px 0;
     .Select-placeholder{
       color: darken(@inverted, 15%) !important;
     }
@@ -271,7 +276,7 @@
       border-color: @border-color;
     }
     .Select.Select--multi .Select-value {
-      background: @inverted;
+      background: transparent;
       border: 1px solid @primary;
       color: @primary;
     }
