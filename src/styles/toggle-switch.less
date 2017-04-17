@@ -27,7 +27,7 @@
     transition: left .2s ease;
   }
   &.toggle-switch-default {
-    .toggle-switch-style-mixin(@dark);
+    .toggle-switch-style-mixin(@default);
   }
   &.toggle-switch-primary {
     .toggle-switch-style-mixin(@primary);
@@ -64,7 +64,7 @@
         background: lighten(@border-color, 8%);
         border-color: @border-color;
         .toggle-switch-latch {
-          background: @light;
+          background: @inverted;
           border-color: @border-color;
           left: 0%;
           transform: translateX(-50%) translateY(-50%);
@@ -89,7 +89,7 @@
         background: tint(lighten(@border-color, 8%));
         border-color: tint(@border-color);
         .toggle-switch-latch {
-          background: tint(@light);
+          background: tint(@inverted);
           border-color: tint(@border-color);
           left: 0%;
           transform: translateX(-50%) translateY(-50%);

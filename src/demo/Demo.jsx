@@ -42,6 +42,9 @@ class Demo extends Component {
         <div>
           <Link to="/badges">Badges</Link>
         </div>
+        <div>
+          <Link to="/typography">Typography</Link>
+        </div>
       </div>
     );
   }

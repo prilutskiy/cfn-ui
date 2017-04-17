@@ -1,10 +1,10 @@
 .badge {
   display: inline-block;
-  padding: 2px 6px;
+  padding: 2px 7px;
   margin: 5px;
   border-radius: 25px;
   &.badge-default {
-    .badge-style-mixin(@dark);
+    .badge-style-mixin(@default);
   }
   &.badge-primary {
     .badge-style-mixin(@primary);
@@ -23,12 +23,12 @@
   }
   .badge-style-mixin(@color) {
     &:not(.disabled) {
-      color: @light;
+      color: @inverted;
       border: 1px solid darken(@color, 3%);
       background: @color;
     }
     &.disabled {
-      color: tint(@light);
+      color: tint(@inverted);
       border: 1px solid tint(darken(@color, 3%));
       background: tint(@color);
     }

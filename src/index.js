@@ -16,6 +16,7 @@ import TooltipDemo from './demo/TooltipDemo';
 import FormDemo from './demo/FormDemo';
 import TagDemo from './demo/TagDemo';
 import BadgeDemo from './demo/BadgeDemo';
+import TypographyDemo from './demo/TypographyDemo';
 
 ReactDOM.render(
   <Router>
@@ -32,6 +33,7 @@ ReactDOM.render(
       <Route path="/forms" component={FormDemo} />
       <Route path="/tags" component={TagDemo} />
       <Route path="/badges" component={BadgeDemo} />
+      <Route path="/typography" component={TypographyDemo} />
     </App>
   </Router>
   ,

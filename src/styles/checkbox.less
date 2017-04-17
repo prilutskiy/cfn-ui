@@ -17,19 +17,19 @@
   &:not(.checked){
     .checkbox-box {
       .checkbox-check {
-        visibility: hidden;
+        opacity: 0;
       }
     }
   }
   &.checked {
     .checkbox-box {
       .checkbox-check {
-        visibility: visible;
+        opacity: 1;
       }      
     }
   }
   &.checkbox-default {
-    .checkbox-style-mixin(@dark);
+    .checkbox-style-mixin(@default);
   }
   &.checkbox-primary {
     .checkbox-style-mixin(@primary);
@@ -53,6 +53,7 @@
     height: 15px;
     border-radius: @border-radius;
     .checkbox-check { 
+      transition: opacity .15s ease;
       &:after {
         content: '';
         display: block;

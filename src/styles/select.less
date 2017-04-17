@@ -60,7 +60,7 @@
   .Select-control {
     border-radius: @border-radius;
     .Select-placeholder{
-      color: darken(@light, 15%) !important;
+      color: darken(@inverted, 15%) !important;
     }
   }
   &.select-xs {
@@ -265,13 +265,13 @@
   }
   &.select-default {
     .select-icon-left {
-      color: darken(@bg, 15%);
+      color: darken(@app-bg, 15%);
     }
     .Select-control {
       border-color: @border-color;
     }
     .Select.Select--multi .Select-value {
-      background: @light;
+      background: @inverted;
       border: 1px solid @primary;
       color: @primary;
     }
@@ -287,7 +287,7 @@
     .Select.Select--multi .Select-value {
       background: @primary;
       border: 1px solid @primary;
-      color: @light;
+      color: @inverted;
     }
   }
   &.select-success {
@@ -300,7 +300,7 @@
     .Select.Select--multi .Select-value {
       background: @success;
       border: 1px solid @success;
-      color: @light;
+      color: @inverted;
     }
   }
   &.select-info {
@@ -313,7 +313,7 @@
     .Select.Select--multi .Select-value {
       background: @info;
       border: 1px solid @info;
-      color: @light;
+      color: @inverted;
     }
   }
   &.select-warning {
@@ -326,7 +326,7 @@
     .Select.Select--multi .Select-value {
       background: @warning;
       border: 1px solid @warning;
-      color: @light;
+      color: @inverted;
     }
   }
   &.select-danger {
@@ -339,7 +339,7 @@
     .Select.Select--multi .Select-value {
       background: @danger;
       border: 1px solid @danger;
-      color: @light;
+      color: @inverted;
     }
   }
 }

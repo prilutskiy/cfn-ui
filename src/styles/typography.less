@@ -1,8 +1,101 @@
-body, input, textarea, select, button {
+html, body {
    font-family: @font-family;
-   font-size: @font-size;
 }
 body {
-  color: @dark;
-  background: @bg;
+  background: @app-bg;
+
+  color: @default;
+  font-size: @font-size;
+  line-height: 1.5em;
+  font-weight: 400;
+}
+
+h1, .h1 {
+  font-size: 3.5em;
+  font-weight: 300;
+  line-height: 1em;
+}
+h2, .h2 {
+  font-size: 2.5em;
+  font-weight: 300;
+  line-height: 1em;
+}
+h3, .h3 {
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.25em;
+}
+h4, .h4 {
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.25em;
+}
+h5, .h5 {
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+h6, .h6 {
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+p {
+  text-indent: 30px;
+  text-align: justify;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.text-default {
+  .text-style-mixin(@default);
+}
+.text-inverted {
+  .text-style-mixin(@inverted);
+}
+.text-primary {
+  .text-style-mixin(@primary);
+}
+.text-success {
+  .text-style-mixin(@success);
+}
+.text-info {
+  .text-style-mixin(@info);
+}
+.text-warning {
+  .text-style-mixin(@warning);
+}
+.text-danger {
+  .text-style-mixin(@danger);
+}
+
+.text-bold, strong, b {
+  font-weight: bold;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+
+
+.text-style-mixin(@color) {
+  &:not(.text-muted) {
+    color: @color;
+  }
+  .text-muted {
+    color: tint(@color);
+  }
 }
