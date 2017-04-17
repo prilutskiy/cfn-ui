@@ -55,11 +55,11 @@ class ButtonDemo extends Component {
           <Button loading link>Button</Button>
         </div>
         <div>
-          <Button outline loading default>Button</Button>
-          <Button outline loading primary>Button</Button>
-          <Button outline loading success>Button</Button>
-          <Button outline loading info>Button</Button>
-          <Button outline loading warning>Button</Button>
+          <Button xs outline loading default>Button</Button>
+          <Button sm outline loading primary>Button</Button>
+          <Button md outline loading success>Button</Button>
+          <Button lg outline loading info>Button</Button>
+          <Button xl outline loading warning>Button</Button>
           <Button outline loading danger>Button</Button>
           <Button outline loading link>Button</Button>
         </div>

@@ -61,7 +61,9 @@
     .btn-type-mixin(@primary, rgba(255,255,255,0.1), @primary)
   }
   &.btn-link {
-    .btn-type-mixin(@primary, rgba(0,0,0,0), rgba(0,0,0,0))
+    .btn-type-mixin(@primary, rgba(0,0,0,0), rgba(0,0,0,0));
+    background-color: transparent !important;
+    border-color: transparent !important;
   }
   &.btn-primary {
     .btn-type-mixin(@inverted, @primary, @primary)
@@ -80,27 +82,27 @@
   }
 
   &.btn-xs {
-    padding: 4px 8px;
+    padding: 4px 16px;
     font-size: 0.8em;
-    .fa { font-size: 0.9em; }
+    .fa { font-size: 1.7em; }
   }
   &.btn-sm {
-    padding: 6px 12px;
+    padding: 6px 20px;
     font-size: 0.9em;
-    .fa { font-size: 1em; }
+    .fa { font-size: 1.6em; }
   }
   &.btn-md {
-    padding: 8px 16px;
+    padding: 8px 24px;
     font-size: 1em;
-    .fa { font-size: 1.1em; }
+    .fa { font-size: 1.5em; }
   }
   &.btn-lg {
     padding: 10px 20px;
     font-size: 1.1em;
-    .fa { font-size: 1.2em; }
+    .fa { font-size: 1.4em; }
   }
   &.btn-xl {
-    padding: 12px 24px;
+    padding: 12px 32px;
     font-size: 1.2em;
     .fa { font-size: 1.3em; }
   }
