@@ -2,37 +2,21 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class FormGroupLabel extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return null;
   }
 }
 class FormGroupHint extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return null;
   }
 }
 class FormGroupBody extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return null;
   }
 }
 class FormGroupAddons extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return null;
   }

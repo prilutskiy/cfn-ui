@@ -1,0 +1,13 @@
+.app-container {
+  display: block;
+  margin: auto;
+  height: 100vh;
+  width: 100vw;
+  background: @app-bg-color;
+  &.app-container-boxed {
+    max-width: @app-container-max-width;
+    border-left: 1px solid @border-color;
+    border-right: 1px solid @border-color;
+    box-shadow: 0 0 15px #d0d0d0;
+  }
+}

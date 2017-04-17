@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
+console.log(Grid, Row, Col);
 
 class Demo extends Component {
   constructor(props) {
@@ -44,6 +47,9 @@ class Demo extends Component {
         </div>
         <div>
           <Link to="/typography">Typography</Link>
+        </div>
+        <div>
+          <a href="http://roylee0704.github.io/react-flexbox-grid/">Flexbox Grid</a>
         </div>
       </div>
     );

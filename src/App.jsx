@@ -1,37 +1,48 @@
 import React, { Component } from 'react';
-import Button from './components/Button';
-import Input from './components/Input';
+import AppContainer from './components/AppContainer';
+import Navbar from './components/Navbar';
 import DropdownMenu from './components/DropdownMenu';
-import Select from './components/Select';
-import Checkbox from './components/Checkbox';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoading: false,
-      values: null,
-      checked: false
-    }
-    this.handlSelectChange = (options) => this.setState({values: options});
-    this.onCheck = this.onCheck.bind(this);
-  }
-
-  onCheck(newValue) {
-    this.setState({ checked: newValue });
   }
 
   render() {
-    const dropdownTrigger = <Button>Dropdown <i className="fa fa-caret-down"></i></Button>;
-    return (
-      <div className="App" style={{ textAlign: 'center' }}>
-        {this.props.children}
-      </div>
+    const profileBtn = (
+    <div className="text-inverted" style={{display:'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch'}}>
+      <img className="img-circle img-sm" src="http://dev.cafein.by/static/img/shattered.png" /> 
+      <span style={{ padding: '0 15px'}}>John Doe</span>
+      <i className="fa fa-caret-down" />
+    </div>
     );
-  }
-  onClick() {
-    this.setState({ isLoading: true });
-    setTimeout(() => this.setState({ isLoading: false }), 1000);
+    return (
+      <AppContainer>
+        <Navbar>
+          <Navbar.BrandLogo>
+            <img src="http://dev.cafein.by/static/img/shattered.png" />
+          </Navbar.BrandLogo>
+          <Navbar.BrandTitle>
+            Brand
+          </Navbar.BrandTitle>
+          <Navbar.LeftMenu>
+            <Navbar.MenuItem>First</Navbar.MenuItem>
+            <Navbar.MenuItem>Second</Navbar.MenuItem>
+          </Navbar.LeftMenu>
+          <Navbar.RightMenu>
+            <Navbar.MenuItem>
+              <DropdownMenu trigger={profileBtn}>
+                <DropdownMenu.Item><i className="fa fa-user" /> My Profile</DropdownMenu.Item>
+                <DropdownMenu.Item><i className="fa fa-sliders" />Settings</DropdownMenu.Item>
+                <DropdownMenu.Item divider />
+                <DropdownMenu.Item><i className="fa fa-power-off" />Exit</DropdownMenu.Item>
+              </DropdownMenu>
+            </Navbar.MenuItem>
+          </Navbar.RightMenu>
+        </Navbar>
+        {this.props.children}
+      </AppContainer>
+    );
   }
 }
 
