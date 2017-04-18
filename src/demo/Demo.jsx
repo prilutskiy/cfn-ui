@@ -51,6 +51,9 @@ class Demo extends Component {
         <div>
           <a href="http://roylee0704.github.io/react-flexbox-grid/">Flexbox Grid</a>
         </div>
+        <div>
+          <Link to="/boxes">Box</Link>
+        </div>
       </div>
     );
   }

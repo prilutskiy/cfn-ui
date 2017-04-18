@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     const profileBtn = (
     <div className="text-inverted" style={{display:'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch'}}>
-      <img className="img-circle img-sm" src="http://dev.cafein.by/static/img/shattered.png" /> 
+      <img className="img-circle img-sm" src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" /> 
       <span style={{ padding: '0 15px'}}>John Doe</span>
       <i className="fa fa-caret-down" />
     </div>
@@ -17,7 +17,7 @@ class App extends Component {
       <AppContainer>
         <Navbar>
           <Navbar.BrandLogo>
-            <img src="http://dev.cafein.by/static/img/shattered.png" />
+            <img src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" />
           </Navbar.BrandLogo>
           <Navbar.BrandTitle>
             <Link to="/">Brand</Link>

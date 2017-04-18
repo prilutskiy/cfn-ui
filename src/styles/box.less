@@ -1,0 +1,55 @@
+.box {
+  display: block;
+  width: 100%;
+  background: @inverted;
+  border-radius: @border-radius;
+  box-shadow: @shadow;
+  margin: 5px;
+  .box-header {
+    padding: 12px 20px;
+    font-size: 1.2em;
+    text-align: left;
+    border-top-left-radius: @border-radius;
+    border-top-right-radius: @border-radius;
+    border-bottom: 1px solid @border-color;
+  }
+  .box-content {
+    padding: 20px;
+    text-align: left;
+  }
+  .box-footer {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom-left-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
+    border-top: 1px solid @border-color;
+  }
+  &.box-default {
+    .box-style-mixin(@default, @inverted);
+  }
+  &.box-inverted {
+    .box-style-mixin(@inverted, @default);
+  }
+  &.box-primary {
+    .box-style-mixin(@inverted, @primary);
+  }
+  &.box-success {
+    .box-style-mixin(@inverted, @success);
+  }
+  &.box-info {
+    .box-style-mixin(@inverted, @info);
+  }
+  &.box-warning {
+    .box-style-mixin(@inverted, @warning);
+  }
+  &.box-danger {
+    .box-style-mixin(@inverted, @danger);
+  }
+
+  .box-style-mixin(@fontcolor, @fillcolor) {
+    .box-header {
+      background: @fillcolor;
+      color: @fontcolor;
+    }
+  }
+}
