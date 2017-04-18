@@ -13,6 +13,10 @@ class Breadcrumbs extends Component {
         {
           React.Children.map(this.props.children, (c, i) => {
             return (
+              i === (this.props.children.length || 1) - 1
+              ?
+              <span key={i} to={c.props.path} className="breadcrumbs-crumb">{c.props.title}</span>
+              :
               <Link key={i} to={c.props.path} className="breadcrumbs-crumb">{c.props.title}</Link>
             );
           })
@@ -33,5 +37,5 @@ Breadcrumbs.propTypes = {
       .toArray(props[propName])
       .find(child => child.type !== Crumb) && new Error(`${componentName} only accepts "<${componentName}.Crumb />" elements`),
 }
-
+Breadcrumbs.Crumb = Crumb;
 export default Breadcrumbs;

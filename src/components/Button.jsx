@@ -33,6 +33,7 @@ class Button extends Component {
 
   getType() {
     return (this.props.primary ? 'btn-primary' :
+      this.props.inverted ? 'btn-inverted':
       this.props.success ? 'btn-success' :
       this.props.info ? 'btn-info' :
       this.props.warning ? 'btn-warning' :
@@ -66,6 +67,7 @@ Button.propTypes = {
   style: PropTypes.object,
 
   default: PropTypes.bool,
+  inverted: PropTypes.bool,
   primary: PropTypes.bool,
   success: PropTypes.bool,
   info: PropTypes.bool,

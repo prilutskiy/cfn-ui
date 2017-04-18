@@ -6,6 +6,9 @@
   cursor: pointer;
   user-select: none;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  .fa {
+    padding-right: 3px;
+  }
 
 
   .btn-type-mixin(@fontcolor, @fillcolor, @bordercolor) {
@@ -82,29 +85,29 @@
   }
 
   &.btn-xs {
-    padding: 4px 16px;
+    padding: 4px 12px;
     font-size: 0.8em;
-    .fa { font-size: 1.7em; }
+    &.btn-loading .fa { font-size: 1.7em; }
   }
   &.btn-sm {
-    padding: 6px 20px;
+    padding: 6px 16px;
     font-size: 0.9em;
-    .fa { font-size: 1.6em; }
+    &.btn-loading .fa { font-size: 1.6em; }
   }
   &.btn-md {
-    padding: 8px 24px;
+    padding: 8px 20px;
     font-size: 1em;
-    .fa { font-size: 1.5em; }
+    &.btn-loading .fa { font-size: 1.5em; }
   }
   &.btn-lg {
-    padding: 10px 20px;
+    padding: 10px 24px;
     font-size: 1.1em;
-    .fa { font-size: 1.4em; }
+    &.btn-loading .fa { font-size: 1.4em; }
   }
   &.btn-xl {
-    padding: 12px 32px;
+    padding: 12px 28px;
     font-size: 1.2em;
-    .fa { font-size: 1.3em; }
+    &.btn-loading .fa { font-size: 1.3em; }
   }
 
   &.btn-loading {

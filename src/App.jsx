@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import DropdownMenu from './components/DropdownMenu';
 import { Link } from 'react-router-dom';
 import Header from './components/Header';
+import Button from './components/Button';
 
 class App extends Component {
   render() {
@@ -38,7 +39,13 @@ class App extends Component {
             </Navbar.MenuItem>
           </Navbar.RightMenu>
         </Navbar>
-        <Header></Header>
+        <Header>
+          <Header.PrimaryTitle>Components Demo</Header.PrimaryTitle>
+          <Header.SubTitle>Use links below to navigate between components</Header.SubTitle>
+          <Header.Actions>
+            <Button primary><i className="fa fa-paper-plane-o"></i> Action</Button>
+          </Header.Actions>
+        </Header>
         {this.props.children}
       </AppContainer>
     );

@@ -1,10 +1,31 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Breadcrumbs from './Breadcrumbs';
+import Button from './Button';
+
+class PrimaryTitle extends Component{
+  render() { return null; }
+}
+class SubTitle extends Component{
+  render() { return null; }
+}
+class Actions extends Component{
+  render() { return null; }
+}
 
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showExtras: false
+    }
+    this.getSpecificChildren = this.getSpecificChildren.bind(this);
+  }
+
+  getSpecificChildren(childType) {
+    const childrenArray = React.Children.toArray(this.props.children);
+    const requiredChild = childrenArray.find(c => c.type === childType);
+    return ((requiredChild || {}).props || {}).children;
   }
 
   render() {
@@ -15,13 +36,35 @@ class Header extends Component {
           <Breadcrumbs.Crumb path="/" title="Page" />
           <Breadcrumbs.Crumb path="/" title="Details" />
         </Breadcrumbs>
-        <div className="header-title">
-          <h2 className="header-title-primary">Cfn UI Components Demo</h2>
-          <h5 className="header-title-secondary">Use links below to navigate between components</h5>
+        <div className="header-content">
+          <div className="header-title">
+            <h2 className="header-title-primary">{this.getSpecificChildren(PrimaryTitle)}</h2>
+            <h5 className="header-title-secondary">{this.getSpecificChildren(SubTitle)}</h5>
+          </div>
+          <div className="header-actions">
+            {this.getSpecificChildren(Actions)}
+          </div>
         </div>
       </div>
     );
   }
 }
+
+const supportedChildTypes = [
+  PrimaryTitle,
+  SubTitle,
+  Actions
+];
+
+Header.propTypes = {
+    children: (props, propName, componentName) =>
+    React.Children
+      .toArray(props[propName])
+      .find(child => supportedChildTypes.indexOf(child.type) === -1) && new Error(`${componentName} only accepts "<${componentName}.PrimaryTitle />", "<${componentName}.SubTitle />", "<${componentName}.Actions />" elements`),
+}
+
+Header.PrimaryTitle = PrimaryTitle;
+Header.SubTitle = SubTitle;
+Header.Actions = Actions;
 
 export default Header;

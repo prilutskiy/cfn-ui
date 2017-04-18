@@ -20,6 +20,7 @@ class BoxDemo extends Component {
   }
 
   render() {
+    console.log(this);
     return (
       <Grid>
         <br />
