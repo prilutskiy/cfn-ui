@@ -3,7 +3,7 @@
 .tooltip {
   display: inline-block;
   position: relative;
-  &:hover .tooltip-body {
+  &:not(.disabled):hover .tooltip-body {
     visibility: visible;
     opacity: 1;
   }
@@ -72,9 +72,10 @@
     background-color: @tooltip-background;
     color: @inverted;
     text-align: center;
-    padding: 10px 20px;
+    padding: 4px 8px;
     border-radius: @border-radius;
     white-space: nowrap;
+    font-size: .8em;
     &::after {
       content: " ";
       position: absolute;

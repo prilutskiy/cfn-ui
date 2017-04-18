@@ -24,7 +24,8 @@ class Tooltip extends Component {
 
     return [
       tooltip,
-      position
+      position,
+      this.props.disabled ? 'disabled' : ''
     ]
     .filter(_=>_)
     .join(' ');
