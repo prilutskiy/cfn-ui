@@ -1,0 +1,13 @@
+.breadcrumbs {
+  .breadcrumbs-crumb {
+    &:not(:last-child) {
+      opacity: .6;
+      &:after {
+        font-family: FontAwesome;
+        content: '\f105';
+        padding: 0 8px;
+      }
+    }
+    text-decoration: none;
+  }
+}

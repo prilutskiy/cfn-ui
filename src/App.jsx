@@ -3,6 +3,7 @@ import AppContainer from './components/AppContainer';
 import Navbar from './components/Navbar';
 import DropdownMenu from './components/DropdownMenu';
 import { Link } from 'react-router-dom';
+import Header from './components/Header';
 
 class App extends Component {
   render() {
@@ -37,6 +38,7 @@ class App extends Component {
             </Navbar.MenuItem>
           </Navbar.RightMenu>
         </Navbar>
+        <Header></Header>
         {this.props.children}
       </AppContainer>
     );
