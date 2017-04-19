@@ -7,7 +7,7 @@ class Overlay extends Component {
 
   render() {
     return (
-      <div className={'overlay overlay-inverted' + (this.props.show?' ':'hidden ')} />
+      <div className={`overlay overlay-${this.props.inverted?'inverted':'default'} ${this.props.page?'overlay-page':''} ${this.props.show?'':'hidden'}`} />
     );
   }
 }

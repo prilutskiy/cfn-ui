@@ -90,7 +90,7 @@ class BoxDemo extends Component {
                 </Row>
               </Box.Header>
               <Box.Content>
-                <Overlay show={this.state.loading} />
+                <Overlay inverted show={this.state.loading} />
                 <p className="text-default">
                   <strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. <span className="text-muted">Proin molestie, ipsum id sagittis mattis, diam justo interdum dolor, a placerat est nulla eget eros. Fusce ac interdum nulla.</span> <a>Duis fermentum lectus posuere posuere feugiat</a>. Praesent eu fringilla dui. Curabitur faucibus tincidunt turpis, sed semper tellus dictum eu. Suspendisse ornare faucibus lorem, eget sagittis massa venenatis maximus.
             </p>
@@ -124,7 +124,7 @@ class BoxDemo extends Component {
                 </Row>
               </Box.Header>
               <Box.Content>
-                <Overlay show={this.state.loading} />
+                <Overlay inverted show={this.state.loading} />
                 <p className="text-default">
                   <strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. <span className="text-muted">Proin molestie, ipsum id sagittis mattis, diam justo interdum dolor, a placerat est nulla eget eros. Fusce ac interdum nulla.</span> <a>Duis fermentum lectus posuere posuere feugiat</a>. Praesent eu fringilla dui. Curabitur faucibus tincidunt turpis, sed semper tellus dictum eu. Suspendisse ornare faucibus lorem, eget sagittis massa venenatis maximus.
             </p>

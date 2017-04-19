@@ -79,6 +79,7 @@
   .checkbox-style-mixin(@color) {
     &:not(.disabled) .checkbox-box {
       border: 2px solid @color;
+      background: fade(@color, 5%);
       &:hover, &:focus {
         border-color: darken(@color, 2%);
       }
@@ -93,6 +94,7 @@
     }
     &.disabled .checkbox-box {
       border: 2px solid tint(@color);
+      background: fade(tint(@color), 5%);
       &:hover, &:focus {
         border-color: tint(@color);
       }

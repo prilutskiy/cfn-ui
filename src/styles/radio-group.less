@@ -68,6 +68,7 @@
       &:not(.disabled) {
         .radio-box {
           border-color: @color;
+          background: fade(@color, 5%);
         }
         &:not(.active) {
           .radio-check {
@@ -83,6 +84,7 @@
       &.disabled {
         .radio-box {
           border-color: tint(@color);
+          background: fade(tint(@color), 5%);
         }
         &:not(.active) {
           .radio-check {

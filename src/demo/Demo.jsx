@@ -49,7 +49,7 @@ class Demo extends Component {
           <Link to="/typography">Typography</Link>
         </div>
         <div>
-          <a href="http://roylee0704.github.io/react-flexbox-grid/">Flexbox Grid</a>
+          <Link to="/flexbox">Flexbox Grid</Link>
         </div>
         <div>
           <Link to="/boxes">Box</Link>

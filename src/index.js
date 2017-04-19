@@ -20,6 +20,7 @@ import TypographyDemo from './demo/TypographyDemo';
 import BoxDemo from './demo/BoxDemo';
 import MessageDemo from './demo/MessageDemo';
 import ProgressDemo from './demo/ProgressDemo';
+import FlexboxDemo from './demo/FlexboxDemo';
 
 ReactDOM.render(
   <Router>
@@ -40,6 +41,7 @@ ReactDOM.render(
       <Route path="/boxes" component={BoxDemo} />
       <Route path="/messages" component={MessageDemo} />
       <Route path="/progressBars" component={ProgressDemo} />
+      <Route path="/flexbox" component={FlexboxDemo} />
     </App>
   </Router>
   ,
