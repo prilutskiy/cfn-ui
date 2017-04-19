@@ -19,6 +19,7 @@ import BadgeDemo from './demo/BadgeDemo';
 import TypographyDemo from './demo/TypographyDemo';
 import BoxDemo from './demo/BoxDemo';
 import MessageDemo from './demo/MessageDemo';
+import ProgressDemo from './demo/ProgressDemo';
 
 ReactDOM.render(
   <Router>
@@ -38,6 +39,7 @@ ReactDOM.render(
       <Route path="/typography" component={TypographyDemo} />
       <Route path="/boxes" component={BoxDemo} />
       <Route path="/messages" component={MessageDemo} />
+      <Route path="/progressBars" component={ProgressDemo} />
     </App>
   </Router>
   ,

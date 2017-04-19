@@ -20,6 +20,7 @@
 @import './header.less';
 @import './breadcrumbs.less';
 @import './message.less';
+@import './progress.less';
 
 .page {
   padding: 30px;
@@ -63,4 +64,29 @@
   -ms-animation: rotating .75s linear infinite;
   -o-animation: rotating .75s linear infinite;
   animation: rotating .75s linear infinite;
+}
+
+@-moz-keyframes progress {
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 50px 50px;
+  }
+}	
+@-ms-keyframes progress {
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 50px 50px;
+  }
+}	
+@keyframes progress {
+  0% {
+  	background-position: 0 0;
+  }
+  100% {
+  	background-position: 50px 50px;
+  }
 }
