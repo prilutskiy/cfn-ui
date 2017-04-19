@@ -16,6 +16,7 @@
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
+      margin-bottom: 5px;
       &::after {
         top: 100%;
         left: 50%;
@@ -29,6 +30,7 @@
       top: 50%;
       left: 100%;
       transform: translateY(-50%);
+      margin-left: 5px;
       &::after {
         top: 50%;
         right: 100%;
@@ -42,6 +44,7 @@
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
+      margin-top: 5px;
       &::after {
         bottom: 100%;
         left: 50%;
@@ -55,6 +58,7 @@
       top: 50%;
       right: 100%;
       transform: translateY(-50%);
+      margin-right: 5px;
       &::after {
         top: 50%;
         left: 100%;
@@ -75,7 +79,7 @@
     padding: 4px 8px;
     border-radius: @border-radius;
     white-space: nowrap;
-    font-size: .8em;
+    font-size: calc(@font-size * 0.8);
     &::after {
       content: " ";
       position: absolute;

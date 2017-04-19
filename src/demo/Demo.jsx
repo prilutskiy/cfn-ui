@@ -54,6 +54,9 @@ class Demo extends Component {
         <div>
           <Link to="/boxes">Box</Link>
         </div>
+        <div>
+          <Link to="/messages">Message</Link>
+        </div>
       </div>
     );
   }

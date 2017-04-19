@@ -18,6 +18,7 @@ import TagDemo from './demo/TagDemo';
 import BadgeDemo from './demo/BadgeDemo';
 import TypographyDemo from './demo/TypographyDemo';
 import BoxDemo from './demo/BoxDemo';
+import MessageDemo from './demo/MessageDemo';
 
 ReactDOM.render(
   <Router>
@@ -36,6 +37,7 @@ ReactDOM.render(
       <Route path="/badges" component={BadgeDemo} />
       <Route path="/typography" component={TypographyDemo} />
       <Route path="/boxes" component={BoxDemo} />
+      <Route path="/messages" component={MessageDemo} />
     </App>
   </Router>
   ,
