@@ -19,6 +19,7 @@ class Modal extends Component {
       default: 'modal-default',
       inverted: 'modal-inverted',
       primary: 'modal-primary',
+      secondary: 'modal-secondary',
       success: 'modal-success',
       info: 'modal-info',
       warning: 'modal-warning',
@@ -59,6 +60,12 @@ class Modal extends Component {
     }
   }
 
+  _stopPropagation = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+
   render() {
     const header = this.getSpecificChildren(ModalHeader);
     const content = this.getSpecificChildren(ModalContent);
@@ -66,7 +73,7 @@ class Modal extends Component {
     return (
       <div>
         <Overlay page show={this.props.show} />
-        <div className={this.getClassSet()}>
+        <div className={this.getClassSet()} onWheel={ this._stopPropagation }>
           <div className="modal-header">
             {header}
             <i className="fa fa-times" role="close" onClick={() => this._cancel()} />

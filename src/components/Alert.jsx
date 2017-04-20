@@ -31,11 +31,17 @@ class Alert extends Component {
     action.onClick();
   };
 
+  _stopPropagation = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+
   render() {
     return (
       <div>
         <Overlay page default show={this.state.show} />
-        <div className={'alert ' + (this.state.show?'':'hidden')}>
+        <div className={'alert ' + (this.state.show?'':'hidden')} onWheel={ this._stopPropagation }>
           <i className="fa fa-times" role="close" onClick={() => this._cancel()} />
           <div className="alert-content">
             <div className="alert-content-title">{this.state.title}</div>

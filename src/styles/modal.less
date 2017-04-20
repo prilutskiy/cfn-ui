@@ -57,8 +57,14 @@
   &.modal-default {
     .modal-style-mixin(@inverted, @default)
   }
+  &.modal-inverted {
+    .modal-style-mixin(@default, @inverted)
+  }
   &.modal-primary {
     .modal-style-mixin(@primary, @inverted)
+  }
+  &.modal-secondary {
+    .modal-style-mixin(@secondary, @default)
   }
   &.modal-success {
     .modal-style-mixin(@success, @inverted)

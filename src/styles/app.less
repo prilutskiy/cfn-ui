@@ -1,0 +1,64 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  min-height: 100vh;
+  background: @app-bg-color;
+  width: 100%;
+  &.app-boxed {
+    max-width: @app-container-max-width;
+    box-shadow: 0 0 15px darken(@border-color, 15%);
+    .app-navigation, 
+    .app-footer,
+    .fly {
+      max-width: @app-container-max-width;
+    }
+  }
+  &.app-fixednav {
+    .app-content {
+      margin-top: @navbar-height;
+    }
+    .app-navigation {
+      position: fixed;
+      z-index: 5;
+      top: 0;
+    }
+    .fly {
+      height: ~'calc(100vh - @{navbar-height})';
+      &.fly-opened {
+        top: @navbar-height;
+      }
+    }
+  }
+  &.app-fixedfooter {
+    .app-content {
+      margin-bottom: @footer-height;
+    }
+    .app-footer {
+      position: fixed;
+      z-index: 5;
+      bottom: 0;
+    }
+    .fly {
+      height: ~'calc(100vh - @{footer-height})';
+    }
+  }
+  &.app-fixedfooter.app-fixednav {
+    .fly {
+      height: ~'calc(100vh - @{footer-height} - @{navbar-height})';
+    }
+  }
+  .app-navigation {
+    flex-grow: 0;
+    width: 100%;
+  }
+  .app-content {
+    position: relative;
+    top: 0;
+    flex-grow: 1;
+  }
+  .app-footer {
+    flex-grow: 0;
+    width: 100%;
+  }
+}

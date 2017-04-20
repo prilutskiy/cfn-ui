@@ -1,0 +1,80 @@
+.fly {
+  position: fixed;
+  z-index: 5;
+  background: @inverted;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top .5s ease;
+  [role='close'] {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    padding: 10px;
+    transform: translateY(-50%);
+    font-size: 1.4em;
+    -webkit-text-stroke-width: 2px;
+    opacity: .7;
+    &:hover:not(:active),
+    &:focus:not(:active) {
+      opacity: .85;
+    }
+    &:active {
+      opacity: 1;
+    }
+  }
+  &.fly-closed {
+    top: 100vh;
+  }
+  &.fly-opened {
+    top: 0;
+  }
+  .fly-header {
+    position: relative;
+    border-bottom: 1px solid @border-color;
+    padding: 20px;
+    font-size: 1.1em;
+  }
+  .fly-content {
+    padding: 10px 30px;
+    overflow-y: scroll;
+  }
+
+  &.fly-default {
+    .fly-style-mixin(@inverted, @default)
+  }
+  &.fly-inverted {
+    .fly-style-mixin(@default, @inverted)
+  }
+  &.fly-primary {
+    .fly-style-mixin(@primary, @inverted)
+  }
+  &.fly-secondary {
+    .fly-style-mixin(@secondary, @default)
+  }
+  &.fly-success {
+    .fly-style-mixin(@success, @inverted)
+  }
+  &.fly-info {
+    .fly-style-mixin(@info, @inverted)
+  }
+  &.fly-warning {
+    .fly-style-mixin(@warning, @inverted)
+  }
+  &.fly-danger {
+    .fly-style-mixin(@danger, @inverted)
+  }
+
+  .fly-style-mixin(@fillcolor, @fontcolor) {
+    .fly-header {
+      background: @fillcolor;
+      color: @fontcolor;
+      [role='close'] {
+        -webkit-text-stroke-color: @fillcolor;
+      }
+    }
+  }
+}

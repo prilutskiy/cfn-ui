@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 
-class AppContainer extends Component {
+class Footer extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className="app-container app-container-boxed">
+      <div className="footer">
         {this.props.children}
       </div>
     );
   }
 }
 
-export default AppContainer;
+export default Footer;
