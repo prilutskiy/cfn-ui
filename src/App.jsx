@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <AppContainer>
         <Alert ref={r => this.alertref = r} />
-        <Modal show={this.state.modal} danger wide>
+        <Modal show={this.state.modal} danger wide onCancel={() => this.setState({modal: false})}>
           <Modal.Header>Modal Title</Modal.Header>
           <Modal.Content>
             <div style={{height: '200px'}}></div>

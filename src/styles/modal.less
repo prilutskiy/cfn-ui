@@ -14,6 +14,13 @@
     position: absolute;
     cursor: pointer;
     color: fade(@inverted, 50%);
+    &:hover:not(:active),
+    &:focus:not(:active) {
+      color: fade(@inverted, 75%);
+    }
+    &:active {
+      color: @inverted;
+    }
   }
   &:not(.modal-wide) {
     width: calc(@app-container-max-width * 0.45);

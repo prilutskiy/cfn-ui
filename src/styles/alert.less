@@ -17,6 +17,13 @@
     position: absolute;
     cursor: pointer;
     color: fade(@inverted, 50%);
+    &:hover:not(:active),
+    &:focus:not(:active) {
+      color: fade(@inverted, 75%);
+    }
+    &:active {
+      color: @inverted;
+    }
   }
   .alert-content {
     flex-grow: 1;
