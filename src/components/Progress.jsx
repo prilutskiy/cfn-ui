@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class Progress extends Component {
   constructor(props) {
-    super(props); this.styleMap = {
+    super(props); 
+    this.styleMap = {
       default: 'progress-default',
       inverted: 'progress-inverted',
       primary: 'progress-primary',

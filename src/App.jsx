@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import AppContainer from './components/AppContainer';
 import Navbar from './components/Navbar';
 import DropdownMenu from './components/DropdownMenu';
@@ -6,12 +7,15 @@ import { Link } from 'react-router-dom';
 import Header from './components/Header';
 import Button from './components/Button';
 import Alert from './components/Alert';
+import Modal from './components/Modal';
+import Message from './components/Message';
+import Progress from './components/Progress';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      modal: false
     };
   }
 
@@ -32,6 +36,10 @@ class App extends Component {
         }
       ],
     });
+  }
+
+  showModal = () => {
+    this.setState({ modal: true });
   }
 
   showAlert = () => {
@@ -55,6 +63,12 @@ class App extends Component {
     return (
       <AppContainer>
         <Alert ref={r => this.alertref = r} />
+        <Modal show={this.state.modal} danger wide>
+          <Modal.Header>Modal Title</Modal.Header>
+          <Modal.Content>
+            <div style={{height: '200px'}}></div>
+          </Modal.Content>
+        </Modal>
         <Navbar>
           <Navbar.BrandLogo>
             <img src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" />
@@ -81,7 +95,8 @@ class App extends Component {
           <Header.PrimaryTitle>Components Demo</Header.PrimaryTitle>
           <Header.SubTitle>Use links below to navigate between components</Header.SubTitle>
           <Header.Actions>
-            <Button primary onClick={() => this.showAlert()}><i className="fa fa-paper-plane-o"></i> Action</Button>
+            <Button primary onClick={() => this.showModal()}><i className="fa fa-window-maximize"></i> Modal</Button>
+            <Button primary onClick={() => this.showAlert()}><i className="fa fa-bell-o"></i> Alert</Button>
           </Header.Actions>
         </Header>
         {this.props.children}

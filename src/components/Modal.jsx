@@ -15,12 +15,75 @@ class ModalFooter extends Component {
 class Modal extends Component {
   constructor(props) {
     super(props);
+    this.getSpecificChildren = this.getSpecificChildren.bind(this); this.styleMap = {
+      default: 'modal-default',
+      inverted: 'modal-inverted',
+      primary: 'modal-primary',
+      success: 'modal-success',
+      info: 'modal-info',
+      warning: 'modal-warning',
+      danger: 'modal-danger',
+    }
+    this.getClassSet = this.getClassSet.bind(this);
+    this.getStyleClass = this.getStyleClass.bind(this);
+  }
+
+  getStyleClass() {
+    return Object.keys(this.styleMap).filter(s => this.props[s]).map(n => this.styleMap[n])[0] || this.styleMap.default;
+  }
+
+  getClassSet() {
+    const modal = 'modal';
+    const style = this.getStyleClass();
+    const wide = this.props.wide ? 'modal-wide' : '';
+
+    return [
+      modal,
+      style,
+      wide,
+      this.props.show ? '' : 'hidden'
+    ]
+      .filter(_ => _)
+      .join(' ');
+  }
+
+  getSpecificChildren(childType) {
+    const childrenArray = React.Children.toArray(this.props.children);
+    const requiredChild = childrenArray.find(c => c.type === childType);
+    return ((requiredChild || {}).props || {}).children;
+  }
+
+  _cancel = () => {
+    if (this.props.onCancel) {
+      this.props.onCancel();
+    }
   }
 
   render() {
+    const header = this.getSpecificChildren(ModalHeader);
+    const content = this.getSpecificChildren(ModalContent);
+    const footer = this.getSpecificChildren(ModalFooter)
     return (
-      <div className="modal" show={this.props.show}>
-        <Overlay page show={this.props.show}/>
+      <div>
+        <Overlay page show={this.props.show} />
+        <div className={this.getClassSet()}>
+          <i className="fa fa-times" role="close" onClick={() => this._cancel()} />
+          <div className="modal-header">
+            {header}
+          </div>
+          <div className="modal-content">
+            {content}
+          </div>
+          {
+            footer
+            ?
+            <div className="modal-footer">
+              {this.getSpecificChildren(ModalFooter)}
+            </div>
+            :
+            null
+          }
+        </div>
       </div>
     );
   }
@@ -37,7 +100,7 @@ Modal.Content = ModalContent;
 Modal.Footer = ModalFooter;
 
 Modal.propTypes = {
-    children: (props, propName, componentName) =>
+  children: (props, propName, componentName) =>
     React.Children
       .toArray(props[propName])
       .find(child => supportedChildTypes.indexOf(child.type) === -1) && new Error(`${componentName} only accepts "<${componentName}.Header />", "<${componentName}.Content />", "<${componentName}.Footer />" elements`),

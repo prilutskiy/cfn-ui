@@ -1,0 +1,70 @@
+.modal {
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 96vw;
+  background: #fff;
+  border-radius: @border-radius;
+  box-shadow: @shadow;
+  [role='close'] {
+    top: -20px;
+    right: -16px;
+    position: absolute;
+    cursor: pointer;
+    color: fade(@inverted, 50%);
+  }
+  &:not(.modal-wide) {
+    width: calc(@app-container-max-width * 0.45);
+  }
+  &.modal-wide {
+    width: calc(@app-container-max-width * 0.9);
+  }
+  & > div:last-child {
+    border-bottom-left-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
+  }
+  .modal-header {
+    border-bottom: 1px solid @border-color;
+    padding: 20px 30px;
+    font-size: 1.1em;
+    border-top-left-radius: @border-radius;
+    border-top-right-radius: @border-radius;
+  }
+  .modal-content {
+    padding: 10px 30px;
+    max-height: 75vh;
+    overflow-y: scroll;
+  }
+  .modal-footer {
+    border-top: 1px solid @border-color;
+    padding: 10px 15px;
+  }
+
+  &.modal-default {
+    .modal-style-mixin(@inverted, @default)
+  }
+  &.modal-primary {
+    .modal-style-mixin(@primary, @inverted)
+  }
+  &.modal-success {
+    .modal-style-mixin(@success, @inverted)
+  }
+  &.modal-info {
+    .modal-style-mixin(@info, @inverted)
+  }
+  &.modal-warning {
+    .modal-style-mixin(@warning, @inverted)
+  }
+  &.modal-danger {
+    .modal-style-mixin(@danger, @inverted)
+  }
+
+  .modal-style-mixin(@fillcolor, @fontcolor) {
+    .modal-header {
+      color: @fontcolor;
+      background: @fillcolor;
+    }
+  }
+}
