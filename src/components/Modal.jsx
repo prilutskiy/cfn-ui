@@ -67,9 +67,9 @@ class Modal extends Component {
       <div>
         <Overlay page show={this.props.show} />
         <div className={this.getClassSet()}>
-          <i className="fa fa-times" role="close" onClick={() => this._cancel()} />
           <div className="modal-header">
             {header}
+            <i className="fa fa-times" role="close" onClick={() => this._cancel()} />
           </div>
           <div className="modal-content">
             {content}

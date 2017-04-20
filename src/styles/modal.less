@@ -9,17 +9,21 @@
   border-radius: @border-radius;
   box-shadow: @shadow;
   [role='close'] {
-    top: -20px;
-    right: -16px;
-    position: absolute;
     cursor: pointer;
-    color: fade(@inverted, 50%);
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    padding: 10px;
+    transform: translateY(-50%);
+    font-size: 1.4em;
+    -webkit-text-stroke-width: 2px;
+    opacity: .7;
     &:hover:not(:active),
     &:focus:not(:active) {
-      color: fade(@inverted, 75%);
+      opacity: .85;
     }
     &:active {
-      color: @inverted;
+      opacity: 1;
     }
   }
   &:not(.modal-wide) {
@@ -33,6 +37,7 @@
     border-bottom-right-radius: @border-radius;
   }
   .modal-header {
+    position: relative;
     border-bottom: 1px solid @border-color;
     padding: 20px 30px;
     font-size: 1.1em;
@@ -72,6 +77,9 @@
     .modal-header {
       color: @fontcolor;
       background: @fillcolor;
+      [role="close"] {
+        -webkit-text-stroke-color: @fillcolor;
+      }
     }
   }
 }
