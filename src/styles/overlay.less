@@ -6,10 +6,12 @@
   bottom: 0;
   z-index: 10;
   opacity: 0;
-  transition: opacity .15s ease;
+  visibility: hidden;
+  transition: opacity .15s ease, visibility .15s ease;
 
   &.overlay-opened {
     opacity: 1;
+    visibility: visible;
   }
   &.overlay-page {
     position: fixed;

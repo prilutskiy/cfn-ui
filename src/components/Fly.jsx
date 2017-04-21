@@ -1,8 +1,9 @@
+/* global $ */
 import React, { Component } from 'react';
 
 class Fly extends Component {
   constructor(props) {
-    super(props);this.getSpecificChildren = this.getSpecificChildren.bind(this); this.styleMap = {
+    super(props); this.getSpecificChildren = this.getSpecificChildren.bind(this); this.styleMap = {
       default: 'fly-default',
       inverted: 'fly-inverted',
       primary: 'fly-primary',
@@ -14,6 +15,16 @@ class Fly extends Component {
     }
     this.getClassSet = this.getClassSet.bind(this);
     this.getStyleClass = this.getStyleClass.bind(this);
+    this._onOutsideClick = this._onOutsideClick.bind(this);
+  }
+
+  _onOutsideClick(e) {
+    const $target = $(e.target);
+    //if user clicks outside the fly (footer click is allowed) except for the background in boxed mode
+    if (!($target.hasClass('fly') || $target.parents('.fly').length || $target.hasClass('footer') || $target.parents('.footer').length) && !$target.find('.app').length) {
+      this._close();
+    } else {
+    }
   }
 
   getStyleClass() {
@@ -27,7 +38,7 @@ class Fly extends Component {
     return [
       fly,
       style,
-      this.props.show ? 'fly-opened' : 'fly-closed'
+      this.props.show ? 'fly-opened' : ''
     ]
       .filter(_ => _)
       .join(' ');
@@ -47,9 +58,19 @@ class Fly extends Component {
     return false;
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.show) {
+      setTimeout(() => {
+        $(window).on('click', this._onOutsideClick)
+      }, 0)
+    } else {
+      $(window).off('click', this._onOutsideClick);
+    }
+  }
+
   render() {
     return (
-      <div className={this.getClassSet()} onWheel={ this._stopPropagation }>
+      <div className={this.getClassSet()} onWheel={this._stopPropagation} ref={r => this.flyRef = r}>
         <div className="fly-header">
           Application Settings
           <i className="fa fa-times" role="close" onClick={() => this._close()} />

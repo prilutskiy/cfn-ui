@@ -42,7 +42,7 @@ class Modal extends Component {
       modal,
       style,
       wide,
-      this.props.show ? '' : 'hidden'
+      this.props.show ? 'modal-opened' : ''
     ]
       .filter(_ => _)
       .join(' ');
@@ -71,9 +71,8 @@ class Modal extends Component {
     const content = this.getSpecificChildren(ModalContent);
     const footer = this.getSpecificChildren(ModalFooter)
     return (
-      <div>
-        <Overlay page show={this.props.show} />
-        <div className={this.getClassSet()} onWheel={ this._stopPropagation }>
+      <div className={`overlay overlay-page overlay-default ${this.props.show ? 'overlay-opened' : null}`}>
+        <div className={this.getClassSet()} onWheel={this._stopPropagation}>
           <div className="modal-header">
             {header}
             <i className="fa fa-times" role="close" onClick={() => this._cancel()} />
@@ -83,12 +82,12 @@ class Modal extends Component {
           </div>
           {
             footer
-            ?
-            <div className="modal-footer">
-              {this.getSpecificChildren(ModalFooter)}
-            </div>
-            :
-            null
+              ?
+              <div className="modal-footer">
+                {this.getSpecificChildren(ModalFooter)}
+              </div>
+              :
+              null
           }
         </div>
       </div>

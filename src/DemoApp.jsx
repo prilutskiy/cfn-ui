@@ -109,6 +109,7 @@ class DemoApp extends Component {
             <Modal show={this.state.modal} success wide onCancel={() => this.setState({ modal: false })}>
               <Modal.Header>Modal Title</Modal.Header>
               <Modal.Content>
+                <Button primary onClick={() => this.showAlert()}>Alert from modal</Button>
                 <div style={{ height: '200px' }}></div>
               </Modal.Content>
             </Modal>

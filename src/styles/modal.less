@@ -8,6 +8,9 @@
   background: #fff;
   border-radius: @border-radius;
   box-shadow: @shadow;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .15s ease, visibility .15s ease;
   [role='close'] {
     cursor: pointer;
     position: absolute;
@@ -25,6 +28,10 @@
     &:active {
       opacity: 1;
     }
+  }
+  &.modal-opened {
+    visibility: visible;
+    opacity: 1;
   }
   &:not(.modal-wide) {
     width: calc(@app-container-max-width * 0.45);
