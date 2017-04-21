@@ -42,77 +42,12 @@ class DemoApp extends Component {
     });
   }
 
-  _createToast = (icon, message) => {
-    const template = `
-    <div class="toast">
-      <div classNaclassme="toast-logo">
-        <i class="fa fa-${icon}"></i>
-      </div>
-      <div class="toast-content">
-        ${message}
-      </div>
-      <div class="toast-dismiss">
-        <i role="close" class="fa fa-times"></i>
-      </div>
-    </div>
-    `;
-    const $toast = $(template);
-    return $toast;
-  }
-
-  _setToastTimeout = ($toast, timeout) => {
-    return setTimeout(() => {
-      this._closeToast($toast);
-    }, timeout * 1000);
-  }
-
-  _setTimer = ($toast, timeout) => {
-    let timerId = this._setToastTimeout($toast, timeout);
-    $toast.on('mouseenter', () => {
-      console.log('mouseenter')
-      clearTimeout(timerId);
-    });
-    $toast.on('mouseleave', () => {
-      console.log('mouseleave')
-      timerId = this._setToastTimeout($toast, timeout);
-    });
-  }
-
-  _insertToastIntoDom = ($toast) => {
-    $('.app > .app-content').prepend($toast);
-    $toast.find('[role="close"]').on('click', () => {
-      this._closeToast($toast);
-    });
-  }
-
-  _showToast = ($toast) => {
-    setTimeout(() => {
-      $toast.addClass('toast-opened');
-    }, 50);
-  }
-
-  _closeToast = ($toast, onClose) => {
-    $toast.removeClass('toast-opened');
-    setTimeout(() => {
-      $toast.remove();
-      onClose ? onClose() : null;
-    }, 200);
-  }
-
   showToast = () => {
-    const timeout = 2;
-    const element = this._createToast('check', 'Action successfuly completed');
-    const currentToast = $('.toast');
-    const _open = () => {
-      this._insertToastIntoDom(element);
-      this._showToast(element);
-    };
-    if (currentToast.length > 0) {
-      this._closeToast(currentToast, _open);
-    } else {
-      _open();
-    }
-    this._setTimer(element, timeout);
+    Toast.show({
+      icon: 'exclamation-circle',
+      text: 'Access denied',
+      style: 'danger',
+    });
   }
 
   showFly = () => {
