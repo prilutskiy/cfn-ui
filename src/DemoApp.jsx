@@ -45,7 +45,6 @@ class DemoApp extends Component {
   _createToast = (icon, message) => {
     const template = `
     <div class="toast">
-      <div class="toast-countdown" />
       <div classNaclassme="toast-logo">
         <i class="fa fa-${icon}"></i>
       </div>
@@ -61,83 +60,59 @@ class DemoApp extends Component {
     return $toast;
   }
 
+  _setToastTimeout = ($toast, timeout) => {
+    return setTimeout(() => {
+      this._closeToast($toast);
+    }, timeout * 1000);
+  }
+
+  _setTimer = ($toast, timeout) => {
+    let timerId = this._setToastTimeout($toast, timeout);
+    $toast.on('mouseenter', () => {
+      console.log('mouseenter')
+      clearTimeout(timerId);
+    });
+    $toast.on('mouseleave', () => {
+      console.log('mouseleave')
+      timerId = this._setToastTimeout($toast, timeout);
+    });
+  }
+
   _insertToastIntoDom = ($toast) => {
-    $('.toast').each((i, el) => {
-      const $el = $(el);
-      const currentPosition = parseInt($el.css('bottom'));
-      $el.css('bottom', `${currentPosition + 60 + 2}px`)
-    })
     $('.app > .app-content').prepend($toast);
+    $toast.find('[role="close"]').on('click', () => {
+      this._closeToast($toast);
+    });
   }
 
   _showToast = ($toast) => {
-    const timeout = 5;
-    const currentPosition = parseInt($toast.css('bottom'));
-    $toast.css('bottom', `${currentPosition + 60}px`).css('opacity', '1');
+    setTimeout(() => {
+      $toast.addClass('toast-opened');
+    }, 50);
   }
 
-  _handleClosing = ($toast) => {
-    const closeButton = $toast.find('[role="close"]');
-    closeButton.on('click', () => {
-      const currentPosition = parseInt($toast.css('bottom'));
-      $toast.css('opacity', '0');
-      $toast.nextAll('.toast').each((i, el) => {
-        const $el = $(el);
-        const currentSiblingPosition = parseInt($el.css('bottom'));
-        $el.css('bottom', `${currentSiblingPosition - 62}px`);
-      });
-      setTimeout(() => {
-        $toast.remove();
-        $toast.find('[role="close"]').trigger('click');
-      }, 350)
-    });
-  }
-
-  _removeRedundant = (treshold) => {
-    const allToasts = $('.toast');
-    allToasts.each((i, el) => {
-      if (i >= treshold) {
-        $(el).find('[role="close"]').trigger('click');
-      }
-    })
-  }
-
-  _setupDestruction = ($toast, timeout) => {
-    const $countdown = $toast.find('.toast-countdown');
-
-    $countdown.css('width', '100%');
-    $countdown.css('transition', `width ${timeout}s linear`);
-    $countdown.css('width', '0%');
-
-    let timerId = setTimeout(() => {
-      $toast.find('[role="close"]').trigger('click');
-    }, timeout * 1000);
-
-    $toast.on('mouseenter', () => {
-      $toast.off('mouseleave');
-      console.log('hover');
-      clearTimeout(timerId);
-      $countdown.css('visibility', 'hidden');
-      $countdown.css('transition', `width .01s linear`);
-      $countdown.css('width', '100%');
-      $countdown.css('transition', `width 1s linear`);
-      $toast.on('mouseleave', () => {
-        $countdown.css('visibility', 'visible');
-        $countdown.css('width', '0%');
-        timerId = setTimeout(() => {
-          $toast.find('[role="close"]').trigger('click');
-        }, 1000);
-      })
-    });
+  _closeToast = ($toast, onClose) => {
+    $toast.removeClass('toast-opened');
+    setTimeout(() => {
+      $toast.remove();
+      onClose ? onClose() : null;
+    }, 200);
   }
 
   showToast = () => {
+    const timeout = 2;
     const element = this._createToast('check', 'Action successfuly completed');
-    this._insertToastIntoDom(element);
-    this._handleClosing(element);
-    this._showToast(element);
-    this._setupDestruction(element, 5);
-    this._removeRedundant(3);
+    const currentToast = $('.toast');
+    const _open = () => {
+      this._insertToastIntoDom(element);
+      this._showToast(element);
+    };
+    if (currentToast.length > 0) {
+      this._closeToast(currentToast, _open);
+    } else {
+      _open();
+    }
+    this._setTimer(element, timeout);
   }
 
   showFly = () => {
