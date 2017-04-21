@@ -36,6 +36,13 @@
     -webkit-text-stroke: 2px @default;
     color: @inverted;
     opacity: .7;
+    &:hover:not(:active),
+    &:focus:not(:active) {
+      opacity: .85;
+    }
+    &:active {
+      opacity: 1;
+    }
   }
 
   &.toast-default {

@@ -2,7 +2,6 @@
   "name": "cfn-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://prilutskiy.github.io/cfn-ui",
   "devDependencies": {
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
