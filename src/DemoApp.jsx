@@ -24,9 +24,9 @@ class DemoApp extends Component {
   }
 
   askForPermission = (onGrant, onDeny) => {
-    this.alertref.open({
+    Alert.show({
       title: 'Are you sure this is legal?',
-      description: 'Because using refs is not recommended.',
+      text: 'Because using refs is not recommended.',
       actions: [
         {
           text: 'No',
@@ -106,7 +106,6 @@ class DemoApp extends Component {
           <App.Content>
             {/*<Toast show={this.state.toast} onClose={() => this.setState({toast: false})} />*/}
             <Fly show={this.state.fly} onClose={() => this.setState({ fly: false })} secondary />
-            <Alert ref={r => this.alertref = r} />
             <Modal show={this.state.modal} success wide onCancel={() => this.setState({ modal: false })}>
               <Modal.Header>Modal Title</Modal.Header>
               <Modal.Content>

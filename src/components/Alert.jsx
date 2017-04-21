@@ -1,64 +1,65 @@
-import React, { Component } from 'react';
-import Overlay from './Overlay';
+/* global $ */
+class Alert {
+  static _defaultConfig = {
+    onClose: null,
+    title: '',
+    text: '',
+    onClose: null,
+    actions: []
+  }
 
-class Alert extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false,
-      title: '',
-      description: '',
-      actions: []
+  static _createClickHander($alert, action) {
+    return () => {
+      const $overlay = $alert.parents('.overlay');
+      $alert.removeClass('alert-opened');
+      $overlay.removeClass('overlay-opened');
+      setTimeout(() => {
+        $overlay.remove();
+        action ? action() : null;
+      }, 150)
     }
   }
 
-  open = (config) => {
-    this.setState({ ...config, show: true });
-  }
-
-  close = () => {
-    this.setState({show: false});
-  }
-
-  _cancel = () => {
-    if (this.props.onCancel) {
-      this.props.onCancel();
-    }
-  }
-
-  _runAction = (action) => {
-    this.close();
-    action.onClick();
-  };
-
-  _stopPropagation = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-  }
-
-  render() {
-    return (
-      <div>
-        <Overlay page default show={this.state.show} />
-        <div className={'alert ' + (this.state.show?'':'hidden')} onWheel={ this._stopPropagation }>
-          <i className="fa fa-times" role="close" onClick={() => this._cancel()} />
-          <div className="alert-content">
-            <div className="alert-content-title">{this.state.title}</div>
-            <div className="alert-content-description">{this.state.description}</div>
-          </div>
-          <div className="alert-actions">
-            {
-              this.state.actions.map((a, i) => {
-                return (
-                  <div key={i} onClick={() => this._runAction(a)} className={`alert-action alert-action-${a.style||'default'}`}>{a.text}</div>
-                );
-              })
-            }
-          </div>
+  static _createAlert(config) {
+    const alertTemplate = `
+      <div class="alert alert-default">
+        <i class="fa fa-times" role="close" />
+        <div class="alert-content">
+          <div class="alert-content-title">${config.title}</div>
+          <div class="alert-content-description">${config.text}</div>
+        </div>
+        <div class="alert-actions">
         </div>
       </div>
-    );
+    `;
+    const $alert = $(alertTemplate);
+    $alert.find('[role="close"]').on('click', this._createClickHander($alert, config.onClose));
+
+    const actions = (config.actions || []).map(a => {
+      const template = `<div class="alert-action alert-action-${a.style || 'default'}">${a.text}</div>`;
+      const $action = $(template).on('click', this._createClickHander($alert, a.onClick));
+      return $action;
+    });
+
+    const $actionsBlock = $alert.find('.alert-actions');
+    actions.forEach(a => {
+      $actionsBlock.append(a);
+    });
+    return $alert;
+  }
+
+  static _insertIntoDOM($alert) {
+    $('.app > .app-content').append($alert);
+    $alert.wrap('<div class="overlay overlay-page overlay-default"></div>');
+    setTimeout(() => {
+      $alert.parents('.overlay').addClass('overlay-opened');
+      $alert.addClass('alert-opened');
+    }, 50);
+  }
+
+  static show(config) {
+    const alert = this._createAlert(config);
+    this._insertIntoDOM(alert);
   }
 }
 

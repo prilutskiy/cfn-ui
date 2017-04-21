@@ -11,6 +11,11 @@
   border-radius: @border-radius;
   box-shadow: @shadow;
   user-select: none;
+  opacity: 0;
+  transition: opacity .15s ease;
+  &.alert-opened {
+    opacity: 1;
+  }
   [role='close'] {
     top: -20px;
     right: -16px;
