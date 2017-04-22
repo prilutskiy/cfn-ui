@@ -11,6 +11,7 @@ import Alert from './components/Alert';
 import Modal from './components/Modal';
 import Fly from './components/Fly';
 import Toast from './components/Toast';
+import Page from './components/Page';
 /* global $ */
 
 class DemoApp extends Component {
@@ -44,9 +45,10 @@ class DemoApp extends Component {
 
   showToast = () => {
     Toast.show({
-      icon: 'exclamation-circle',
-      text: 'Access denied',
-      style: 'danger',
+      icon: 'check',
+      text: 'Operation successful',
+      style: 'success',
+      timeout: 3
     });
   }
 
@@ -104,26 +106,32 @@ class DemoApp extends Component {
             </Navbar>
           </App.Navigation>
           <App.Content>
-            {/*<Toast show={this.state.toast} onClose={() => this.setState({toast: false})} />*/}
-            <Fly show={this.state.fly} onClose={() => this.setState({ fly: false })} secondary />
-            <Modal show={this.state.modal} success wide onCancel={() => this.setState({ modal: false })}>
-              <Modal.Header>Modal Title</Modal.Header>
-              <Modal.Content>
-                <Button primary onClick={() => this.showAlert()}>Alert from modal</Button>
-                <div style={{ height: '200px' }}></div>
-              </Modal.Content>
-            </Modal>
-            <Header>
-              <Header.PrimaryTitle>Components Demo</Header.PrimaryTitle>
-              <Header.SubTitle>Use links below to navigate between components</Header.SubTitle>
-              <Header.Actions>
-                <Button primary onClick={() => this.showToast()}><i className="fa fa-info"></i> Toast</Button>
-                <Button primary onClick={() => this.showFly()}><i className="fa fa-plane"></i> Fly</Button>
-                <Button primary onClick={() => this.showModal()}><i className="fa fa-window-maximize"></i> Modal</Button>
-                <Button primary onClick={() => this.showAlert()}><i className="fa fa-bell-o"></i> Alert</Button>
-              </Header.Actions>
-            </Header>
-            {this.props.children}
+            <Page>
+              <Fly show={this.state.fly} onClose={() => this.setState({ fly: false })} secondary>
+                <Fly.Header>Sky is the limit</Fly.Header>
+                <Fly.Content>
+                  Lorem ipsum
+              </Fly.Content>
+              </Fly>
+              <Modal show={this.state.modal} success wide onCancel={() => this.setState({ modal: false })}>
+                <Modal.Header>Modal Title</Modal.Header>
+                <Modal.Content>
+                  <Button primary onClick={() => this.showAlert()}>Alert from modal</Button>
+                  <div style={{ height: '200px' }}></div>
+                </Modal.Content>
+              </Modal>
+              <Header>
+                <Header.PrimaryTitle>Components Demo</Header.PrimaryTitle>
+                <Header.SubTitle>Use links below to navigate between components</Header.SubTitle>
+                <Header.Actions>
+                  <Button primary onClick={() => this.showToast()}><i className="fa fa-info"></i> Toast</Button>
+                  <Button primary onClick={() => this.showFly()}><i className="fa fa-plane"></i> Fly</Button>
+                  <Button primary onClick={() => this.showModal()}><i className="fa fa-window-maximize"></i> Modal</Button>
+                  <Button primary onClick={() => this.showAlert()}><i className="fa fa-bell-o"></i> Alert</Button>
+                </Header.Actions>
+              </Header>
+              {this.props.children}
+            </Page>
           </App.Content>
           <App.Footer>
             <Footer>

@@ -1,9 +1,18 @@
 /* global $ */
 import React, { Component } from 'react';
 
+class Header extends Component {
+  render = () => null;
+}
+
+class Content extends Component {
+  render = () => null;
+}
+
 class Fly extends Component {
   constructor(props) {
-    super(props); this.getSpecificChildren = this.getSpecificChildren.bind(this); this.styleMap = {
+    super(props); 
+    this.styleMap = {
       default: 'fly-default',
       inverted: 'fly-inverted',
       primary: 'fly-primary',
@@ -15,6 +24,7 @@ class Fly extends Component {
     }
     this.getClassSet = this.getClassSet.bind(this);
     this.getStyleClass = this.getStyleClass.bind(this);
+    this.getSpecificChildren = this.getSpecificChildren.bind(this); 
     this._onOutsideClick = this._onOutsideClick.bind(this);
   }
 
@@ -72,13 +82,30 @@ class Fly extends Component {
     return (
       <div className={this.getClassSet()} onWheel={this._stopPropagation} ref={r => this.flyRef = r}>
         <div className="fly-header">
-          Application Settings
+          {this.getSpecificChildren(Header)}
           <i className="fa fa-times" role="close" onClick={() => this._close()} />
         </div>
-        <div className="fly-content"></div>
+        <div className="fly-content">
+          {this.getSpecificChildren(Content)}
+        </div>
       </div>
     );
   }
 }
 
+
+Fly.Header = Header;
+Fly.Content = Content;
+
+const supportedChildrenTypes = [
+  Header,
+  Content,
+]
+
+Fly.propTypes = {
+  children: (props, propName, componentName) =>
+    React.Children
+      .toArray(props[propName])
+      .find(child => supportedChildrenTypes.indexOf(child.type) === -1) && new Error(`${componentName} only accepts following children: <${componentName}.Header />, <${componentName}.Content />`),
+}
 export default Fly;

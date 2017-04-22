@@ -1,5 +1,6 @@
 .btn {
   display: inline-block;
+  box-sizing: border-box;
   position: relative;
   margin: 5px;
   border-radius: @border-radius;
@@ -7,9 +8,25 @@
   user-select: none;
   white-space: nowrap;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  .fa {
-    padding-right: 3px;
+  &, &:hover, &:active, &:focus {
+    text-decoration: none;
   }
+  .btn-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        padding: 0 5px;
+      }
+    .fa {
+      padding-right: 3px;
+      font-size: 1.2em;
+    }
+  }  
 
 
   .btn-type-mixin(@fontcolor, @fillcolor, @bordercolor) {
@@ -119,5 +136,5 @@
       margin: 0 auto;
     }
   }
-  &.btn-block { display: block; }
+  &.btn-block { display: block; width: 100%; text-align: center; }
 }

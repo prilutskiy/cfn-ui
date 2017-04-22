@@ -22,7 +22,7 @@ class Toast {
     } else {
       _open();
     }
-    if (_config > 0) {
+    if (_config.timeout > 0) {
       this._setTimer(element, _config.timeout);
     }
   }

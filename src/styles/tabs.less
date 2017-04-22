@@ -1,0 +1,110 @@
+.tab-container {
+  display: flex;
+  background: @inverted;
+  box-shadow: @shadow;
+  border-radius: @border-radius;
+  .tab-header {
+    display: flex;
+    flex-grow: 0;
+    justify-content: flex-start;
+    user-select: none;
+    color: lighten(@default, 20%);
+    .tab-header-tab {
+      padding: 10px 30px;
+      cursor: pointer;
+      transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+      &:focus,
+      &:hover,
+      &:active,
+      &.active {
+        background: darken(@inverted, 1%);
+      }
+    }
+  }
+  .tab-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    .tab-content-tab {
+      padding: 10px 20px;
+    }
+  }
+
+  &.tab-container-default {
+    .tab-container-style-mixin(@default);
+  }
+  &.tab-container-primary {
+    .tab-container-style-mixin(@primary);
+  }
+  &.tab-container-success {
+    .tab-container-style-mixin(@success);
+  }
+  &.tab-container-info {
+    .tab-container-style-mixin(@info);
+  }
+  &.tab-container-warning {
+    .tab-container-style-mixin(@warning);
+  }
+  &.tab-container-danger {
+    .tab-container-style-mixin(@danger);
+  }
+
+  .tab-container-style-mixin(@color) {
+    &.tab-container-top {
+      flex-direction: column;
+      .tab-header {
+          flex-direction: row;
+          border-bottom: 1px solid @border-color;
+          .tab-header-tab {
+            border-bottom: 2px solid transparent;
+            &.active, &:active {
+              border-bottom-color: @color;
+              color: @color;
+            }
+        }
+      }
+    }
+    &.tab-container-right {
+      flex-direction: row-reverse;
+      .tab-header {
+          flex-direction: column;
+          border-left: 1px solid @border-color;
+          .tab-header-tab {
+            border-left: 2px solid transparent;
+            &.active, &:active {
+              border-left-color: @color;
+              color: @color;
+            }
+        }
+      }
+    }
+    &.tab-container-bottom {
+      flex-direction: column-reverse;
+      .tab-header {
+          flex-direction: row;
+          border-top: 1px solid @border-color;
+          .tab-header-tab {
+            border-top: 2px solid transparent;
+            &.active, &:active {
+              border-top-color: @color;
+              color: @color;
+            }
+        }
+      }
+    }
+    &.tab-container-left {
+      flex-direction: row;
+      .tab-header {
+          flex-direction: column;
+          border-right: 1px solid @border-color;
+          .tab-header-tab {
+            border-right: 2px solid transparent;
+            &.active, &:active {
+              border-right-color: @color;
+              color: @color;
+            }
+        }
+      }
+    }
+  }
+}
