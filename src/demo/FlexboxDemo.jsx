@@ -7,10 +7,8 @@ class FlexboxDemo extends Component {
 
   render() {
     return (
-      <div>
-        <iframe src="http://roylee0704.github.io/react-flexbox-grid/" width="100%">
-        </iframe>
-      </div>
+      <iframe src="http://roylee0704.github.io/react-flexbox-grid/" width="100%">
+      </iframe>
     );
   }
 }
