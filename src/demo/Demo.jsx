@@ -84,7 +84,7 @@ class Demo extends Component {
               <Button default block href="/tabs"><img src="https://cdn1.iconfinder.com/data/icons/jetflat-multimedia-vol-2/90/004_109_browser_tabs_window_app_application-128.png" /> Tabs</Button>
             </Col>
             <Col sm={3}>
-
+              <Button default block href="/stories"><img src="https://cdn1.iconfinder.com/data/icons/business-onomicons/512/business-05-128.png" /> Stories</Button>
             </Col>
           </Row>
         </Grid>

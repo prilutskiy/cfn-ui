@@ -1,0 +1,39 @@
+.stories {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  justify-content: flex-start;
+  align-items: center;
+  background: @inverted;
+  box-shadow: @shadow;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  &, & * {
+    &, &:hover, &:focus, &:active {
+      text-decoration: none;
+    }
+  } 
+  .story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 96px;
+    margin: 10px;
+    .story-image {
+      img {
+        border-radius: 50%;
+        height: 64px;
+        width: 64px;
+        box-shadow: @shadow;
+      }
+    }
+    .story-title {
+      width: inherit;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}

@@ -22,6 +22,7 @@ import MessageDemo from './demo/MessageDemo';
 import ProgressDemo from './demo/ProgressDemo';
 import FlexboxDemo from './demo/FlexboxDemo';
 import TabsDemo from './demo/TabsDemo';
+import StoriesDemo from './demo/StoriesDemo';
 
 
 const Router = process.env.NODE_ENV === 'development' ? BrowserRouter : HashRouter;
@@ -47,6 +48,7 @@ ReactDOM.render(
       <Route path="/progressBars" component={ProgressDemo} />
       <Route path="/flexbox" component={FlexboxDemo} />
       <Route path="/tabs" component={TabsDemo} />
+      <Route path="/stories" component={StoriesDemo} />
     </DemoApp>
   </Router>
   ,
