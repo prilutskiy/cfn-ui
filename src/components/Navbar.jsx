@@ -45,7 +45,7 @@ class Navbar extends Component {
             {
               React.Children.map(this.getSpecificChildren(NavbarLeftMenu), c => {
                 return (
-                  <span className="navbar-menu-item text-inverted">
+                  <span className="navbar-menu-item text-inverted" onClick={c.props.onClick}>
                     <span>{c.props.children}</span>
                   </span>
                 )

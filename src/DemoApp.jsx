@@ -12,6 +12,7 @@ import Modal from './components/Modal';
 import Fly from './components/Fly';
 import Toast from './components/Toast';
 import Page from './components/Page';
+import SideMenu from './components/SideMenu';
 /* global $ */
 
 class DemoApp extends Component {
@@ -21,6 +22,7 @@ class DemoApp extends Component {
       modal: false,
       fly: false,
       toast: false,
+      menu: false
     };
   }
 
@@ -91,7 +93,7 @@ class DemoApp extends Component {
               </Navbar.BrandTitle>
               <Navbar.LeftMenu>
                 <Navbar.MenuItem>First</Navbar.MenuItem>
-                <Navbar.MenuItem>Second</Navbar.MenuItem>
+                <Navbar.MenuItem onClick={() => this.setState({menu: !this.state.menu})}>Side Menu</Navbar.MenuItem>
               </Navbar.LeftMenu>
               <Navbar.RightMenu>
                 <Navbar.MenuItem>
@@ -140,6 +142,7 @@ class DemoApp extends Component {
                 <Col>Settings</Col>
               </Row>
             </Footer>
+            <SideMenu show={this.state.menu} onClose={() => this.setState({menu: false})} />
           </App.Footer>
         </App>
       </div>
