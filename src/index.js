@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import 'font-awesome/css/font-awesome.min.css';
 import './styles/styles.less';
-import { BrowserRouter as Router, Route } from 'react-router-dom'; 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Route, BrowserRouter, HashRouter } from 'react-router-dom'; 
 import DemoApp from './DemoApp';
 import Demo from './demo/Demo';
 import ButtonDemo from './demo/ButtonDemo';
@@ -21,6 +21,9 @@ import BoxDemo from './demo/BoxDemo';
 import MessageDemo from './demo/MessageDemo';
 import ProgressDemo from './demo/ProgressDemo';
 import FlexboxDemo from './demo/FlexboxDemo';
+
+
+const Router = process.env.NODE_ENV === 'development' ? BrowserRouter : HashRouter;
 
 ReactDOM.render(
   <Router>
