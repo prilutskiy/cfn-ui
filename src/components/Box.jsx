@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class BoxHeader extends Component {
-  render () { return null; }
+  render() { return null; }
 }
 class BoxContent extends Component {
-  render () { return null; }
+  render() { return null; }
 }
 class BoxFooter extends Component {
-  render () { return null; }
+  render() { return null; }
 }
 
 class Box extends Component {
@@ -51,6 +51,7 @@ class Box extends Component {
   }
 
   render() {
+    const footer = this.getSpecificChildren(BoxFooter);
     return (
       <div className={this.getClassSet()}>
         <div className="box-header h5">
@@ -59,9 +60,15 @@ class Box extends Component {
         <div className="box-content">
           {this.getSpecificChildren(BoxContent)}
         </div>
-        <div className="box-footer text-default text-muted">
-          {this.getSpecificChildren(BoxFooter)}
-        </div>
+        {
+          footer
+            ?
+            <div className="box-footer text-default text-muted">
+              {footer}
+            </div>
+            :
+            null
+        }
       </div>
     );
   }
@@ -78,7 +85,7 @@ const supportedChildTypes = [
 ];
 
 Box.propTypes = {
-    children: (props, propName, componentName) =>
+  children: (props, propName, componentName) =>
     React.Children
       .toArray(props[propName])
       .find(child => supportedChildTypes.indexOf(child.type) === -1) && new Error(`${componentName} only accepts "<Box.Header />", "<Box.Content />", "<Box.Footer />", elements`),

@@ -1,222 +1,76 @@
+@placeholder-color: fade(darken(#fff, 30%), 50%);
+
 .input {
-  position: relative;
   display: inline-block;
+  position: relative;
   margin: 5px;
-  margin-right: -12px;
-  min-width: 317px;
-  box-shadow: @shadow;
-  input {
-    display: block;
-    outline: none;
-    padding: 4px 10px;
-    background: transparent;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    border-radius: @border-radius;
-  }
-  input::placeholder {
-    color: darken(@inverted, 15%);
-  }
-  &.disabled {
-    &>* {
-      cursor: not-allowed;
-    }
-    input {
-      background: #f9f9f9 !important;
-      border-color: @border-color !important;
-    }
-  }
-  .input-icon-left,
-  .input-icon-right {
+  .input-icon-right,
+  .input-icon-left {
     position: absolute;
-    color: darken(@inverted, 30%);
+    top: 50%;
+    transform: translateY(-50%);
+    color: @placeholder-color;
+    font-size: 1.1rem;
   }
-  &.input-default {
-    .input-icon-left {
-      color: darken(@app-bg-color, 15%);
+  .input-icon-right {
+    right: 6px;
+  }
+  .input-icon-left {
+    left: 8px;
+  }
+  input {
+    border-radius: @border-radius;
+    width: 100%;
+    background: transparent;
+    min-width: 300px;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid @border-color;
+    outline: none;
+    transition: border-color .15s ease;
+    &::placeholder {
+      color: @placeholder-color;
     }
+  }
+  &.input-icon {
     input {
-      border-color: darken(@border-color, 5%);
+      padding-left: 26px;
     }
+  }
+  &.input-password {
+    input {
+      padding-right: 28px;
+    }
+  }
+
+  &.input-default {
+    .input-style-mixin(@default);
+    
   }
   &.input-primary {
-    .input-icon-left {
-      color: @primary;
-    }
-    input {
-      border-color: @primary;
-    }
+    .input-style-mixin(@primary);
   }
   &.input-success {
-    .input-icon-left {
-      color: @success;
-    }
-    input {
-      border-color: @success;
-    }
+    .input-style-mixin(@success);
   }
   &.input-info {
-    .input-icon-left {
-      color: @info;
-    }
-    input {
-      border-color: @info;
-    }
+    .input-style-mixin(@info);
   }
   &.input-warning {
-    .input-icon-left {
-      color: @warning;
-    }
-    input {
-      border-color: @warning;
-    }
+    .input-style-mixin(@warning);
   }
   &.input-danger {
-    .input-icon-left {
-      color: @danger;
-    }
-    input {
-      border-color: @danger;
-    }
+    .input-style-mixin(@danger);
   }
-  &.input-xs {
-    &>input {
-      height: 15px;
-      font-size: 0.8em;
-      line-height: 0.8em;
-      width: ~'calc(100% - 31px)';
+
+
+
+  .input-style-mixin(@color) {    
+    & input:focus,
+    &.input-highlighted input{
+      border-color: @color;
     }
-    &.input-icon {
-      input {
-        padding-left: 15px;
-      }
-      .input-icon-left {
-        font-size: 0.8em;
-        top: 6px;
-        left: 4px;
-      }
-    }
-    &.input-password {
-      input {
-        padding-right: 15px;
-      }
-      .input-icon-right {
-        font-size: 0.8em;
-        top: 6px;
-        right: 4px;
-      }
-    }
-  }
-  &.input-sm {
-    &>input {
-      height: 20px;
-      font-size: 0.9em;
-      line-height: 0.9em;
-      width: ~'calc(100% - 43px)';
-    }
-    &.input-icon {
-      input {
-        padding-left: 20px;
-      }
-      .input-icon-left {
-        font-size: 0.9em;
-        top: 8px;
-        left: 6px;
-      }
-    }
-    &.input-password {
-      input {
-        padding-right: 20px;
-      }
-      .input-icon-right {
-        font-size: 0.9em;
-        top: 8px;
-        right: 6px;
-      }
-    }
-  }
-  &.input-md {
-    &>input {
-      height: 25px;
-      font-size: 1em;
-      line-height: 1em;
-      width: ~'calc(100% - 55px)';
-    }
-    &.input-icon {
-      input {
-        padding-left: 26px;
-      }
-      .input-icon-left {
-        font-size: 1em;
-        top: 10px;
-        left: 8px;
-      }
-    }
-    &.input-password {
-      input {
-        padding-right: 26px;
-      }
-      .input-icon-right {
-        font-size: 1em;
-        top: 10px;
-        right: 8px;
-      }
-    }
-  }
-  &.input-lg {
-    &>input {
-      height: 30px;
-      font-size: 1.1em;
-      line-height: 1.1em;
-      width: ~'calc(100% - 63px)';
-    }
-    &.input-icon {
-      input {
-        padding-left: 30px;
-      }
-      .input-icon-left {
-        font-size: 1.1em;
-        top: 12px;
-        left: 10px;
-      }
-    }
-    &.input-password {
-      input {
-        padding-right: 30px;
-      }
-      .input-icon-right {
-        font-size: 1.1em;
-        top: 12px;
-        right: 10px;
-      }
-    }
-  }
-  &.input-xl {
-    &>input {
-      height: 37px;
-      font-size: 1.2em;
-      line-height: 1.2em;
-      width: ~'calc(100% - 75px)';
-    }
-    &.input-icon {
-      input {
-        padding-left: 35px;
-      }
-      .input-icon-left {
-        font-size: 1.2em;
-        top: 14px;
-        left: 12px;
-      }
-    }
-    &.input-password {
-      input {
-        padding-right: 35px;
-      }
-      .input-icon-right {
-        font-size: 1.2em;
-        top: 14px;
-        right: 12px;
-      }
-    }
-  }
+  }  
 }
