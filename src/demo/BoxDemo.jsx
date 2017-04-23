@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Box from './../components/Box';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Overlay from './../components/Overlay';
-import Tooltip from './../components/Tooltip';
+import Button from './../components/Button';
 
 class BoxDemo extends Component {
   constructor(props) {
@@ -32,6 +32,7 @@ class BoxDemo extends Component {
                 <p className="text-default">
                   <strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. <span className="text-muted">Proin molestie, ipsum id sagittis mattis, diam justo interdum dolor, a placerat est nulla eget eros. Fusce ac interdum nulla.</span> <a>Duis fermentum lectus posuere posuere feugiat</a>. Praesent eu fringilla dui. Curabitur faucibus tincidunt turpis, sed semper tellus dictum eu. Suspendisse ornare faucibus lorem, eget sagittis massa venenatis maximus.
             </p>
+              <Button clean primary>Action</Button>
               </Box.Content>
               <Box.Footer>
                 Some box footer goes here

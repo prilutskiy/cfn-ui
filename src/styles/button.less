@@ -3,6 +3,14 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: baseline;
+  .button-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
   position: relative;
   padding: 10px 20px;
   margin: 5px;
@@ -10,9 +18,24 @@
   border-radius: @border-radius;
   user-select: none;
   transition: all .1s ease;
-  align-items: baseline;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: box-shadow .1s ease;
+
+
+  &.button-loading > * {
+    &:not(.fa-spinner) { 
+      visibility: hidden;
+    }
+    &.fa-spinner {
+      padding: 0;
+      position: absolute;
+      top: ~'calc(50% - .5em)';
+      left: ~'calc(50% - .5em)';
+    }
+  }
+  &.button-disabled {
+    cursor: not-allowed;
+  }
   &.button-block {
     width: 100%;
   }
@@ -26,11 +49,11 @@
     align-self: center;
   }
 
-  &:hover:not(:active),
-  &:focus:not(:active) {
+  &:hover:not(:active):not(.button-disabled),
+  &:focus:not(:active):not(.button-disabled) {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0), 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  &:active {
+  &:active:not(.button-disabled) {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0, 0, 0, 0.2);
   }
 
@@ -41,6 +64,9 @@
 
   &.button-default {
     .button-style-mixin(@inverted, @default);
+  }
+  &.button-inverted {
+    .button-style-mixin(@default, @inverted);
   }
   &.button-primary {
     .button-style-mixin(@primary, @inverted);
@@ -59,7 +85,25 @@
   }
 
   .button-style-mixin(@fillcolor, @fontcolor) {
-    background: @fillcolor;
-    color: @fontcolor;
+    &.button-link {
+      background: transparent;
+      color: @fillcolor;
+      &.button-disabled { color: tint(@fillcolor); }
+      &, &:hover, &:active, &:focus, &.button-disabled {
+        box-shadow: none;
+      }
+    }
+    &:not(.button-link) {
+      &.button-clean {
+        background: @fontcolor;
+        color: @fillcolor;
+        &.button-disabled { color: tint(@fillcolor); background: tint(@fontcolor); }
+      }
+      &:not(.button-clean) {
+        background: @fillcolor;
+        color: @fontcolor;
+        &.button-disabled { color: tint(@fontcolor); background: tint(@fillcolor); }
+      }
+    }
   }
 }

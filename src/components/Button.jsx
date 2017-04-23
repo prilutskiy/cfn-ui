@@ -26,15 +26,23 @@ class Button extends Component {
 
   getClassSet() {
     const button = 'button';
+    const link = this.props.link ? 'button-link' : '';
     const block = this.props.block ? 'button-block' :'';
     const style = this.getStyleClass();
     const existing = this.props.className;
+    const clean = this.props.clean ? 'button-clean' : '';
+    const disabled = this.props.disabled || this.props.loading ? 'button-disabled' : '';
+    const loading = this.props.loading ? 'button-loading' : '';
 
     return [
+      existing,
       button,
       style,
       block,
-      existing,
+      link,
+      clean,
+      disabled,
+      loading,
     ]
       .filter(_ => _)
       .join(' ');
@@ -45,7 +53,7 @@ class Button extends Component {
   }
 
   render() {
-    const content = this.props.children;
+    const content = <div className="button-content">{this.props.children}</div>
     const props = {
       className: this.getClassSet(),
       onClick: (e) => this.onClick(e)
@@ -54,10 +62,12 @@ class Button extends Component {
       ?
       <Link to={this.props.href} {...props} ref={r => this.btn = r}>
         {content}
+        { this.props.loading ? <i className="fa fa-spinner fa-spin fa-fw"></i> : null }
       </Link>
       :
       <a {...props} ref={r => this.btn = r}>
         {content}
+        { this.props.loading ? <i className="fa fa-spinner fa-spin fa-fw"></i> : null }
       </a>
       ;
   }
