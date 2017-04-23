@@ -1,141 +1,65 @@
-.btn {
-  display: inline-block;
-  box-sizing: border-box;
-  box-shadow: @shadow;
+.button {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   position: relative;
+  padding: 10px 20px;
   margin: 5px;
+  box-sizing: border-box;
   border-radius: @border-radius;
-  cursor: pointer;
   user-select: none;
-  white-space: nowrap;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: all .1s ease;
+  align-items: baseline;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: box-shadow .1s ease;
+  &.button-block {
+    width: 100%;
+  }
+  .fa {
+    padding: 0 5px;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    align-self: center;
+  }
+
+  &:hover:not(:active),
+  &:focus:not(:active) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0), 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0), 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
   &, &:hover, &:active, &:focus {
     text-decoration: none;
-  }
-  .btn-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    img {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        padding: 0 5px;
-      }
-    .fa {
-      padding-right: 3px;
-      font-size: 1.2em;
-    }
-  }  
-
-
-  .btn-type-mixin(@fontcolor, @fillcolor, @bordercolor) {
-    &:not(.disabled) {
-      border: 1px solid darken(@bordercolor, 2%);
-    }
-    &.disabled {
-      border: 1px solid tint(darken(@bordercolor, 2%));
-    }
-    &:not(.btn-outline) {
-      &:not(.disabled) {
-        color: @fontcolor;
-        background: @fillcolor;
-      }
-      &.disabled {
-        color: tint(@fontcolor);
-        background: tint(@fillcolor)
-      }
-    }
-    &.btn-outline {
-      &:not(.disabled) {
-        color: @fillcolor;
-        background: transparent;
-      }
-      &.disabled {
-        color: tint(@fillcolor);
-        background: transparent;
-      }
-    }
-    &:hover:not(:active):not(.disabled), 
-    &:focus:not(:active):not(.disabled) {
-      &.btn-outline{
-        background: fade(@fillcolor, 3%);
-        border-color: darken(@bordercolor, 7%);
-      }
-      &:not(.btn-outline) {
-        background: darken(@fillcolor, 2%);
-      }
-    }
-    &:active:not(.disabled) {
-      &.btn-outline {
-        background: @fillcolor;
-        color: @fontcolor;
-      }
-      &:not(.btn-outline) {
-        border-color: darken(@bordercolor, 9%);
-        background: darken(@fillcolor, 7%);
-      }
-    }
+    outline: none;
   }
 
-  &.btn-default {
-    .btn-type-mixin(@primary, rgba(255,255,255,0.1), @primary)
+  &.button-default {
+    .button-style-mixin(@inverted, @default);
   }
-  &.btn-link {
-    .btn-type-mixin(@primary, rgba(0,0,0,0), rgba(0,0,0,0));
-    background-color: transparent !important;
-    border-color: transparent !important;
+  &.button-primary {
+    .button-style-mixin(@primary, @inverted);
   }
-  &.btn-primary {
-    .btn-type-mixin(@inverted, @primary, @primary)
+  &.button-success {
+    .button-style-mixin(@success, @inverted);
   }
-  &.btn-success {
-    .btn-type-mixin(@inverted, @success, @success)
+  &.button-info {
+    .button-style-mixin(@info, @inverted);
   }
-  &.btn-info {
-    .btn-type-mixin(@inverted, @info, @info)
+  &.button-warning {
+    .button-style-mixin(@warning, @inverted);
   }
-  &.btn-warning {
-    .btn-type-mixin(@inverted, @warning, @warning)
-  }
-  &.btn-danger {
-    .btn-type-mixin(@inverted, @danger, @danger)
+  &.button-danger {
+    .button-style-mixin(@danger, @inverted);
   }
 
-  &.btn-xs {
-    padding: 4px 12px;
-    font-size: 0.8em;
-    &.btn-loading .fa { font-size: 1.7em; }
+  .button-style-mixin(@fillcolor, @fontcolor) {
+    background: @fillcolor;
+    color: @fontcolor;
   }
-  &.btn-sm {
-    padding: 6px 16px;
-    font-size: 0.9em;
-    &.btn-loading .fa { font-size: 1.6em; }
-  }
-  &.btn-md {
-    padding: 8px 20px;
-    font-size: 1em;
-    &.btn-loading .fa { font-size: 1.5em; }
-  }
-  &.btn-lg {
-    padding: 10px 24px;
-    font-size: 1.1em;
-    &.btn-loading .fa { font-size: 1.4em; }
-  }
-  &.btn-xl {
-    padding: 12px 28px;
-    font-size: 1.2em;
-    &.btn-loading .fa { font-size: 1.3em; }
-  }
-
-  &.btn-loading {
-    .fa {
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-    }
-  }
-  &.btn-block { display: block; width: 100%; text-align: center; }
 }

@@ -10,7 +10,7 @@ class ButtonDemo extends Component {
     return (
       <div>
         <div>
-          <Button default>Button</Button>
+          <Button default href="/">Button</Button>
           <Button primary>Button</Button>
           <Button success>Button</Button>
           <Button info>Button</Button>
