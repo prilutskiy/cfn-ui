@@ -75,7 +75,7 @@ class DemoApp extends Component {
   render() {
     const profileBtn = (
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' }}>
-        <img className="img-circle img-sm" src="/bg.png" />
+        <img className="img-circle img-sm" src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" />
         <span style={{ padding: '0 15px' }}>John Doe</span>
         <i className="fa fa-caret-down" />
       </div>
@@ -84,7 +84,7 @@ class DemoApp extends Component {
       <div>
         <App fixednav fixedfooter boxed>
           <App.Navigation>
-            <Navbar logo="/bg.png" title="Haze UI">
+            <Navbar logo="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" title="Haze UI">
               <Navbar.LeftMenu>
                 <Navbar.MenuItem>First</Navbar.MenuItem>
                 <Navbar.MenuItem onClick={() => this.setState({menu: !this.state.menu})}>Side Menu</Navbar.MenuItem>
@@ -126,10 +126,6 @@ class DemoApp extends Component {
                   <Button primary onClick={() => this.showAlert()}><i className="fa fa-bell-o"></i> Alert</Button>
                 </Header.Actions>
               </Header>
-              <div>
-                <i className="fa fa-angle-left"></i>
-                Back to: <span>Root page</span>
-              </div>
               {this.props.children}
             </Page>
           </App.Content>

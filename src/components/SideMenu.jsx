@@ -25,7 +25,7 @@ class SideMenu extends Component {
         <div className={this.getClassSet()}>
           <div className="sidemenu-header">
             <div className="sidemenu-brand">
-              <img className="sidemenu-brand-logo" src="/bg.png" alt="" />
+              <img className="sidemenu-brand-logo" src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" alt="" />
               <h4 className="sidemenu-brand-title">
                 Brand
             </h4>

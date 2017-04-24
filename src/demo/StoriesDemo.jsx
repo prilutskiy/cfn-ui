@@ -10,27 +10,27 @@ class StoriesDemo extends Component {
     return (
       <div>
         <Stories>
-          <Stories.Story image="/bg.png" href="/" title="One"/>
-          <Stories.Story image="/bg.png" href="/" title="Two"/>
-          <Stories.Story image="/bg.png" href="/" title="Very long story Title will hide behind ellipses"/>
-          <Stories.Story image="/bg.png" href="/" title="One"/>
-          <Stories.Story image="/bg.png" href="/" title="Two"/>
-          <Stories.Story image="/bg.png" href="/" title="Three"/>
-          <Stories.Story image="/bg.png" href="/" title="One"/>
-          <Stories.Story image="/bg.png" href="/" title="Two"/>
-          <Stories.Story image="/bg.png" href="/" title="Three"/>
-          <Stories.Story image="/bg.png" href="/" title="One"/>
-          <Stories.Story image="/bg.png" href="/" title="Two"/>
-          <Stories.Story image="/bg.png" href="/" title="Three"/>
-          <Stories.Story image="/bg.png" href="/" title="One"/>
-          <Stories.Story image="/bg.png" href="/" title="Two"/>
-          <Stories.Story image="/bg.png" href="/" title="Three"/>
-          <Stories.Story image="/bg.png" href="/" title="One"/>
-          <Stories.Story image="/bg.png" href="/" title="Two"/>
-          <Stories.Story image="/bg.png" href="/" title="Three"/>
-          <Stories.Story image="/bg.png" href="/" title="One"/>
-          <Stories.Story image="/bg.png" href="/" title="Two"/>
-          <Stories.Story image="/bg.png" href="/" title="Three"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="One"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Two"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Very long story Title will hide behind ellipses"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="One"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Two"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Three"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="One"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Two"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Three"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="One"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Two"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Three"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="One"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Two"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Three"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="One"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Two"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Three"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="One"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Two"/>
+          <Stories.Story image="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" href="/" title="Three"/>
         </Stories>
       </div>
     );
