@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-class NavbarBrandLogo extends Component {
-  render() { return null; }
-}
-class NavbarBrandTitle extends Component {
-  render() { return null; }
-}
 class NavbarLeftMenu extends Component {
   render() { return null; }
 }
@@ -32,21 +27,39 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        <div className="navbar-brand">
-          <span className="navbar-brand-logo">
-            {this.getSpecificChildren(NavbarBrandLogo)}
-          </span>
-          <h4 className="navbar-brand-title text-inverted">
-            {this.getSpecificChildren(NavbarBrandTitle)}
-          </h4>
-        </div>
+        {
+          !(this.props.logo || this.props.title)
+            ?
+            null
+            :
+            <Link to="/" className="navbar-brand">
+              <span className="navbar-brand-logo">
+                {
+                  this.props.logo
+                    ?
+                    <img src={this.props.logo} alt="Logo" />
+                    :
+                    null
+                }
+              </span>
+              {
+                this.props.title
+                  ?
+                  <h4 className="navbar-brand-title">
+                    {this.props.title}
+                  </h4>
+                  :
+                  null
+              }
+            </Link>
+        }
         <div className="navbar-content">
           <div className="navbar-menu">
             {
               React.Children.map(this.getSpecificChildren(NavbarLeftMenu), c => {
                 return (
-                  <span className="navbar-menu-item text-inverted" onClick={c.props.onClick}>
-                    <span>{c.props.children}</span>
+                  <span className="navbar-menu-item" onClick={c.props.onClick}>
+                    {typeof c.props.children === 'string' ? <span>{c.props.children}</span> : c.props.children}
                   </span>
                 )
               })
@@ -57,7 +70,7 @@ class Navbar extends Component {
               React.Children.map(this.getSpecificChildren(NavbarRightMenu), c => {
                 return (
                   <span className="navbar-menu-item">
-                    <span>{c.props.children}</span>
+                    {typeof c.props.children === 'string' ? <span>{c.props.children}</span> : c.props.children}
                   </span>
                 )
               })
@@ -69,15 +82,11 @@ class Navbar extends Component {
   }
 }
 
-Navbar.BrandLogo = NavbarBrandLogo;
-Navbar.BrandTitle = NavbarBrandTitle;
 Navbar.LeftMenu = NavbarLeftMenu;
 Navbar.RightMenu = NavbarRightMenu;
 Navbar.MenuItem = NavbarMenuItem;
 
 const supportedChildTypes = [
-  NavbarBrandLogo,
-  NavbarBrandTitle,
   NavbarLeftMenu,
   NavbarRightMenu,
   NavbarMenuItem
@@ -94,7 +103,7 @@ Navbar.propTypes = {
   children: (props, propName, componentName) =>
     React.Children
       .toArray(props[propName])
-      .find(child => supportedChildTypes.indexOf(child.type) === -1) && new Error(`${componentName} only accepts "<Navbar.BrandLogo />", "<Navbar.BrandTitle />", "<Navbar.BrandMenu />", "<Navbar.BrandMenuItem />" elements`),
+      .find(child => supportedChildTypes.indexOf(child.type) === -1) && new Error(`${componentName} only accepts "<${componentName}.LeftMenu />", "<${componentName}.RightMenu />" elements`),
 }
 
 export default Navbar;

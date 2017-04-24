@@ -74,7 +74,7 @@ class DemoApp extends Component {
 
   render() {
     const profileBtn = (
-      <div className="text-inverted" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' }}>
         <img className="img-circle img-sm" src="/bg.png" />
         <span style={{ padding: '0 15px' }}>John Doe</span>
         <i className="fa fa-caret-down" />
@@ -84,13 +84,7 @@ class DemoApp extends Component {
       <div>
         <App fixednav fixedfooter boxed>
           <App.Navigation>
-            <Navbar>
-              <Navbar.BrandLogo>
-                <img src="/bg.png" />
-              </Navbar.BrandLogo>
-              <Navbar.BrandTitle>
-                <Link to="/">Brand</Link>
-              </Navbar.BrandTitle>
+            <Navbar logo="/bg.png" title="Haze UI">
               <Navbar.LeftMenu>
                 <Navbar.MenuItem>First</Navbar.MenuItem>
                 <Navbar.MenuItem onClick={() => this.setState({menu: !this.state.menu})}>Side Menu</Navbar.MenuItem>
