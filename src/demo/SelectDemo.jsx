@@ -34,7 +34,7 @@ class SelectDemo extends Component {
             </div>
             <div>
               <Select success highlighted options={this.options} value={this.state.values} onChange={v => this.setState({values: v})} placeholder="Text here" />
-              <Select danger highlighted placeholder="Password" type="password" icon="key" />
+              <Select danger disabled highlighted placeholder="Password" type="password" icon="key" />
             </div>
           </Box.Content>
         </Box>

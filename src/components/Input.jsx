@@ -7,16 +7,8 @@ class Input extends Component {
     this.state = {
       isPasswordVisible: false,
     };
-    this.sizeMap = {
-      xs: 'input-xs',
-      sm: 'input-sm',
-      md: 'input-md',
-      lg: 'input-lg',
-      xl: 'input-xl'
-    };
     this.styleMap = {
       default: 'input-default',
-      disabled: 'disabled',
       primary: 'input-primary',
       success: 'input-success',
       info: 'input-info',
@@ -24,13 +16,9 @@ class Input extends Component {
       danger: 'input-danger',
     }
     this.getClassSet = this.getClassSet.bind(this);
-    this.getSizeClass = this.getSizeClass.bind(this);
     this.getStyleClass = this.getStyleClass.bind(this);
   }
 
-  getSizeClass() {
-    return Object.keys(this.sizeMap).filter(s => this.props[s]).map(n => this.sizeMap[n])[0] || this.sizeMap.md;
-  }
   getStyleClass() {
     return Object.keys(this.styleMap).filter(s => this.props[s]).map(n => this.styleMap[n])[0] || this.styleMap.default;
   }
@@ -38,14 +26,14 @@ class Input extends Component {
   getClassSet() {
     const existing = this.props.className;
     const input = 'input';
-    const size = this.getSizeClass();
     const style = this.getStyleClass();
+    const disabled = this.props.disabled ? 'input-disabled' : '';
 
     return [
       existing,
       input,
-      size,
       style,
+      disabled,
       this.props.type === 'password' ? 'input-password' : '',
       this.props.icon ? 'input-icon' : '',
       this.props.highlighted ? 'input-highlighted' : ''

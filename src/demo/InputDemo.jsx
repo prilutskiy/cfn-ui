@@ -26,7 +26,7 @@ class InputDemo extends Component {
             </div>
             <div>
               <Input success placeholder="Text here"/>
-              <Input danger highlighted placeholder="Password" type="password" icon="key"/>
+              <Input danger disabled highlighted placeholder="Password" type="password" icon="key"/>
             </div>
           </Box.Content>
         </Box>

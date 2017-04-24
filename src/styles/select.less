@@ -1,4 +1,4 @@
-@placeholder-color: fade(darken(#fff, 30%), 50%);
+@placeholder-color: fade(darken(@inverted, 30%), 50%);
 
 .react-select-wrapper {
   text-align: left;
@@ -7,6 +7,12 @@
   min-width: 300px;
   margin: 5px;
   vertical-align: top;
+  &.select-disabled {
+    &, & * {
+      cursor: not-allowed;
+    }
+    background: darken(@inverted, 2%);
+  }
   .Select {
     outline: none;
     display: inline-flex;
@@ -88,6 +94,16 @@
     &:not(.select-highlighted) .Select.is-focused .Select-control,
     &.select-highlighted .Select-control {
       border-color: @color;
+    }
+    &.select-disabled {
+      .Select--multi .Select-value {
+        border-color: tint(@color);
+        color: tint(@color);
+      }
+      &:not(.select-highlighted) .Select.is-focused .Select-control,
+      &.select-highlighted .Select-control {
+        border-color: tint(@color);
+      }
     }
   }
 }

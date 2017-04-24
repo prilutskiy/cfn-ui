@@ -26,11 +26,13 @@ class Select extends Component {
     const select = 'react-select-wrapper';
     const style = this.getStyleClass();
     const highlighted = this.props.highlighted ? 'select-highlighted' : '';
+    const disabled = this.props.disabled ? 'select-disabled' : '';
 
     return [
       existing,
       select,
       style,
+      disabled,
       highlighted,
       this.props.icon ? 'select-icon' : ''
     ]

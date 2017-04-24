@@ -1,9 +1,15 @@
-@placeholder-color: fade(darken(#fff, 30%), 50%);
+@placeholder-color: fade(darken(@inverted, 30%), 50%);
 
 .input {
   display: inline-block;
   position: relative;
   margin: 5px;
+  &.input-disabled {
+    &, & * {
+      cursor: not-allowed;
+    }
+    background: darken(@inverted, 2%);
+  }
   .input-icon-right,
   .input-icon-left {
     position: absolute;
@@ -67,10 +73,14 @@
 
 
 
-  .input-style-mixin(@color) {    
+  .input-style-mixin(@color) {
     & input:focus,
     &.input-highlighted input{
       border-color: @color;
+    }
+    &.input-disabled input:focus,
+    &.input-disabled.input-highlighted input{
+      border-color: tint(@color);
     }
   }  
 }
