@@ -2,22 +2,23 @@
   position: fixed;
   z-index: 100;
   top: 0;
+  left: 0;
   width: @sidemenu-width;
   max-width: 100vw;
   height: 100vh;
   background-color: @sidemenu-bg-color;
   color: @sidemenu-text-color;
-  transition: left .4s ease;
+  transition: all .3s ease-out;
   box-shadow: @shadow;
 
   display: flex;
   flex-direction: column;
 
   &:not(.sidemenu-opened) {
-    left: calc(-1 * @sidemenu-width);
+    transform: translateX(-100%);
   }
   &.sidemenu-opened {
-    left: 0;
+    transform: translateX(0);
   }
 
   .sidemenu-header {
