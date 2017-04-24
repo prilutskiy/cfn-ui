@@ -27,6 +27,7 @@ class Select extends Component {
     const style = this.getStyleClass();
     const highlighted = this.props.highlighted ? 'select-highlighted' : '';
     const disabled = this.props.disabled ? 'select-disabled' : '';
+    const icon = this.props.icon ? 'select-icon' : '';
 
     return [
       existing,
@@ -34,7 +35,7 @@ class Select extends Component {
       style,
       disabled,
       highlighted,
-      this.props.icon ? 'select-icon' : ''
+      icon,
     ]
       .filter(_ => _)
       .join(' ');

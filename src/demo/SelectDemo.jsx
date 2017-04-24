@@ -23,12 +23,12 @@ class SelectDemo extends Component {
           <Box.Header>Selects</Box.Header>
           <Box.Content>
             <div>
-              <Select options={this.options} value={this.state.values} onChange={v => this.setState({values: v})} placeholder="Username" type="text" icon="user" />
+              <Select multi options={this.options} value={this.state.values} onChange={v => this.setState({values: v})} placeholder="Username" type="text" icon="user" />
               <Button primary>Action</Button>
               <Button primary clean>Reset</Button>
             </div>
             <div>
-              <Select primary multi options={this.options} value={this.state.values} onChange={v => this.setState({values: v})}  placeholder="Password" />
+              <Select primary icon="lightbulb-o" options={this.options} value={this.state.values} onChange={v => this.setState({values: v})}  placeholder="Password" />
               <Button primary>Action</Button>
               <Button primary clean>Reset</Button>
             </div>
