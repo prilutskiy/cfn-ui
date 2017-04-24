@@ -86,7 +86,6 @@ class DemoApp extends Component {
           <App.Navigation>
             <Navbar logo="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" title="Haze UI">
               <Navbar.LeftMenu>
-                <Navbar.MenuItem>First</Navbar.MenuItem>
                 <Navbar.MenuItem onClick={() => this.setState({menu: !this.state.menu})}>Side Menu</Navbar.MenuItem>
               </Navbar.LeftMenu>
               <Navbar.RightMenu>
