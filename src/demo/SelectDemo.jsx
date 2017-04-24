@@ -23,17 +23,17 @@ class SelectDemo extends Component {
           <Box.Header>Selects</Box.Header>
           <Box.Content>
             <div>
-              <Select placeholder="Username" type="text" icon="user" />
+              <Select options={this.options} value={this.state.values} onChange={v => this.setState({values: v})} placeholder="Username" type="text" icon="user" />
               <Button primary>Action</Button>
               <Button primary clean>Reset</Button>
             </div>
             <div>
-              <Select placeholder="Password" type="password" icon="key" />
+              <Select primary multi options={this.options} value={this.state.values} onChange={v => this.setState({values: v})}  placeholder="Password" />
               <Button primary>Action</Button>
               <Button primary clean>Reset</Button>
             </div>
             <div>
-              <Select success placeholder="Text here" />
+              <Select success highlighted options={this.options} value={this.state.values} onChange={v => this.setState({values: v})} placeholder="Text here" />
               <Select danger highlighted placeholder="Password" type="password" icon="key" />
             </div>
           </Box.Content>

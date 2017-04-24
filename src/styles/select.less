@@ -1,13 +1,93 @@
+@placeholder-color: fade(darken(#fff, 30%), 50%);
+
 .react-select-wrapper {
-  top: 21px;
-  font-size: 1rem;
-  line-height: 2.5rem;
   text-align: left;
   display: inline-block;
-  min-width: 300px;
   position: relative;
+  min-width: 300px;
   margin: 5px;
+  vertical-align: top;
+  .Select {
+    outline: none;
+    display: inline-flex;
+    width: 100%;
+  }
+  .Select-placeholder {
+    color: @placeholder-color;
+  }
+  .Select-control {
+    border: 1px solid @border-color;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  .is-focused:not(.is-open) > .Select-control {
+    box-shadow: none;
+    border: 1px solid @border-color;
+  }
+  .Select-placeholder,
+  .Select-input,
+  .Select-control,
+  .is-open > .Select-control {
+    font-size: 1rem;
+    background: transparent;
+  }
+  .Select-control {
+    height: 41px;
+    border-radius: @border-radius;
+  }
+  .Select-placeholder, 
+  .Select--single > .Select-control .Select-value {
+    top: 2px;
+  }
+  .Select--multi .Select-value {
+    border-radius: @border-radius;
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 1rem;
+    .Select-value-icon {
+      border: none;
+      &:hover {
+        background: transparent;
+        color: inherit;
+      }
+    }
+    .Select-value-label {
+      padding-left: 0;
+    }
+  }
   .fa {
     display: none;
+  }
+
+  &.select-default {
+    .select-style-mixin(@default);
+  }
+  &.select-primary {
+    .select-style-mixin(@primary);
+  }
+  &.select-success {
+    .select-style-mixin(@success);
+  }
+  &.select-info {
+    .select-style-mixin(@info);
+  }
+  &.select-warning {
+    .select-style-mixin(@warning);
+  }
+  &.select-danger {
+    .select-style-mixin(@danger);
+  }
+
+  .select-style-mixin(@color) {
+    .Select--multi .Select-value {
+      border-color: @color;
+      color: @color;
+    }
+    &:not(.select-highlighted) .Select.is-focused .Select-control,
+    &.select-highlighted .Select-control {
+      border-color: @color;
+    }
   }
 }

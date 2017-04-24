@@ -5,16 +5,8 @@ import 'react-select/dist/react-select.css';
 class Select extends Component {
   constructor(props) {
     super(props);
-    this.sizeMap = {
-      xs: 'select-xs',
-      sm: 'select-sm',
-      md: 'select-md',
-      lg: 'select-lg',
-      xl: 'select-xl'
-    };
     this.styleMap = {
       default: 'select-default',
-      disabled: 'disabled',
       primary: 'select-primary',
       success: 'select-success',
       info: 'select-info',
@@ -22,13 +14,9 @@ class Select extends Component {
       danger: 'select-danger',
     }
     this.getClassSet = this.getClassSet.bind(this);
-    this.getSizeClass = this.getSizeClass.bind(this);
     this.getStyleClass = this.getStyleClass.bind(this);
   }
 
-  getSizeClass() {
-    return Object.keys(this.sizeMap).filter(s => this.props[s]).map(n => this.sizeMap[n])[0] || this.sizeMap.md;
-  }
   getStyleClass() {
     return Object.keys(this.styleMap).filter(s => this.props[s]).map(n => this.styleMap[n])[0] || this.styleMap.default;
   }
@@ -36,14 +24,14 @@ class Select extends Component {
   getClassSet() {
     const existing = this.props.className;
     const select = 'react-select-wrapper';
-    const size = this.getSizeClass();
     const style = this.getStyleClass();
+    const highlighted = this.props.highlighted ? 'select-highlighted' : '';
 
     return [
       existing,
       select,
-      size,
       style,
+      highlighted,
       this.props.icon ? 'select-icon' : ''
     ]
       .filter(_ => _)
