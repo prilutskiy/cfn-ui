@@ -87,6 +87,13 @@ class Demo extends Component {
               <Button default block href="/stories"><img src="https://cdn1.iconfinder.com/data/icons/business-onomicons/512/business-05-128.png" /> Stories</Button>
             </Col>
           </Row>
+          <Row>
+            <Col sm={3}>
+              <Button default block href="/charts"><img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/trends-128.png" /> Charts</Button>
+            </Col>
+            <Col sm={3}>
+            </Col>
+          </Row>
         </Grid>
       </div>
     );

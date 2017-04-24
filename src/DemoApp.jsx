@@ -126,6 +126,10 @@ class DemoApp extends Component {
                   <Button primary onClick={() => this.showAlert()}><i className="fa fa-bell-o"></i> Alert</Button>
                 </Header.Actions>
               </Header>
+              <div>
+                <i className="fa fa-angle-left"></i>
+                Back to: <span>Root page</span>
+              </div>
               {this.props.children}
             </Page>
           </App.Content>
