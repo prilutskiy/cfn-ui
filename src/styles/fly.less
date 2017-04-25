@@ -10,7 +10,7 @@
   top: 100vh;
   left: 50%;
   transform: translateX(-50%);
-  transition: top .4s ease;
+  transition: transform .4s ease;
   [role='close'] {
     cursor: pointer;
     position: absolute;
@@ -30,7 +30,7 @@
     }
   }
   &.fly-opened {
-    top: 0;
+    transform: translateX(-50%) translateY(-100%);
   }
   .fly-header {
     position: relative;
