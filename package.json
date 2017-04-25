@@ -1,7 +1,7 @@
 {
-  "name": "cfn-ui",
+  "name": "haze-ui",
+  "main": "src/haze-ui.js",
   "version": "0.1.0",
-  "private": true,
   "homepage": "http://prilutskiy.github.io/haze-ui",
   "devDependencies": {
     "autoprefixer": "6.7.2",
