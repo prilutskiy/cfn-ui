@@ -1,0 +1,15 @@
+{
+  "dist/haze-ui.css": "dist/haze-ui.css",
+  "dist/haze-ui.css.map": "dist/haze-ui.css.map",
+  "dist/haze-ui.js": "dist/haze-ui.js",
+  "dist/haze-ui.js.map": "dist/haze-ui.js.map",
+  "fontawesome-webfont.eot?v=4.7.0": "fontawesome-webfont.eot",
+  "fontawesome-webfont.svg?v=4.7.0": "fontawesome-webfont.svg",
+  "fontawesome-webfont.ttf?v=4.7.0": "fontawesome-webfont.ttf",
+  "fontawesome-webfont.woff2?v=4.7.0": "fontawesome-webfont.woff2",
+  "fontawesome-webfont.woff?v=4.7.0": "fontawesome-webfont.woff",
+  "static/js/bundle.css": "static/js/bundle.css",
+  "static/js/bundle.css.map": "static/js/bundle.css.map",
+  "static/js/bundle.js": "static/js/bundle.js",
+  "static/js/bundle.js.map": "static/js/bundle.js.map"
+}
