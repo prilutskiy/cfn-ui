@@ -1,11 +1,15 @@
 {
-  "main.css": "static/css/main.1b301346.css",
-  "main.css.map": "static/css/main.1b301346.css.map",
-  "main.js": "static/js/main.6f5627c6.js",
-  "main.js.map": "static/js/main.6f5627c6.js.map",
-  "static/media/fontawesome-webfont.eot?v=4.7.0": "static/media/fontawesome-webfont.674f50d2.eot",
-  "static/media/fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
-  "static/media/fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
-  "static/media/fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
-  "static/media/fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff"
+  "dist/haze-ui.css": "dist/haze-ui.css",
+  "dist/haze-ui.css.map": "dist/haze-ui.css.map",
+  "dist/haze-ui.js": "dist/haze-ui.js",
+  "dist/haze-ui.js.map": "dist/haze-ui.js.map",
+  "fontawesome-webfont.eot?v=4.7.0": "fontawesome-webfont.eot",
+  "fontawesome-webfont.svg?v=4.7.0": "fontawesome-webfont.svg",
+  "fontawesome-webfont.ttf?v=4.7.0": "fontawesome-webfont.ttf",
+  "fontawesome-webfont.woff2?v=4.7.0": "fontawesome-webfont.woff2",
+  "fontawesome-webfont.woff?v=4.7.0": "fontawesome-webfont.woff",
+  "static/js/bundle.css": "static/js/bundle.css",
+  "static/js/bundle.css.map": "static/js/bundle.css.map",
+  "static/js/bundle.js": "static/js/bundle.js",
+  "static/js/bundle.js.map": "static/js/bundle.js.map"
 }
