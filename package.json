@@ -1,7 +1,7 @@
 {
   "name": "haze-ui",
   "main": "build/dist/haze-ui.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://prilutskiy.github.io/haze-ui",
   "devDependencies": {
     "autoprefixer": "6.7.2",
