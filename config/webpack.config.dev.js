@@ -64,7 +64,8 @@ module.exports = {
     // containing code from all our entry points, and the Webpack runtime.
     filename: '[name].js',
     // This is the URL that app is served from. We use "/" in development.
-    publicPath: publicPath
+    publicPath: publicPath,
+    libraryTarget: "umd"
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.

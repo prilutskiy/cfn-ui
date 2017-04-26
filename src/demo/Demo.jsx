@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Row, Col, Button } from './../library';
 
-console.log(Grid, Row, Col);
-
 class Demo extends Component {
   constructor(props) {
     super(props);

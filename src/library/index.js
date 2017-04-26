@@ -31,7 +31,8 @@ import './styles/styles.less';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-export {
+export
+{
   Alert,
   App,
   Badge,
