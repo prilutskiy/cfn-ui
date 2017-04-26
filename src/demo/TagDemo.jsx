@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Tag from './../components/Tag';
+import { Tag } from './../library';
 
 class TagDemo extends Component {
   constructor(props) {

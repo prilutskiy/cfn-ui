@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import TabContainer from './../components/TabContainer';
-import Page from './../components/Page';
+import { TabContainer, Page } from './../library';
 
 class TabsDemo extends Component {
   constructor(props) {

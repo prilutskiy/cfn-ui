@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import Button from './../components/Button';
+import { Grid, Row, Col, Button } from './../library';
 
 console.log(Grid, Row, Col);
 

@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import Input from './../components/Input';
-import Button from './../components/Button';
-import Select from './../components/Select';
-import Checkbox from './../components/Checkbox';
-import RadioGroup from './../components/RadioGroup';
-import DropdownMenu from './../components/DropdownMenu';
-import ToggleSwitch from './../components/ToggleSwitch';
-
-import FormGroup from './../components/FormGroup';
+import { Input, Button, Select, Checkbox, RadioGroup, DropdownMenu, ToggleSwitch, FormGroup } from './../library';
 
 class FormDemo extends Component {
   constructor(props) {

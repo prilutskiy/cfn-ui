@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Message from './../components/Message';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col, Message } from './../library';
 
 class MessageDemo extends Component {
   constructor(props) {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Button from './../components/Button';
-import DropdownMenu from './../components/DropdownMenu';
+import { Button, DropdownMenu } from './../library';
 
 class DropdownDemo extends Component {
   constructor(props) {

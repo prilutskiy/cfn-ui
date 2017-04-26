@@ -27,6 +27,9 @@ import Tag from './components/Tag';
 import Toast from './components/Toast';
 import ToggleSwitch from './components/ToggleSwitch';
 import Tooltip from './components/Tooltip';
+import './styles/styles.less';
+
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 export {
   Alert,
@@ -57,5 +60,9 @@ export {
   Tag,
   Toast,
   ToggleSwitch,
-  Tooltip
+  Tooltip,
+
+  Grid,
+  Row,
+  Col
 };

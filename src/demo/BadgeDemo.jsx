@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Badge from './../components/Badge';
+import { Badge } from './../library';
 
 class BadgeDemo extends Component {
   constructor(props) {

@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import App from './components/App';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import DropdownMenu from './components/DropdownMenu';
+
+import { Grid, Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu } from './library';
 import { Link } from 'react-router-dom';
-import Header from './components/Header';
-import Button from './components/Button';
-import Alert from './components/Alert';
-import Modal from './components/Modal';
-import Fly from './components/Fly';
-import Toast from './components/Toast';
-import Page from './components/Page';
-import SideMenu from './components/SideMenu';
+
 /* global $ */
 
 class DemoApp extends Component {
@@ -28,8 +18,8 @@ class DemoApp extends Component {
 
   askForPermission = (onGrant, onDeny) => {
     Alert.show({
-      title: 'Are you sure this is legal?',
-      text: 'Because using refs is not recommended.',
+      title: 'Are you sure ?',
+      text: 'This action cannot be undone',
       actions: [
         {
           text: 'No',

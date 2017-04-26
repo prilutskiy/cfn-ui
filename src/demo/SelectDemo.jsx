@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Select from './../components/Select';
-import Button from './../components/Button';
-import Box from './../components/Box';
+import { Box, Button, Select } from './../library';
 
 class SelectDemo extends Component {
   constructor(props) {

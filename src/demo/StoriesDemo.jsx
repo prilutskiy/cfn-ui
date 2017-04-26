@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Stories from './../components/Stories';
+import { Stories } from './../library';
 
 class StoriesDemo extends Component {
   constructor(props) {

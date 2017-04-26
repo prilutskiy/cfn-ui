@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Box from './../components/Box';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import Overlay from './../components/Overlay';
-import Button from './../components/Button';
+import { Grid, Row, Col, Box, Overlay, Button } from './../library';
 
 class BoxDemo extends Component {
   constructor(props) {

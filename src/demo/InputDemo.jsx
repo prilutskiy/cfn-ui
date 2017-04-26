@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Input from './../components/Input';
-import Button from './../components/Button';
-import Box from './../components/Box';
+import { Input, Button, Box } from './../library';
 
 class InputDemo extends Component {
   constructor(props) {

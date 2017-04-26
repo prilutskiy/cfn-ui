@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Tooltip from './../components/Tooltip';
-import Button from './../components/Button';
+import { Tooltip, Button } from './../library';
 
 class TooltipDemo extends Component {
   constructor(props) {

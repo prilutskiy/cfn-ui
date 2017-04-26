@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from './../components/Button';
+import { Button } from './../library';
 
 class ButtonDemo extends Component {
   constructor(props) {
