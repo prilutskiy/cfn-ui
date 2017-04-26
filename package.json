@@ -1,6 +1,6 @@
 {
   "name": "haze-ui",
-  "main": "src/haze-ui.js",
+  "main": "build/dist/haze-ui.js",
   "version": "0.1.0",
   "homepage": "http://prilutskiy.github.io/haze-ui",
   "devDependencies": {
