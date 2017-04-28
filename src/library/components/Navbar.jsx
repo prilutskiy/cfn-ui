@@ -23,8 +23,8 @@ class Navbar extends Component {
     return ((requiredChild || {}).props || {}).children;
   }
   _onLinkClick = (e) => {
-    e.preventDefault();
-    this.props.onClick(e);
+    e.preventDefault();    
+    (this.props.onClick||(()=>{}))(e);
   }
 
   render() {

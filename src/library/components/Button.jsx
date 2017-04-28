@@ -20,7 +20,7 @@ class Button extends Component {
 
   _onLinkClick = (e) => {
     e.preventDefault();
-    this.props.onClick(e);
+    (this.props.onClick||(()=>{}))(e);
   }
 
   getStyleClass() {

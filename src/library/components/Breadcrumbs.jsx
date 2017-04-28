@@ -7,8 +7,8 @@ class Crumb extends Component {
 
 class Breadcrumbs extends Component {
   _onLinkClick = (e) => {
-    e.preventDefault();
-    this.props.onClick(e);
+    e.preventDefault();    
+    (this.props.onClick||(()=>{}))(e);
   }
   render() {
     return (

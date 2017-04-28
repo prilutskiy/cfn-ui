@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 import { Grid, Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu } from './library';
 
@@ -73,7 +74,7 @@ class DemoApp extends Component {
       <div>
         <App fixednav fixedfooter boxed>
           <App.Navigation>
-            <Navbar logo="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" title="Haze UI">
+            <Navbar logo="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" title="Haze UI" onClick={ () => browserHistory.push('/') }>
               <Navbar.LeftMenu>
                 <Navbar.MenuItem onClick={() => this.setState({menu: !this.state.menu})}>Side Menu</Navbar.MenuItem>
               </Navbar.LeftMenu>
