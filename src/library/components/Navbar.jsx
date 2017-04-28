@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 class NavbarLeftMenu extends Component {
   render() { return null; }
@@ -23,6 +22,10 @@ class Navbar extends Component {
     const requiredChild = childrenArray.find(c => c.type === childType);
     return ((requiredChild || {}).props || {}).children;
   }
+  _onLinkClick = (e) => {
+    e.preventDefault();
+    this.props.onClick(e);
+  }
 
   render() {
     return (
@@ -32,7 +35,7 @@ class Navbar extends Component {
             ?
             null
             :
-            <Link to="/" className="navbar-brand">
+            <a className="navbar-brand" href="/" onClick={ this._onLinkClick }>
               <span className="navbar-brand-logo">
                 {
                   this.props.logo
@@ -51,7 +54,7 @@ class Navbar extends Component {
                   :
                   null
               }
-            </Link>
+            </a>
         }
         <div className="navbar-content">
           <div className="navbar-menu">
@@ -100,6 +103,9 @@ NavbarLeftMenu.propTypes = NavbarRightMenu.propTypes = {
 }
 
 Navbar.propTypes = {
+  logo: PropTypes.string,
+  title: PropTypes.string,
+  onClick: PropTypes.func,
   children: (props, propName, componentName) =>
     React.Children
       .toArray(props[propName])

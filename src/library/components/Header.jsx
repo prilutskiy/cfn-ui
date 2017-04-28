@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import Breadcrumbs from './Breadcrumbs';
-import Button from './Button';
 
 class PrimaryTitle extends Component{
   render() { return null; }
@@ -31,11 +28,6 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <Breadcrumbs>
-          <Breadcrumbs.Crumb path="/" title="Home" />
-          <Breadcrumbs.Crumb path="/" title="Page" />
-          <Breadcrumbs.Crumb path="/" title="Details" />
-        </Breadcrumbs>
         <div className="header-content">
           <div className="header-title">
             <h2 className="header-title-primary">{this.getSpecificChildren(PrimaryTitle)}</h2>

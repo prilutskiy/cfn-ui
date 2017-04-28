@@ -1,8 +1,6 @@
 /* global $ */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 class Button extends Component {
   constructor(props) {
@@ -18,6 +16,11 @@ class Button extends Component {
     }
     this.getClassSet = this.getClassSet.bind(this);
     this.getStyleClass = this.getStyleClass.bind(this);
+  }
+
+  _onLinkClick = (e) => {
+    e.preventDefault();
+    this.props.onClick(e);
   }
 
   getStyleClass() {
@@ -58,18 +61,12 @@ class Button extends Component {
       className: this.getClassSet(),
       onClick: (e) => this.onClick(e)
     }
-    return this.props.href
-      ?
-      <Link to={this.props.href} {...props} ref={r => this.btn = r}>
-        {content}
-        { this.props.loading ? <i className="fa fa-spinner fa-spin fa-fw"></i> : null }
-      </Link>
-      :
-      <a {...props} ref={r => this.btn = r}>
+    return (
+      <a {...props} ref={r => this.btn = r} href={this.props.href} onClick={ this._onLinkClick }>
         {content}
         { this.props.loading ? <i className="fa fa-spinner fa-spin fa-fw"></i> : null }
       </a>
-      ;
+    );
   }
 }
 

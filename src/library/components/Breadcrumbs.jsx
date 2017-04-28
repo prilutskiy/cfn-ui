@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Crumb extends Component {
@@ -7,6 +6,10 @@ class Crumb extends Component {
 }
 
 class Breadcrumbs extends Component {
+  _onLinkClick = (e) => {
+    e.preventDefault();
+    this.props.onClick(e);
+  }
   render() {
     return (
       <div className="breadcrumbs">
@@ -17,7 +20,7 @@ class Breadcrumbs extends Component {
               ?
               <span key={i} to={c.props.path} className="breadcrumbs-crumb">{c.props.title}</span>
               :
-              <Link key={i} to={c.props.path} className="breadcrumbs-crumb">{c.props.title}</Link>
+              <a key={i} href={c.props.path} onClick={ this._onLinkClick } className="breadcrumbs-crumb">{c.props.title}</a>
             );
           })
         }
@@ -28,7 +31,8 @@ class Breadcrumbs extends Component {
 
 Crumb.propTypes = {
   path: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 }
 
 Breadcrumbs.propTypes = {
