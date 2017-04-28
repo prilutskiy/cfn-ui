@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import { Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu } from './library';
 
 /* global $ */
@@ -73,7 +73,7 @@ class DemoApp extends Component {
       <div>
         <App fixednav fixedfooter boxed>
           <App.Navigation>
-            <Navbar logo="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" title="Haze UI" onClick={ () => browserHistory.push('/') }>
+            <Navbar logo="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" title="Haze UI" onClick={ () => hashHistory.push('/') }>
               <Navbar.LeftMenu>
                 <Navbar.MenuItem onClick={() => this.setState({menu: !this.state.menu})}>Side Menu</Navbar.MenuItem>
               </Navbar.LeftMenu>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, browserHistory, hashHistory, IndexRoute, Router } from 'react-router';
+import { Route, hashHistory, IndexRoute, Router } from 'react-router';
 import Demo from './demo/Demo';
 import ButtonDemo from './demo/ButtonDemo';
 import InputDemo from './demo/InputDemo';
@@ -22,10 +22,8 @@ import StoriesDemo from './demo/StoriesDemo';
 import ChartsDemo from './demo/ChartsDemo';
 import DemoApp from './DemoApp';
 
-
-const routerHistory = process.env.NODE_ENV === 'development' ? browserHistory : hashHistory;
 const routing = (
-  <Router history={routerHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={DemoApp}>
       <IndexRoute component={Demo} />
       <Route path="/buttons" component={ButtonDemo} />
