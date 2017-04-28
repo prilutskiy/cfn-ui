@@ -11,7 +11,7 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity .1s ease, visibility .1s ease;
-  [role='close'] {
+  .modal-dismiss {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -90,7 +90,7 @@
     .modal-header {
       color: @fontcolor;
       background: @fillcolor;
-      [role="close"] {
+      .modal-dismiss {
         -webkit-text-stroke-color: @fillcolor;
       }
     }

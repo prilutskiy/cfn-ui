@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Checkbox } from './../library';
 
 class CheckboxDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

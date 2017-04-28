@@ -11,7 +11,7 @@
   left: 50%;
   transform: translateX(-50%);
   transition: transform .4s ease;
-  [role='close'] {
+  .fly-dismiss {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -72,7 +72,7 @@
     .fly-header {
       background: @fillcolor;
       color: @fontcolor;
-      [role='close'] {
+      .fly-dismiss {
         -webkit-text-stroke-color: @fillcolor;
       }
     }

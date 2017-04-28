@@ -3,10 +3,6 @@ import { Stories } from './../library';
 import { browserHistory } from 'react-router';
 
 class StoriesDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

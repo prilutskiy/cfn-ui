@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Overlay from './Overlay';
 
 class ModalHeader extends Component {
   render = () => null;
@@ -75,7 +73,7 @@ class Modal extends Component {
         <div className={this.getClassSet()} onWheel={this._stopPropagation}>
           <div className="modal-header">
             {header}
-            <i className="fa fa-times" role="close" onClick={() => this._cancel()} />
+            <i className="fa fa-times modal-dismiss" onClick={() => this._cancel()} />
           </div>
           <div className="modal-content">
             {content}

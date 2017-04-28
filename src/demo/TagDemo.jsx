@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Tag } from './../library';
 
 class TagDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

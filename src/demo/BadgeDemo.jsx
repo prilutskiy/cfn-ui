@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Badge } from './../library';
 
 class BadgeDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

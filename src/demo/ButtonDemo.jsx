@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Button } from './../library';
 
 class ButtonDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

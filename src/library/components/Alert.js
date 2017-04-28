@@ -4,7 +4,6 @@ class Alert {
     onClose: null,
     title: '',
     text: '',
-    onClose: null,
     actions: []
   }
 
@@ -15,7 +14,7 @@ class Alert {
       $overlay.removeClass('overlay-opened');
       setTimeout(() => {
         $overlay.remove();
-        action ? action() : null;
+        (action||(()=>{}))();
       }, 150)
     }
   }

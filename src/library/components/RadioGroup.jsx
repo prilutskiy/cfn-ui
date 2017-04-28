@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 class RadioGroup extends Component {
   constructor(props) {
@@ -82,10 +81,6 @@ class RadioGroup extends Component {
 }
 
 class RadioGroupItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <span>{this.props.children}</span>

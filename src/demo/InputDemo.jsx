@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Input, Button, Box } from './../library';
 
 class InputDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

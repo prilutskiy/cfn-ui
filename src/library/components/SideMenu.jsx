@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class SideMenu extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getClassSet = () => {
     const sidemenu = 'sidemenu';
     const opened = this.props.show ? 'sidemenu-opened' : '';

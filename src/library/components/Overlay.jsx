@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class Overlay extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   _stopPropagation = (e) => {
     e.preventDefault();

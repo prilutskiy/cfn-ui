@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class DropdownMenu extends Component {
   constructor(props) {
     super(props);
-    this.dropdown;
+    this.dropdown = null;
     this.close = this.close.bind(this);
     this.open = this.open.bind(this);
     this.onClick = this.onClick.bind(this);
@@ -56,10 +56,6 @@ class DropdownMenu extends Component {
 }
 
 class Item extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let { className, children, divider, ...otherProps } = this.props;
     return (

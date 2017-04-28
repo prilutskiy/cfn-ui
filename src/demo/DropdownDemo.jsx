@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Button, DropdownMenu } from './../library';
 
 class DropdownDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const dropdownTrigger = <Button>Dropdown <i className="fa fa-caret-down"></i></Button>;
     return (

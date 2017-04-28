@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-
-import { Grid, Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu } from './library';
+import { Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu } from './library';
 
 /* global $ */
 
@@ -65,7 +64,7 @@ class DemoApp extends Component {
   render() {
     const profileBtn = (
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' }}>
-        <img className="img-circle img-sm" src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" />
+        <img className="img-circle img-sm" alt="" src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" />
         <span style={{ padding: '0 15px' }}>John Doe</span>
         <i className="fa fa-caret-down" />
       </div>

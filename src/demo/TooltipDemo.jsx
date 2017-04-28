@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Tooltip, Button } from './../library';
 
 class TooltipDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const btn = <Button primary>Button</Button>
     return (

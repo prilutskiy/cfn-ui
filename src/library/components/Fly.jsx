@@ -83,7 +83,7 @@ class Fly extends Component {
       <div className={this.getClassSet()} onWheel={this._stopPropagation} ref={r => this.flyRef = r}>
         <div className="fly-header">
           {this.getSpecificChildren(Header)}
-          <i className="fa fa-times" role="close" onClick={() => this._close()} />
+          <i className="fa fa-times fly-dismiss" onClick={() => this._close()} />
         </div>
         <div className="fly-content">
           {this.getSpecificChildren(Content)}

@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Input, Button, Select, Checkbox, RadioGroup, DropdownMenu, ToggleSwitch, FormGroup } from './../library';
 
 class FormDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const dropdownBtn = <Button>Dropdown <i className="fa fa-caret-down" /></Button>
     return (

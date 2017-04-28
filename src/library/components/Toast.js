@@ -78,7 +78,7 @@ class Toast {
     $toast.removeClass('toast-opened');
     setTimeout(() => {
       $toast.remove();
-      onClose ? onClose() : null;
+      (onClose||(()=>{}))();
     }, 200);
   }
 }

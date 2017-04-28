@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Message } from './../library';
+import { Message } from './../library';
 
 class MessageDemo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="page">
