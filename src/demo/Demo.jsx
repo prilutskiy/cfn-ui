@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Grid, Row, Col, Button } from './../library';
 
 class Demo extends Component {

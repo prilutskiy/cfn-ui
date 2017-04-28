@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter, HashRouter } from 'react-router-dom'; 
-import DemoApp from './DemoApp';
+import { Route, browserHistory, hashHistory, IndexRoute, Router } from 'react-router';
 import Demo from './demo/Demo';
 import ButtonDemo from './demo/ButtonDemo';
 import InputDemo from './demo/InputDemo';
@@ -21,13 +20,14 @@ import FlexboxDemo from './demo/FlexboxDemo';
 import TabsDemo from './demo/TabsDemo';
 import StoriesDemo from './demo/StoriesDemo';
 import ChartsDemo from './demo/ChartsDemo';
+import DemoApp from './DemoApp';
 
 
-const Router = process.env.NODE_ENV === 'development' ? BrowserRouter : HashRouter;
+const routerHistory = process.env.NODE_ENV === 'development' ? browserHistory : hashHistory;
 const routing = (
-  <Router>
-    <DemoApp>
-      <Route exact path="/" component={Demo} />
+  <Router history={routerHistory}>
+    <Route path="/" component={DemoApp}>
+      <IndexRoute component={Demo} />
       <Route path="/buttons" component={ButtonDemo} />
       <Route path="/dropdowns" component={DropdownDemo} />
       <Route path="/inputs" component={InputDemo} />
@@ -47,7 +47,7 @@ const routing = (
       <Route path="/tabs" component={TabsDemo} />
       <Route path="/stories" component={StoriesDemo} />
       <Route path="/charts" component={ChartsDemo} />
-    </DemoApp>
+    </Route>
   </Router>
 );
 

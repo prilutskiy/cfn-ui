@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import { Grid, Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu } from './library';
-import { Link } from 'react-router-dom';
 
 /* global $ */
 
