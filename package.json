@@ -1,7 +1,7 @@
 {
   "name": "haze-ui",
   "main": "build/dist/haze-ui.js",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "homepage": "http://prilutskiy.github.io/haze-ui",
   "devDependencies": {
     "autoprefixer": "6.7.2",
@@ -40,6 +40,7 @@
     "object-assign": "4.1.1",
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
+    "react-bootstrap-table": "^3.3.5",
     "react-chartjs-2": "^2.0.5",
     "react-dev-utils": "^0.5.2",
     "react-flexbox-grid": "^1.0.2",

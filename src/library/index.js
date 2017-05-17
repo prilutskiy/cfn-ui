@@ -27,7 +27,9 @@ import Tag from './components/Tag';
 import Toast from './components/Toast';
 import ToggleSwitch from './components/ToggleSwitch';
 import Tooltip from './components/Tooltip';
+import { DataTable, DataTableColumn } from './components/DataTable';
 import './styles/styles.less';
+import 'font-awesome/css/font-awesome.min.css';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -65,5 +67,8 @@ export
 
   Grid,
   Row,
-  Col
+  Col,
+
+  DataTable,
+  DataTableColumn
 };
