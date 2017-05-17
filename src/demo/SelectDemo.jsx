@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Button } from './../library';
-import Select2 from 'react-select2-wrapper';
-import 'react-select2-wrapper/css/select2.css';
-
-class Select extends Component {
-  render() {
-    return <div className="select"><Select2 {...this.props} /></div>
-  }
-}
+import { Box, Button, Select } from './../library';
 
 class SelectDemo extends Component {
   constructor(props) {

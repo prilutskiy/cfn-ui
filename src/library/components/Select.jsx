@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import ReactSelect from 'react-select';
-import 'react-select/dist/react-select.css';
+
+import Select2 from 'react-select2-wrapper';
+import 'react-select2-wrapper/css/select2.css';
+
 
 class Select extends Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class Select extends Component {
 
   getClassSet() {
     const existing = this.props.className;
-    const select = 'react-select-wrapper';
+    const select = 'select';
     const style = this.getStyleClass();
     const highlighted = this.props.highlighted ? 'select-highlighted' : '';
     const disabled = this.props.disabled ? 'select-disabled' : '';
@@ -45,10 +47,7 @@ class Select extends Component {
     const { icon, primary, success, info, warning, danger, xs, sm, md, lg, xl, ...otherProps } = this.props;
     const selectIcon = this.props.icon ? <i className={'select-icon-left fa fa-' + this.props.icon} /> : null;
     return (
-      <div className={this.getClassSet()}>
-        <ReactSelect {...otherProps} />
-        {selectIcon}
-      </div>
+      <div className="select"><Select2 {...otherProps} /></div>
     );
   }
 }
