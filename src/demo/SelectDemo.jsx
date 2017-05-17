@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Box, Button, Select } from './../library';
+import { Box, Button } from './../library';
+import Select2 from 'react-select2-wrapper';
+import 'react-select2-wrapper/css/select2.css';
+
+class Select extends Component {
+  render() {
+    return <div className="select"><Select2 {...this.props} /></div>
+  }
+}
 
 class SelectDemo extends Component {
   constructor(props) {
@@ -21,6 +29,14 @@ class SelectDemo extends Component {
           <Box.Header>Selects</Box.Header>
           <Box.Content>
             <div>
+              <Select multiple options={{placeholder: 'Select your tags'}} data={['bug', 'feature', 'documents', 'discussion']}/>
+              <Button disabled={true} onClick={() => alert('asd')} primary>Action</Button>
+            </div>
+            <div>
+              <Select options={{placeholder: 'Select your tags'}} data={['bug', 'feature', 'documents', 'discussion']}/>
+              <Button primary>Action</Button>
+            </div>
+            {/*<div>
               <Select multi options={this.options} value={this.state.values} onChange={v => this.setState({values: v})} placeholder="Username" type="text" icon="user" />
               <Button primary>Action</Button>
               <Button primary clean>Reset</Button>
@@ -33,7 +49,7 @@ class SelectDemo extends Component {
             <div>
               <Select success highlighted options={this.options} value={this.state.values} onChange={v => this.setState({values: v})} placeholder="Text here" />
               <Select danger disabled highlighted placeholder="Password" type="password" icon="key" />
-            </div>
+            </div>*/}
           </Box.Content>
         </Box>
       </div>

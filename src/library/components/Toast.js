@@ -4,7 +4,7 @@ class Toast {
     icon: null,
     text: '',
     style: 'default',
-    timeout: 0
+    timeout: 3000
   };
   static show(config) {
     const _config = { ...this._defaultConfig, ...config };

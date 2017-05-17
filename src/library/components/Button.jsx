@@ -18,11 +18,6 @@ class Button extends Component {
     this.getStyleClass = this.getStyleClass.bind(this);
   }
 
-  _onLinkClick = (e) => {
-    e.preventDefault();
-    (this.props.onClick||(()=>{}))(e);
-  }
-
   getStyleClass() {
     return Object.keys(this.styleMap).filter(s => this.props[s]).map(n => this.styleMap[n])[0] || this.styleMap.default;
   }
@@ -52,6 +47,7 @@ class Button extends Component {
   }
 
   onClick(e) {
+    e.preventDefault();
     return this.props.onClick && !this.props.disabled && !this.props.loading ? this.props.onClick(e) : false;
   }
 
@@ -62,7 +58,7 @@ class Button extends Component {
       onClick: (e) => this.onClick(e)
     }
     return (
-      <a {...props} ref={r => this.btn = r} href={this.props.href} onClick={ this._onLinkClick }>
+      <a {...props} ref={r => this.btn = r} href={this.props.href}>
         {content}
         { this.props.loading ? <i className="fa fa-spinner fa-spin fa-fw"></i> : null }
       </a>

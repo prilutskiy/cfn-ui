@@ -1,131 +1,165 @@
-.react-select-wrapper {
-  text-align: left;
-  display: inline-block;
-  position: relative;
-  min-width: 300px;
-  margin: 5px;
-  vertical-align: top;
-  &.select-icon {    
-    .fa {
-      position: absolute;
-      left: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: @placeholder-color;
-    }
-    .Select--multi {
-      .Select-multi-value-wrapper {
-        padding-left: 21px;
-      }
-      .Select-input {
-        margin-left: 5px;
-      }
-      .Select-placeholder {
-        padding-left: 26px;
-      }
-    }
-    .Select--single {
-      .Select-placeholder, .Select-input, .Select-value {
-        padding-left: 26px;
-      }
-    }
-  }
-
-
-  &.select-disabled {
-    &, & * {
-      cursor: not-allowed;
-    }
-    background: darken(@inverted, 2%);
-  }
-  .Select {
+.select2-container {
+  .select2-search__field {
     outline: none;
-    display: inline-flex;
-    width: 100%;
   }
-  .Select-placeholder {
-    color: @placeholder-color;
+  .select2-dropdown {
+    border-radius: @border-radius;
   }
-  .Select-control {
-    border: 1px solid @border-color;
-    &:hover {
-      box-shadow: none;
-    }
+}    
+.select {
+  display: inline-block;
+  min-width: 300px;
+  position: relative;
+  bottom: 2px;
+  .select2-container {
+    min-width: 100%;
   }
-  .is-focused:not(.is-open) > .Select-control {
-    box-shadow: none;
-    border: 1px solid @border-color;
-  }
-  .Select-placeholder,
-  .Select-input,
-  .Select-control,
-  .is-open > .Select-control {
-    font-size: 1rem;
-    background: transparent;
-  }
-  .Select-control {
+  .select2-container .select2-selection {
     height: 41px;
     border-radius: @border-radius;
-  }
-  .Select-placeholder, 
-  .Select--single > .Select-control .Select-value {
-    top: 2px;
-  }
-  .Select--multi .Select-value {
-    border-radius: @border-radius;
-    background: transparent;
-    border-style: solid;
-    border-width: 1px;
-    font-size: 1rem;
-    .Select-value-icon {
-      border: none;
-      &:hover {
-        background: transparent;
-        color: inherit;
-      }
+    border: 1px solid @border-color;
+    outline: none;
+    .select2-selection__choice {
+      height: 28px;
+      border-radius: @border-radius;
+      line-height: 1.7rem;
     }
-    .Select-value-label {
-      padding-left: 0;
-    }
-  }
-
-  &.select-default {
-    .select-style-mixin(@default);
-  }
-  &.select-primary {
-    .select-style-mixin(@primary);
-  }
-  &.select-success {
-    .select-style-mixin(@success);
-  }
-  &.select-info {
-    .select-style-mixin(@info);
-  }
-  &.select-warning {
-    .select-style-mixin(@warning);
-  }
-  &.select-danger {
-    .select-style-mixin(@danger);
-  }
-
-  .select-style-mixin(@color) {
-    .Select--multi .Select-value {
-      border-color: @color;
-      color: @color;
-    }
-    &:not(.select-highlighted) .Select.is-focused .Select-control,
-    &.select-highlighted .Select-control {
-      border-color: @color;
-    }
-    &.select-disabled {
-      .Select--multi .Select-value {
-        border-color: tint(@color);
-        color: tint(@color);
-      }
-      &:not(.select-highlighted) .Select.is-focused .Select-control,
-      &.select-highlighted .Select-control {
-        border-color: tint(@color);
-      }
+    .select2-selection__arrow,
+    .select2-selection__rendered {
+      height: 39px;
+      line-height: 39px;
     }
   }
 }
+
+// .react-select-wrapper {
+//   text-align: left;
+//   display: inline-block;
+//   position: relative;
+//   min-width: 300px;
+//   margin: 5px;
+//   vertical-align: top;
+//   &.select-icon {    
+//     .fa {
+//       position: absolute;
+//       left: 8px;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       color: @placeholder-color;
+//     }
+//     .Select--multi {
+//       .Select-multi-value-wrapper {
+//         padding-left: 21px;
+//       }
+//       .Select-input {
+//         margin-left: 5px;
+//       }
+//       .Select-placeholder {
+//         padding-left: 26px;
+//       }
+//     }
+//     .Select--single {
+//       .Select-placeholder, .Select-input, .Select-value {
+//         padding-left: 26px;
+//       }
+//     }
+//   }
+
+
+//   &.select-disabled {
+//     &, & * {
+//       cursor: not-allowed;
+//     }
+//     background: darken(@inverted, 2%);
+//   }
+//   .Select {
+//     outline: none;
+//     display: inline-flex;
+//     width: 100%;
+//   }
+//   .Select-placeholder {
+//     color: @placeholder-color;
+//   }
+//   .Select-control {
+//     border: 1px solid @border-color;
+//     &:hover {
+//       box-shadow: none;
+//     }
+//   }
+//   .is-focused:not(.is-open) > .Select-control {
+//     box-shadow: none;
+//     border: 1px solid @border-color;
+//   }
+//   .Select-placeholder,
+//   .Select-input,
+//   .Select-control,
+//   .is-open > .Select-control {
+//     font-size: 1rem;
+//     background: transparent;
+//   }
+//   .Select-control {
+//     height: 41px;
+//     border-radius: @border-radius;
+//   }
+//   .Select-placeholder, 
+//   .Select--single > .Select-control .Select-value {
+//     top: 2px;
+//   }
+//   .Select--multi .Select-value {
+//     border-radius: @border-radius;
+//     background: transparent;
+//     border-style: solid;
+//     border-width: 1px;
+//     font-size: 1rem;
+//     .Select-value-icon {
+//       border: none;
+//       &:hover {
+//         background: transparent;
+//         color: inherit;
+//       }
+//     }
+//     .Select-value-label {
+//       padding-left: 0;
+//     }
+//   }
+
+//   &.select-default {
+//     .select-style-mixin(@default);
+//   }
+//   &.select-primary {
+//     .select-style-mixin(@primary);
+//   }
+//   &.select-success {
+//     .select-style-mixin(@success);
+//   }
+//   &.select-info {
+//     .select-style-mixin(@info);
+//   }
+//   &.select-warning {
+//     .select-style-mixin(@warning);
+//   }
+//   &.select-danger {
+//     .select-style-mixin(@danger);
+//   }
+
+//   .select-style-mixin(@color) {
+//     .Select--multi .Select-value {
+//       border-color: @color;
+//       color: @color;
+//     }
+//     &:not(.select-highlighted) .Select.is-focused .Select-control,
+//     &.select-highlighted .Select-control {
+//       border-color: @color;
+//     }
+//     &.select-disabled {
+//       .Select--multi .Select-value {
+//         border-color: tint(@color);
+//         color: tint(@color);
+//       }
+//       &:not(.select-highlighted) .Select.is-focused .Select-control,
+//       &.select-highlighted .Select-control {
+//         border-color: tint(@color);
+//       }
+//     }
+//   }
+// }
