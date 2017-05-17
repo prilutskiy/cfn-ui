@@ -124,7 +124,11 @@ class DemoApp extends Component {
                 <Col>Settings</Col>
               </Row>
             </Footer>
-            <SideMenu show={this.state.menu} onClose={() => this.setState({menu: false})} />
+            <SideMenu show={this.state.menu} onClose={() => this.setState({menu: false})} brand="Haze UI" logo="/bg.png">
+              <SideMenu.Item href="/" onClick={ () => hashHistory.push('/') }>
+                Go Home
+              </SideMenu.Item>
+            </SideMenu>
           </App.Footer>
         </App>
       </div>
