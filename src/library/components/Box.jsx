@@ -34,10 +34,12 @@ class Box extends Component {
   getClassSet() {
     const box = 'box';
     const style = this.getStyleClass();
+    const link = this.props.link ? 'box-link' : '';
 
     return [
       box,
       style,
+      link
     ]
       .filter(_ => _)
       .join(' ');

@@ -4,6 +4,16 @@
   border-radius: @border-radius;
   box-shadow: @shadow;
   margin: 5px;
+  &.box-link {
+    position: relative;
+    top: 0;
+    transition: top .05s ease-in-out;
+    &:hover:not(:active),
+    &:focus:not(:active) {
+      top: -1px;
+    }
+    &, & * { cursor: pointer; }
+  }
   .box-header {
     padding: 12px 20px;
     font-size: 1.2em;

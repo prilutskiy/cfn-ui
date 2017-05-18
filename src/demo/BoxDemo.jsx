@@ -78,7 +78,7 @@ class BoxDemo extends Component {
         </Row>
         <Row>
           <Col xs={4}>
-            <Box default>
+            <Box default link>
               <Box.Content>
                 <Overlay inverted show={this.state.loading} />
                 <p className="text-default">
