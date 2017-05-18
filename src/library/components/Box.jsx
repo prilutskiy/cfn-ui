@@ -51,11 +51,18 @@ class Box extends Component {
 
   render() {
     const footer = this.getSpecificChildren(BoxFooter);
+    const header = this.getSpecificChildren(BoxHeader);
     return (
       <div className={this.getClassSet()}>
-        <div className="box-header h5">
-          {this.getSpecificChildren(BoxHeader)}
-        </div>
+        {
+          header
+            ?
+            <div className="box-header h5">
+              {header}
+            </div>
+            :
+            null
+        }
         <div className="box-content">
           {this.getSpecificChildren(BoxContent)}
         </div>

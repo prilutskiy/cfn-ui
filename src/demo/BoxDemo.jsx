@@ -79,23 +79,12 @@ class BoxDemo extends Component {
         <Row>
           <Col xs={4}>
             <Box default>
-              <Box.Header>
-                <Row between="xs">
-                  <Col xs={11}>Default Box</Col>
-                  <Col xs={1} className="text-right">
-                    <i style={{padding:'5px'}} className={'fa fa-refresh ' + (this.state.loading?'rotating':'clickable')} onClick={() => this.state.loading ? null : this.refresh()} />
-                  </Col>
-                </Row>
-              </Box.Header>
               <Box.Content>
                 <Overlay inverted show={this.state.loading} />
                 <p className="text-default">
                   <strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit. <span className="text-muted">Proin molestie, ipsum id sagittis mattis, diam justo interdum dolor, a placerat est nulla eget eros. Fusce ac interdum nulla.</span> <a>Duis fermentum lectus posuere posuere feugiat</a>. Praesent eu fringilla dui. Curabitur faucibus tincidunt turpis, sed semper tellus dictum eu. Suspendisse ornare faucibus lorem, eget sagittis massa venenatis maximus.
             </p>
               </Box.Content>
-              <Box.Footer>
-                Some box footer goes here
-              </Box.Footer>
             </Box>
           </Col>
           <Col xs={4}>
