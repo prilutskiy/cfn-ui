@@ -1,6 +1,12 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  &.dropdown-down .dropdown-menu {
+    top: 100%;
+  }
+  &.dropdown-up .dropdown-menu {
+    bottom: 100%;
+  }
   .dropdown-menu {
     &.invisible {
       opacity: 0;
@@ -13,7 +19,6 @@
     background: @inverted;
     box-shadow: @shadow;
     border-radius: @border-radius;
-    top: 100%;
     right: 0;
     .dropdown-item {
       user-select: none;

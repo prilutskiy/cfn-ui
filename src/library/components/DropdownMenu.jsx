@@ -35,7 +35,7 @@ class DropdownMenu extends Component {
 
   render() {
     return (
-      <span className="dropdown" onClick={!this.props.trigger.props.disabled ? this.onClick : null} ref={(r) => this.dropdown = r}>
+      <span className={`dropdown ${this.props.up ? 'dropdown-up' : 'dropdown-down'}`} onClick={!this.props.trigger.props.disabled ? this.onClick : null} ref={(r) => this.dropdown = r}>
         <div className="dropdown-trigger">
           {this.props.trigger}
         </div>

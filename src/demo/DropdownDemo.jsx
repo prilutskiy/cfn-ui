@@ -21,6 +21,21 @@ class DropdownDemo extends Component {
             Exit
             </DropdownMenu.Item>
         </DropdownMenu>
+        <DropdownMenu up trigger={dropdownTrigger}>
+          <DropdownMenu.Item>
+            <i className="fa fa-user" />
+            My Personal profile
+            </DropdownMenu.Item>
+          <DropdownMenu.Item>
+            <i className="fa fa-sliders" />
+            Account settings
+            </DropdownMenu.Item>
+          <DropdownMenu.Item divider />
+          <DropdownMenu.Item>
+            <i className="fa fa-power-off" />
+            Exit
+            </DropdownMenu.Item>
+        </DropdownMenu>
       </div>
     );
   }
