@@ -23,7 +23,7 @@ class RadioDemo extends Component {
     return (
       <div>
         <div>
-          <RadioGroup value={this.state.value} onChange={(v) => this.setState({value: v})}>
+          <RadioGroup inline value={this.state.value} onChange={(v) => this.setState({value: v})}>
             {
               this.options.map(o => {
                 return (

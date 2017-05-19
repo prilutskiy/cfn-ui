@@ -35,10 +35,12 @@ class RadioGroup extends Component {
   getClassSet() {
     const radioGroup = 'radio-group';
     const style = this.getStyleClass();
+    const inline = this.props.inline ? 'radio-group-inline' : '';
 
     return [
       radioGroup,
       style,
+      inline,
       this.props.disabled ? 'diabled' : '',
 
     ]

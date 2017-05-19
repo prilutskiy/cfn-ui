@@ -2,8 +2,13 @@
   display: inline-block;
   text-align: left;
   margin: 5px;
+  &.radio-group-inline {
+    .radio { display: inline-block; }
+  }
+  &:not(.radio-group-inline) {
+    .radio { display: block; }
+  }
   .radio {
-    display: block;
     margin: 5px 10px 0 0;
     &:first-child {
       margin-top: 0;
