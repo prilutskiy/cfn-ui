@@ -39,7 +39,7 @@ class DemoApp extends Component {
       icon: 'check',
       text: 'Operation successful',
       style: 'success',
-      timeout: 3
+      timeout: 5
     });
   }
 

@@ -23,28 +23,31 @@ class Tag extends Component {
     const tag = 'tag';
     const style = this.getStyleClass();
     const disabled =  this.props.disabled ? 'disabled' : '';
+    const clickable = !this.props.disabled ? 'clickable' : '';
 
     return [
       disabled,
       tag,
       style,
+      clickable
     ]
       .filter(_ => _)
       .join(' ');
   }
 
   onClick() {
-    if (this.props.disabled || !this.props.onRemove) {
+    if (this.props.disabled) {
       return;
     }
-    this.props.onChange();
+    this.props.onClick();
   }
 
 
   render() {
+    const { className, onClick, ...otherProps } = this.props;
     return (
-      <div className={this.getClassSet()}>
-        {this.props.removable ? <i className="fa fa-times" onClick={() => this.onClick()} /> : null }
+      <div className={this.getClassSet()} onClick={() => this.onClick()} {...otherProps}>
+        {this.props.icon ? <i className={`fa fa-${this.props.icon}`} />  : null }
         {this.props.children}
       </div>
     );

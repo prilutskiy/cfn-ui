@@ -6,34 +6,34 @@ class TagDemo extends Component {
     return (
       <div>
         <div>
-          <Tag removable>Removable tag</Tag>
-          <Tag>Unremovable tag</Tag>
-          <Tag disabled>Unremovable tag</Tag>
+          <Tag icon="times">Remove tag</Tag>
+          <Tag icon="plus">Add tag</Tag>
+          <Tag disabled>Disabled tag</Tag>
         </div>
         <div>
-          <Tag primary  removable>Removable tag</Tag>
-          <Tag primary >Unremovable tag</Tag>
-          <Tag primary disabled>Unremovable tag</Tag>
+          <Tag primary icon="times">Remove tag</Tag>
+          <Tag primary icon="plus">Add tag</Tag>
+          <Tag primary disabled>Disabled tag</Tag>
         </div>
         <div>
-          <Tag success removable>Removable tag</Tag>
-          <Tag success>Unremovable tag</Tag>
-          <Tag success disabled>Unremovable tag</Tag>
+          <Tag success icon="times">Remove tag</Tag>
+          <Tag success icon="plus">Add tag</Tag>
+          <Tag success disabled>Disabled tag</Tag>
         </div>
         <div>
-          <Tag info removable>Removable tag</Tag>
-          <Tag info>Unremovable tag</Tag>
-          <Tag info disabled>Unremovable tag</Tag>
+          <Tag info icon="times">Remove tag</Tag>
+          <Tag info icon="plus">Add tag</Tag>
+          <Tag info disabled>Disabled tag</Tag>
         </div>
         <div>
-          <Tag warning removable>Removable tag</Tag>
-          <Tag warning>Unremovable tag</Tag>
-          <Tag warning disabled>Unremovable tag</Tag>
+          <Tag warning icon="times">Remove tag</Tag>
+          <Tag warning icon="plus">Add tag</Tag>
+          <Tag warning disabled>Disabled tag</Tag>
         </div>
         <div>
-          <Tag danger removable>Removable tag</Tag>
-          <Tag danger>Unremovable tag</Tag>
-          <Tag danger disabled>Unremovable tag</Tag>
+          <Tag danger icon="times">Remove tag</Tag>
+          <Tag danger icon="plus">Add tag</Tag>
+          <Tag danger disabled>Disabled tag</Tag>
         </div>
       </div>
     );

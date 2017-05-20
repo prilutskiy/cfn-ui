@@ -4,10 +4,11 @@ class Toast {
     icon: null,
     text: '',
     style: 'default',
-    timeout: 3000
+    timeout: 3
   };
   static show(config) {
     const _config = { ...this._defaultConfig, ...config };
+    console.log(_config);
     const element = this._createToast(_config);
 
     const currentToast = $('.toast');
