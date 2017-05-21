@@ -27,7 +27,7 @@ import Tag from './components/Tag';
 import Toast from './components/Toast';
 import ToggleSwitch from './components/ToggleSwitch';
 import Tooltip from './components/Tooltip';
-import { DataTable, DataTableColumn } from './components/DataTable';
+import StarRating from './components/StarRating';
 import './styles/styles.less';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -64,11 +64,9 @@ export
   Toast,
   ToggleSwitch,
   Tooltip,
+  StarRating,
 
   Grid,
   Row,
   Col,
-
-  DataTable,
-  DataTableColumn
 };

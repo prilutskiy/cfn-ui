@@ -43,7 +43,7 @@ class Input extends Component {
   }
 
   render() {
-    const { className, type, xs, sm, md, lg, xl, primary, success, disabled, info, warning, danger, ...otherProps } = this.props;
+    const { highlighted, className, type, xs, sm, md, lg, xl, primary, success, disabled, info, warning, danger, ...otherProps } = this.props;
     const inputIcon = this.props.icon ? <i className={'input-icon-left fa fa-' + this.props.icon} /> : null;
     const passRevealerIcon =
       this.props.type === 'password'

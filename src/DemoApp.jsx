@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
-import { Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu } from './library';
+import { Row, Col, App, Navbar, Footer, DropdownMenu, Header, Button, Alert, Modal, Fly, Toast, Page, SideMenu, StarRating } from './library';
 
 /* global $ */
 
@@ -108,6 +108,7 @@ class DemoApp extends Component {
                 <Header.PrimaryTitle>Components Demo</Header.PrimaryTitle>
                 <Header.SubTitle>Use links below to navigate between components</Header.SubTitle>
                 <Header.Actions>
+                  <StarRating />
                   <Button primary onClick={() => this.showToast()}><i className="fa fa-info"></i> Toast</Button>
                   <Button primary onClick={() => this.showFly()}><i className="fa fa-plane"></i> Fly</Button>
                   <Button primary onClick={() => this.showModal()}><i className="fa fa-window-maximize"></i> Modal</Button>
