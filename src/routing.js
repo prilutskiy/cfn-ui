@@ -20,6 +20,7 @@ import FlexboxDemo from './demo/FlexboxDemo';
 import TabsDemo from './demo/TabsDemo';
 import StoriesDemo from './demo/StoriesDemo';
 import ChartsDemo from './demo/ChartsDemo';
+import TabBarDemo from './demo/TabBarDemo';
 import DemoApp from './DemoApp';
 
 const routing = (
@@ -46,6 +47,7 @@ const routing = (
       <Route path="/stories" component={StoriesDemo} />
       <Route path="/charts" component={ChartsDemo} />
     </Route>
+    <Route path="/tabbar" component={TabBarDemo} />
   </Router>
 );
 

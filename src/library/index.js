@@ -28,6 +28,7 @@ import Toast from './components/Toast';
 import ToggleSwitch from './components/ToggleSwitch';
 import Tooltip from './components/Tooltip';
 import StarRating from './components/StarRating';
+import TabBar from './components/TabBar';
 import './styles/styles.less';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -65,6 +66,7 @@ export
   ToggleSwitch,
   Tooltip,
   StarRating,
+  TabBar,
 
   Grid,
   Row,
