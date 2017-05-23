@@ -72,7 +72,7 @@ class RadioGroup extends Component {
                 <div className="radio-box">
                   <div className="radio-check" />
                 </div>
-                <div className="radio-label">{c}</div>
+                <div className={`radio-label ${this.props.disabled?'text-muted':''}`}>{c}</div>
               </div>
             );
           })
