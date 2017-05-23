@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
 
 class BoxHeader extends Component {
-  render() { return null; }
+  render() {
+    const { className, ...otherProps } = this.props;
+    return (
+      <div className={`box-header ${className || ''}`} {...otherProps}>
+        {this.props.children}
+      </div>
+    );
+  }
 }
 class BoxContent extends Component {
-  render() { return null; }
+  render() {
+    const { className, ...otherProps } = this.props;
+    return (
+      <div className={`box-content ${className || ''}`} {...otherProps}>
+        {this.props.children}
+      </div>
+    );
+  }
 }
 class BoxFooter extends Component {
-  render() { return null; }
+  render() {
+    const { className, ...otherProps } = this.props;
+    return (
+      <div className={`box-footer ${className || ''}`} {...otherProps}>
+        {this.props.children}
+      </div>
+    );
+  }
 }
 
 class Box extends Component {
   constructor(props) {
     super(props);
-    this.getSpecificChildren = this.getSpecificChildren.bind(this);
     this.styleMap = {
       default: 'box-default',
       inverted: 'box-inverted',
@@ -45,38 +65,11 @@ class Box extends Component {
       .join(' ');
   }
 
-  getSpecificChildren(childType) {
-    const childrenArray = React.Children.toArray(this.props.children);
-    const requiredChild = childrenArray.find(c => c.type === childType);
-    return ((requiredChild || {}).props || {}).children;
-  }
-
   render() {
-    const footer = this.getSpecificChildren(BoxFooter);
-    const header = this.getSpecificChildren(BoxHeader);
+    const children = React.Children.toArray(this.props.children).filter(c => [BoxHeader, BoxContent, BoxFooter].indexOf(c.type) !== -1);
     return (
       <div className={this.getClassSet()}>
-        {
-          header
-            ?
-            <div className="box-header h5">
-              {header}
-            </div>
-            :
-            null
-        }
-        <div className="box-content">
-          {this.getSpecificChildren(BoxContent)}
-        </div>
-        {
-          footer
-            ?
-            <div className="box-footer text-default text-muted">
-              {footer}
-            </div>
-            :
-            null
-        }
+        {children}
       </div>
     );
   }

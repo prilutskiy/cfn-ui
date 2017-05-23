@@ -21,7 +21,7 @@ class SelectDemo extends Component {
           <Box.Header>Selects</Box.Header>
           <Box.Content>
             <div>
-              <Select multiple options={{placeholder: 'Select your tags'}} data={['bug', 'feature', 'documents', 'discussion']}/>
+              <Select block multiple options={{placeholder: 'Select your tags'}} data={['bug', 'feature', 'documents', 'discussion']}/>
               <Button disabled={true} onClick={() => alert('asd')} primary>Action</Button>
             </div>
             <div>

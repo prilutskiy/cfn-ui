@@ -27,27 +27,22 @@ class Select extends Component {
     const existing = this.props.className;
     const select = 'select';
     const style = this.getStyleClass();
-    const highlighted = this.props.highlighted ? 'select-highlighted' : '';
-    const disabled = this.props.disabled ? 'select-disabled' : '';
-    const icon = this.props.icon ? 'select-icon' : '';
+    const block = this.props.block ? 'select-block' : '';
 
     return [
       existing,
       select,
       style,
-      disabled,
-      highlighted,
-      icon,
+      block
     ]
       .filter(_ => _)
       .join(' ');
   }
 
   render() {
-    const { icon, primary, success, info, warning, danger, xs, sm, md, lg, xl, ...otherProps } = this.props;
-    const selectIcon = this.props.icon ? <i className={'select-icon-left fa fa-' + this.props.icon} /> : null;
+    const { classname, block, icon, primary, success, info, warning, danger, xs, sm, md, lg, xl, ...otherProps } = this.props;
     return (
-      <div className="select"><Select2 {...otherProps} /></div>
+      <div className={this.getClassSet()}><Select2 {...otherProps} /></div>
     );
   }
 }

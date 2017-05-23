@@ -43,20 +43,18 @@ class StarRating extends Component {
       padding: '3px'
     }
     return (
-      <div>
-        <span onMouseLeave={() => this.onStarLeave()} className="clickable" onClick={() => this.onStarClick()}>
-          {
-            Array(this.props.count).fill(0).map((_, i) => {
-              return (
-                (this.state.hoverIndex != null && this.state.hoverIndex >= i) ||
-                  (this.value != null && this.value > i) ?
-                  <i style={style} key={i} className="fa fa-star" onMouseEnter={() => this.onStarHover(i)} /> :
-                  <i style={style} key={i} className="fa fa-star-o" onMouseEnter={() => this.onStarHover(i)} />
-              );
-            })
-          }
-        </span>
-      </div>
+      <span onMouseLeave={() => this.onStarLeave()} className="clickable star-rating" onClick={() => this.onStarClick()}>
+        {
+          Array(this.props.count).fill(0).map((_, i) => {
+            return (
+              (this.state.hoverIndex != null && this.state.hoverIndex >= i) ||
+                (this.value != null && this.value > i) ?
+                <i style={style} key={i} className="fa fa-star" onMouseEnter={() => this.onStarHover(i)} /> :
+                <i style={style} key={i} className="fa fa-star-o" onMouseEnter={() => this.onStarHover(i)} />
+            );
+          })
+        }
+      </span>
     );
   }
 }

@@ -8,15 +8,14 @@
     flex-grow: 0;
     justify-content: flex-start;
     user-select: none;
-    color: lighten(@default, 20%);
+    color: darken(@border-color, 25%);
     .tab-header-tab {
       padding: 10px 30px;
+      font-weight: 400;
       cursor: pointer;
       transition: background-color .15s ease, border-color .15s ease, color .15s ease;
       &:focus,
-      &:hover,
-      &:active,
-      &.active {
+      &:hover,{
         background: darken(@inverted, 1%);
       }
     }

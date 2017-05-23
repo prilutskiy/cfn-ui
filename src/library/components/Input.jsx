@@ -28,11 +28,13 @@ class Input extends Component {
     const input = 'input';
     const style = this.getStyleClass();
     const disabled = this.props.disabled ? 'input-disabled' : '';
+    const block = this.props.block ? 'input-block' : '';
 
     return [
       existing,
       input,
       style,
+      block,
       disabled,
       this.props.type === 'password' ? 'input-password' : '',
       this.props.icon ? 'input-icon' : '',

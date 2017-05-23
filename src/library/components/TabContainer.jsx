@@ -72,7 +72,7 @@ class TabContainer extends Component {
           {
             React.Children.map(this.props.children, (c, i) => {
               return (
-                <div key={i} className={`tab-header-tab ${activeTabIndex===i?'active':''}`} onClick={() => this.onTabClick(c, i)}>
+                <div key={i} className={`tab-header-tab h5 ${activeTabIndex===i?'active':''}`} onClick={() => this.onTabClick(c, i)}>
                   {c.props.title}
                 </div> 
               );

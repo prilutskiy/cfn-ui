@@ -19,7 +19,7 @@ class InputDemo extends Component {
               <Button primary clean>Reset</Button>
             </div>
             <div>
-              <Input success placeholder="Text here"/>
+              <Input success block placeholder="Block input"/>
               <Input danger disabled highlighted placeholder="Password" type="password" icon="key"/>
             </div>
           </Box.Content>

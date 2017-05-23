@@ -1,5 +1,6 @@
 .box {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: @inverted;
   border-radius: @border-radius;
   box-shadow: @shadow;
@@ -24,16 +25,20 @@
     border-bottom: 1px solid @border-color;
   }
   .box-content {
+    flex-grow: 1;
     padding: 20px;
     text-align: left;
     position: relative;
+    &:not(:last-child) {
+      border-bottom: 1px solid @border-color;
+    }
   }
   .box-footer {
     padding: 12px 20px;
     text-align: left;
+    background: darken(@inverted, 2%);
     border-bottom-left-radius: @border-radius;
     border-bottom-right-radius: @border-radius;
-    border-top: 1px solid @border-color;
   }
   &.box-default {
     .box-style-mixin(@default, @inverted);
