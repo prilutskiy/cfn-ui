@@ -66,7 +66,7 @@ class Checkbox extends Component {
         <div className="checkbox-box">
           <span className="checkbox-check" />
         </div>
-        <label className={`checkbox-label ${this.props.disabled?'text-muted':''}`}>{this.props.label}</label>
+        <label className={`checkbox-label ${this.props.disabled?'text-default text-muted':''}`}>{this.props.label}</label>
       </span>
     );
   }
