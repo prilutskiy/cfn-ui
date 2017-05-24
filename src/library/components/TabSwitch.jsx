@@ -82,7 +82,7 @@ class TabSwitch extends Component {
 
   render() {
     const items = React.Children.toArray(this.props.children).filter(c => c.type === TabSwitchItem);
-    const { primary, success, info, warning, danger, className, ...otherProps } = this.props;
+    const { compact, primary, success, info, warning, danger, className, ...otherProps } = this.props;
     return (
       <div className={this.getClassSet()} {...otherProps}>
         {items}
