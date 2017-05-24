@@ -41,8 +41,10 @@ class TabContainer extends Component {
     const tabContainer= 'tab-container';
     const style = this.getStyleClass();
     const orientation = this.getOrientationClass();
+    const existing = this.props.className || '';
 
     return [
+      existing,
       tabContainer,
       style,
       orientation
@@ -99,7 +101,7 @@ TabContainer.propTypes = {
   children : (props, propName, componentName) => 
                 React.Children
                   .toArray(props[propName])
-                  .find(child => child.type !== Tab) && new Error(`${componentName} only accepts "<${componentName}.Tab />" elements`),
+                  .find(child => child.type !== Tab) && new Error(`TabContainer only accepts "<TabContainer.Tab />" elements`),
 };
 
 TabContainer.Tab = Tab;
