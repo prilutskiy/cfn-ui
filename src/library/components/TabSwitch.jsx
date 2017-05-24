@@ -68,11 +68,13 @@ class TabSwitch extends Component {
     const tabContainer = 'tab-switch';
     const style = this.getStyleClass();
     const existing = this.props.className || '';
+    const compact = this.props.compact ? 'tab-switch-compact' : ''
 
     return [
       existing,
       tabContainer,
       style,
+      compact
     ]
       .filter(_ => _)
       .join(' ');

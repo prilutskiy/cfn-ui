@@ -5,12 +5,23 @@
   border-style: solid;
   border-width: 1px;
   background: @inverted;
-  margin: 5px;
   cursor: pointer;
+  &:not(.tab-switch-compact) {
+    margin: 5px;
+    .tab-switch-item {
+      padding: 4px;
+    }
+  }
+  .tab-switch-compact {
+    margin: 0px;
+    .tab-switch-item {
+      padding: 0 8px;
+    }
+  }
+
   .tab-switch-item {
     flex-grow: 1;
     text-align: center;
-    padding: 4px;
     box-sizing: border-box;  
     transition: background-color .15s ease, color .15s ease;
 
