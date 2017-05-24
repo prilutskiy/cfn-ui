@@ -21,6 +21,8 @@ import TabsDemo from './demo/TabsDemo';
 import StoriesDemo from './demo/StoriesDemo';
 import ChartsDemo from './demo/ChartsDemo';
 import TabBarDemo from './demo/TabBarDemo';
+import TabSwitchDemo from './demo/TabSwitchDemo';
+
 import DemoApp from './DemoApp';
 
 const routing = (
@@ -46,6 +48,7 @@ const routing = (
       <Route path="/tabs" component={TabsDemo} />
       <Route path="/stories" component={StoriesDemo} />
       <Route path="/charts" component={ChartsDemo} />
+      <Route path="/tabswitch" component={TabSwitchDemo} />
     </Route>
     <Route path="/tabbar" component={TabBarDemo} />
   </Router>

@@ -88,6 +88,13 @@ class Demo extends Component {
               <Button default block onClick={() => hashHistory.push('/tabbar')} href="/tabbar">TabBar</Button>
             </Col>
           </Row>
+          <Row>
+            <Col sm={3}>
+              <Button default block onClick={() => hashHistory.push('/tabswitch')} href="/tabswitch">TabSwitch</Button>
+            </Col>
+            <Col sm={3}>
+            </Col>
+          </Row>
         </Grid>
       </div>
     );
