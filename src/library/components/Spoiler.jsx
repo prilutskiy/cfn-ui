@@ -42,7 +42,6 @@ class Spoiler extends Component {
     const header = allChildren.find(c => c.type === SpoilerHeader);
     const content = allChildren.find(c => c.type === SpoilerContent);
     const { left, right, collapsed, onClick, ...otherProps } = this.props;
-    console.log(header, content);
     return (
       <div className={`spoiler ${this.collapsed ? 'spoiler-collapsed' : ''}`} {...otherProps}>
         <div className="spoiler-header" onClick={this._onStateChange}>
