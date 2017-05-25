@@ -69,8 +69,8 @@ class Modal extends Component {
     const content = this.getSpecificChildren(ModalContent);
     const footer = this.getSpecificChildren(ModalFooter)
     return (
-      <div className={`overlay overlay-page overlay-default ${this.props.show ? 'overlay-opened' : null}`}>
-        <div className={this.getClassSet()} onWheel={this._stopPropagation}>
+      <div className={`overlay overlay-page overlay-default ${this.props.show ? 'overlay-opened' : null}`} onWheel={this._stopPropagation}>
+        <div className={this.getClassSet()}>
           <div className="modal-header">
             {header}
             <i className="fa fa-times modal-dismiss" onClick={() => this._cancel()} />
