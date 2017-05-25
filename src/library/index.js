@@ -30,6 +30,7 @@ import Tooltip from './components/Tooltip';
 import StarRating from './components/StarRating';
 import TabBar from './components/TabBar';
 import TabSwitch from './components/TabSwitch';
+import Spoiler from './components/Spoiler';
 
 import './styles/styles.less';
 import 'font-awesome/css/font-awesome.min.css';
@@ -70,6 +71,7 @@ export
   StarRating,
   TabBar,
   TabSwitch,
+  Spoiler,
 
   Grid,
   Row,

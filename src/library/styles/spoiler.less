@@ -1,0 +1,45 @@
+@hr-color: darken(@border-color, 4%);
+@font-color: darken(@border-color, 25%);
+
+.spoiler {
+  &.spoiler-collapsed {
+    .spoiler-content {
+      display: none;
+    }
+    .spoiler-header {
+      color: fade(@font-color, 70%);
+      .fa {
+        transform: rotateZ(-90deg);
+      }
+    }
+  }
+  .spoiler-header {
+    color: @font-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 5px;
+    cursor: pointer;
+    user-select: none;
+    .fa {
+      font-size: 20px;
+      margin-right: 5px;
+      display: inline-block;
+      width: 15px;
+      transition: transform .1s ease;
+      position: relative;
+      bottom: 2px;
+    }
+    .spoiler-header-before,
+    .spoiler-header-after
+     {
+      flex-grow: 1;
+      height: 0;
+      border-top: 2px solid @hr-color;
+    }
+    .spoiler-header-content {
+      flex-grow: 0;
+      padding: 0 10px;
+    }
+  }
+}
