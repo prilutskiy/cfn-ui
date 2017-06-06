@@ -4,12 +4,15 @@
   height: 100px;
   padding: 16px 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   .header-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    .header-logo {
+      display: flex;
+    }
     .header-title {
       .header-title-primary {
         font-size: 3em;
@@ -19,5 +22,9 @@
         font-size: 1.2em;
       }
     }
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
   }
 }

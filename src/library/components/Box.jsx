@@ -67,8 +67,9 @@ class Box extends Component {
 
   render() {
     const children = React.Children.toArray(this.props.children).filter(c => [BoxHeader, BoxContent, BoxFooter].indexOf(c.type) !== -1);
+    const { className, primary, inverted, success, info, warning, danger, link, ...otherProps } = this.props;
     return (
-      <div className={this.getClassSet()}>
+      <div className={this.getClassSet()} {...otherProps}>
         {children}
       </div>
     );

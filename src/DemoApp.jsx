@@ -13,6 +13,7 @@ class DemoApp extends Component {
       toast: false,
       menu: false
     };
+    this.imgStub = 'http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png';
   }
 
   askForPermission = (onGrant, onDeny) => {
@@ -64,7 +65,7 @@ class DemoApp extends Component {
   render() {
     const profileBtn = (
       <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', alignSelf: 'stretch' }}>
-        <img className="img-circle img-sm" alt="" src="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" />
+        <img className="img-circle img-sm" alt="" src={this.imgStub} />
         <span style={{ padding: '0 15px' }}>John Doe</span>
         <i className="fa fa-caret-down" />
       </div>
@@ -73,7 +74,7 @@ class DemoApp extends Component {
       <div>
         <App fixednav fixedfooter boxed>
           <App.Navigation>
-            <Navbar logo="http://webapplayers.com/inspinia_admin-v2.7/css/patterns/shattered.png" title="Haze UI" onClick={ () => hashHistory.push('/') }>
+            <Navbar logo={this.imgStub} title="Haze UI" onClick={ () => hashHistory.push('/') }>
               <Navbar.LeftMenu>
                 <Navbar.MenuItem onClick={() => this.setState({menu: !this.state.menu})}>Side Menu</Navbar.MenuItem>
               </Navbar.LeftMenu>
@@ -105,6 +106,7 @@ class DemoApp extends Component {
                 </Modal.Content>
               </Modal>
               <Header>
+                <Header.Logo src={this.imgStub} />
                 <Header.PrimaryTitle>Components Demo</Header.PrimaryTitle>
                 <Header.SubTitle>Use links below to navigate between components</Header.SubTitle>
                 <Header.Actions>
